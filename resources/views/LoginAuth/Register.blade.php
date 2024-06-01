@@ -14,7 +14,7 @@
         <label for="">Contact Number</label>
         <input type="text" name="number" id=""><br>
         <label for="">Address</label>
-        <input type="text" name="addr" id=""><br>
+        <input type="text" name="addr" id=""><br><br>
         <button type="submit">Register</button><br>
         <a href="">Don't have an account? Register here</a>
     </form>
