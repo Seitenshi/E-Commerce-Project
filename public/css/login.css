@@ -8,6 +8,18 @@
 
 }
 
+/* PANG RESPONSIVE TO BE CONTINUED --> 
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,
+    minmax(250px, 1fr)); grid-gap: 10px; /* Adjust spacing */ 
+
+h1{
+    font-family: 'Montserrat';
+    font-size: 2em;
+    font-weight: bolder;
+}
+
 body{
     background-color: #fff;
     display: flex;
@@ -41,7 +53,7 @@ body{
 
 .container a{
     color: #333;
-    font-size: 13px;
+    font-size: 15px;
     text-decoration: none;
     margin: 15px 0 10px;
 }
@@ -49,7 +61,7 @@ body{
 .container button{
     background-color: #134B42;
     color: #fff;
-    font-size: 12px;
+    font-size: 15px;
     padding: 10px 45px;
     border: 1px solid transparent;
     border-radius: 8px;
