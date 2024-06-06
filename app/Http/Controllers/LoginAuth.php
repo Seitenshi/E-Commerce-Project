@@ -17,27 +17,30 @@ class LoginAuth extends Controller
     
     public function store(Request $request)
     {
-        // Validate the request
-        $request->validate([
-            'user_email' => 'required|email',
-            'user_password' => 'required|min:8|max:32',
-            'user_fname' => 'required',
-            'user_lname' => 'required',
-            'user_contact' => 'required|numeric|max:11',
-            'user_addr' => 'required',
+        // Validation
+        $validatedData = $request->validate([
+            'user_fname' => 'required|string|max:255',
+            'user_lname' => 'required|string|max:255',
+            'user_contact' => 'required|string|max:11',
+            'user_addr' => 'required|string|max:255',
+            'user_email' => 'required|string|email|max:255|unique:users',
+            'user_password' => 'required|string|min:8',
         ]);
 
         // Create the user
-        User::create([
-            'user_email' => $request->input('user_email'),
-            'user_password' => $request->input('user_password'),
-            'user_fname' => $request->input('user_fname'),
-            'user_lname' => $request->input('user_lname'),
-            'user_contact' => $request->input('user_contact'),
-            'user_addr' => $request->input('user_addr'),
+        $user = new User([
+            'user_email' => $validatedData['user_email'],
+            'user_password' => $validatedData['user_password'], // Hash the password
+            'user_fname' => $validatedData['user_fname'],
+            'user_lname' => $validatedData['user_lname'],
+            'user_contact' => $validatedData['user_contact'],
+            'user_addr' => $validatedData['user_addr'],
         ]);
 
-        return redirect('/login');
+        // Save the user to the database
+        $user->save();
+
+        return redirect()->route('Login')->with('success', 'Account created successfully.');
     }
 
     public function loginAuth(Request $request){
