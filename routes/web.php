@@ -21,5 +21,8 @@ Route::get('/', function () {
 Route::get('/login', [LoginAuth::class, 'login'])
     ->name('Login');
 
-Route::get('/register', [LoginAuth::class, 'register'])
+Route::get('/register', [LoginAuth::class, 'register']) //deprecated
     ->name('Register');
+
+Route::post('/adduser', [LoginAuth::class, 'store']) //sign up function
+    ->name('User.signup');

@@ -10,19 +10,23 @@
 
     <div class="container" id="container">
         <div class="form-container sign-up">
-            <form action="" method="post">
+            <form action="{{ url('/adduser') }}" method="post">
+                @csrf
+                <!-- Register -->
                 <h1>Create Account</h1>
-                <input type="text" class="form-control" placeholder="First Name" aria-label="First Name">
-                <input type="text" class="form-control" placeholder="Last Name" aria-label="Last Name">
-                <input type="text" class="form-control" placeholder="Contact Number" aria-label="Contact Number">
-                <input type="text" class="form-control" placeholder="Address" aria-label="Address">
-                <input type="text" class="form-control" placeholder="Email" aria-label="Email">
-                <input type="text" class="form-control" placeholder="Password" aria-label="Password">
-                <button>Sign Up</button>
+                <input type="text" class="form-control" placeholder="First Name" aria-label="First Name" name="user_fname">
+                <input type="text" class="form-control" placeholder="Last Name" aria-label="Last Name" name="user_lname">
+                <input type="text" class="form-control" placeholder="Contact Number" aria-label="Contact Number" name="user_contact">
+                <input type="text" class="form-control" placeholder="Address" aria-label="Address" name="user_addr">
+                <input type="text" class="form-control" placeholder="Email" aria-label="Email" name="user_email">
+                <input type="text" class="form-control" placeholder="Password" aria-label="Password" name="user_password">
+                <button type="submit">Sign Up</button>
             </form>
         </div>
         <div class="form-container sign-in">
             <form action="" method="post">
+                @csrf
+                <!-- Login -->
                 <h1>Sign In</h1>
                 <div class="social-icons">
                     <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
@@ -31,10 +35,10 @@
                     <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
                 <span>or use your email password</span>
-                <input type="text" class="form-control" placeholder="Email" aria-label="Email">
-                <input type="text" class="form-control" placeholder="Password" aria-label="Password">
+                <input type="text" class="form-control" placeholder="Email" aria-label="Email" name="user_email">
+                <input type="text" class="form-control" placeholder="Password" aria-label="Password" name="user_password">
                 <a href=" ">Forgot Your Password?</a>
-                <button>Sign In</button>
+                <button type="submit">Sign In</button>
             </form>
         </div>
         <div class="toggle-container">
