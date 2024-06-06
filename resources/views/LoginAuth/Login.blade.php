@@ -14,12 +14,12 @@
                 @csrf
                 <!-- Register -->
                 <h1>Create Account</h1>
-                <input type="text" class="form-control" placeholder="First Name" aria-label="First Name" name="user_fname">
-                <input type="text" class="form-control" placeholder="Last Name" aria-label="Last Name" name="user_lname">
-                <input type="text" class="form-control" placeholder="Contact Number" aria-label="Contact Number" name="user_contact">
-                <input type="text" class="form-control" placeholder="Address" aria-label="Address" name="user_addr">
-                <input type="text" class="form-control" placeholder="Email" aria-label="Email" name="user_email">
-                <input type="text" class="form-control" placeholder="Password" aria-label="Password" name="user_password">
+                <input type="text" class="form-control" placeholder="First Name" aria-label="First Name" name="user_fname" required>
+                <input type="text" class="form-control" placeholder="Last Name" aria-label="Last Name" name="user_lname" required>
+                <input type="text" class="form-control" placeholder="Contact Number" aria-label="Contact Number" name="user_contact" required>
+                <input type="text" class="form-control" placeholder="Address" aria-label="Address" name="user_addr" required>
+                <input type="text" class="form-control" placeholder="Email" aria-label="Email" name="user_email" required>
+                <input type="text" class="form-control" placeholder="Password" aria-label="Password" name="user_password" required>
                 <button type="submit">Sign Up</button>
             </form>
         </div>
@@ -35,8 +35,8 @@
                     <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
                 <span>or use your email password</span>
-                <input type="text" class="form-control" placeholder="Email" aria-label="Email" name="user_email">
-                <input type="text" class="form-control" placeholder="Password" aria-label="Password" name="user_password">
+                <input type="text" class="form-control" placeholder="Email" aria-label="Email" name="user_email" required>
+                <input type="text" class="form-control" placeholder="Password" aria-label="Password" name="user_password" required>
                 <a href=" ">Forgot Your Password?</a>
                 <button type="submit">Sign In</button>
             </form>
