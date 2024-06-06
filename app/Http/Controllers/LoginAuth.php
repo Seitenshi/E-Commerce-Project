@@ -46,6 +46,16 @@ class LoginAuth extends Controller
             'user_password' => 'required|min:8|max:32',
         ]);
 
+        $user = User::where('user_email', '=', $request->input('user_email'))->first();
         
+        //check if user exists
+        if($user){
+            //check password
+            if ($request->input('user_password') === $user->user_password){
+                return view("Homepage_login");
+            }
+        }else{
+            echo "gago ka mali account mo";
+        }
     }
 }

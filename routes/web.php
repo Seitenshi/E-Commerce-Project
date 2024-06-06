@@ -26,3 +26,6 @@ Route::get('/register', [LoginAuth::class, 'register']) //deprecated
 
 Route::post('/adduser', [LoginAuth::class, 'store']) //sign up function
     ->name('User.signup');
+
+Route::post('/auth', [LoginAuth::class, 'loginAuth']) //sign in function
+    ->name('loginAuth');

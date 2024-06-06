@@ -24,7 +24,7 @@
             </form>
         </div>
         <div class="form-container sign-in">
-            <form action="" method="post">
+            <form action="{{ url('/auth') }}" method="post">
                 @csrf
                 <!-- Login -->
                 <h1>Sign In</h1>
