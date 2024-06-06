@@ -54,6 +54,9 @@ class LoginAuth extends Controller
             if ($request->input('user_password') === $user->user_password){
                 return view("Homepage_login");
             }
+            else{
+                echo "gago ka mali account mo";
+            }
         }else{
             echo "gago ka mali account mo";
         }
