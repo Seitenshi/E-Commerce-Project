@@ -1,0 +1,80 @@
+/* NAVBARSERZ */
+
+.navbar-brand {
+    font-weight: 500;
+    color: green;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.loginbutton {
+    background-color: #CA763B;
+    color: white;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.loginbutton:hover {
+    background-color: #80917D;
+}
+
+.navbar-nav{
+    justify-content: flex-end;
+}
+.navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+}
+
+.navbar-toggler:focus, .btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link {
+    color: grey;
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-link:hover, .nav-link:active, .nav-link.active {
+    color: black;
+}
+
+.nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #CA763B;
+    visibility: hidden;
+    transition: width 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.nav-link:hover::before, .nav-link:active::before, .nav-link.active::before {
+    width: 100%;
+    visibility: visible;
+}
+
+@media (min-width: 1880px) {
+    /* No additional styles needed here for hover effect */
+}
+
+/* END OF NAVBAR */
+
+/* START OF PARALLAX */
+
+.pic1 {
+    /* The image used */
+    background-image: url('/assets/img/hmpgev1.jpg');
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
