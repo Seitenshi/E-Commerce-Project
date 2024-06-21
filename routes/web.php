@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginAuth;
+use App\Http\Controllers\MainHome;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,3 +30,11 @@ Route::post('/adduser', [LoginAuth::class, 'store']) //sign up function
 
 Route::post('/auth', [LoginAuth::class, 'loginAuth']) //sign in function
     ->name('loginAuth');
+
+//Homepage - logged in
+Route::get('/home', [MainHome::class, 'homepageLogged']) //homepage logged in
+    ->name('home');
+
+//Misc
+Route::get('/about', [MainHome::class, 'about']) //about us
+    ->name('about');
