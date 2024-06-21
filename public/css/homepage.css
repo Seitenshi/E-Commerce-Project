@@ -1,5 +1,12 @@
 /* NAVBARSERZ */
 
+.navbar{
+    font-family: 'Rethink Sans';
+    font-weight: bold;
+    font-size: 20px;
+    box-shadow: 0 4px 4px -4px #9c6830;
+}
+
 .navbar-brand {
     font-weight: 500;
     color: green;
@@ -8,9 +15,9 @@
 }
 
 .loginbutton {
-    background-color: #CA763B;
+    background-color: #9c6830;
     color: white;
-    font-size: 14px;
+    font-size: 15px;
     padding: 8px 20px;
     border-radius: 50px;
     text-decoration: none;
@@ -52,7 +59,7 @@
     transform: translateX(-50%);
     width: 0;
     height: 2px;
-    background-color: #CA763B;
+    background-color: #9c6830;
     visibility: hidden;
     transition: width 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
@@ -62,6 +69,7 @@
     visibility: visible;
 }
 
+
 @media (min-width: 1880px) {
     /* No additional styles needed here for hover effect */
 }
@@ -70,11 +78,169 @@
 
 /* START OF PARALLAX */
 
-.pic1 {
-    /* The image used */
-    background-image: url('/assets/img/hmpgev1.jpg');
-    height: 500px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.parlx1 {
+  background-image: url('/assets/img/par.svg');
+  height: 300px; 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; 
+}
+
+
+/*   AAYUSIN PISKIT NAGPAPAGE BREAK BUSET
+  body {
+    This affects the entire page
+    max-width: 1088px;
+    margin:auto;
+    min-height:350vh;
+  
+  } */
+  .space{
+    height: 150vh
+
   }
+
+  .kalinaw-container {
+    height: 40vh;
+    overflow: hidden; 
+    position: relative; 
+}
+
+  .kalinaw-transition{
+    animation: repeat 1s forwards;
+    animation-delay: 1s;
+      
+  }
+  
+  .kalinaw{
+    margin: 0.9em ;
+    color: black;
+    font-family: Montserrat;
+    font-weight: bolder;
+    font-size: 3em;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap:10px;
+    
+  }
+
+  .kalinawL{
+    text-align: right;
+    left:5em;
+  }
+  .kalinawR{
+    left:10em;
+  }
+  @keyframes repeat{
+    100%{
+      filter: drop-shadow(0 1em 0 #80917D) drop-shadow(0 1em 0 black) drop-shadow(0 1em 0 #80917D);
+    }
+    
+  }
+  .kalinawL-transition{
+      animation: moveLeft .7s forwards;
+  /*   animation-delay:2s; */
+        animation-play-state: paused ;
+    animation-delay:  calc(var(--scroll) * -1s);
+  
+  }
+  .kalinawR-transition{
+      animation: moveRight .7s forwards;
+  /*     animation-delay:2s; */
+        animation-play-state: paused ;
+    animation-delay:  calc(var(--scroll) * -1s);
+  }
+  
+  @keyframes moveLeft {
+        0% {
+          transform: translateX(0px) rotate(0);
+    }
+    100%{
+        transform: translateX(-10em);
+    } 
+  }
+  @keyframes moveRight {
+        0% {
+          transform: translateX(0px) rotate(0);
+    }
+    100%{
+        transform: translateX(10em);
+    } 
+  }
+
+  .wrap {
+    position: relative;
+    width: 100%;
+    height: 300px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .search {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    height: 300px;
+  }
+  
+  .searchTerm {
+    width: 100%;
+    padding: 15px;
+    border: 5px solid #9c6830;
+    border-radius: 5px 0 0 5px;
+    font-size: 20px; 
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .searchButton {
+    width: 80px;
+    height: 69px;
+    background: #9c6830;
+    border: 1px solid #9c6830;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px; 
+  }
+  
+
+/* product showcase */
+ #first{
+  padding:1%;
+  outline: red dashed 1px;
+  height: 300px;
+  width: 100%;
+  background-color:beige;
+  }
+
+  .container {
+    display: flex;
+    padding: 20px;
+  }
+  .left-column, .right-column {
+    flex: 1;
+    padding: 10px;
+  }
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px; /* Adjust this width as needed */
+    height: 300px;
+  }
+  .swiper-slide:nth-child(1) { background-image: url(https://picsum.photos/300/300/?image=1083); }
+  .swiper-slide:nth-child(2) { background-image: url(https://picsum.photos/300/300/?image=1050); }
+  .swiper-slide:nth-child(3) { background-image: url(https://picsum.photos/300/300/?image=1039); }
+  .swiper-slide:nth-child(4) { background-image: url(https://picsum.photos/300/300/?image=1019); }
+  .swiper-slide:nth-child(5) { background-image: url(https://picsum.photos/300/300/?image=1015); }
+  .swiper-slide:nth-child(6) { background-image: url(https://picsum.photos/300/300/?image=999); }
+  .swiper-slide:nth-child(7) { background-image: url(https://picsum.photos/300/300/?image=976); }
+  .swiper-slide:nth-child(8) { background-image: url(https://picsum.photos/300/300/?image=944); }
+  .swiper-slide:nth-child(9) { background-image: url(https://picsum.photos/300/300/?image=884); }
+  .swiper-slide:nth-child(10) { background-image: url(https://picsum.photos/300/300/?image=883); }
