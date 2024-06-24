@@ -28,7 +28,7 @@
     background-color: #80917D;
 }
 
-.navbar-nav{
+.navbar-nav{ 
     justify-content: flex-end;
 }
 .navbar-toggler {
@@ -216,31 +216,121 @@
   background-color:beige;
   }
 
-  .container {
+  * {
+    box-sizing: border-box;
+  }
+  
+  .carousel {
+    width: 900px;
+    height: 550px;
     display: flex;
-    padding: 20px;
+    overflow: hidden;
+    position: relative;
+    background-color: #eaeaea;
+    margin: auto;
   }
-  .left-column, .right-column {
-    flex: 1;
-    padding: 10px;
-  }
-  .swiper-container {
+  
+  .carousel-item {
+    display: flex;
     width: 100%;
     height: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #fff;
+    flex-shrink: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.6s ease-in-out;
+    opacity: 0;
+    z-index: 0;
   }
-  .swiper-slide {
+  
+  .carousel-item.active {
+    opacity: 1;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .carousel-item__info {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    width: 40%;
+    order: 2;
+  }
+  
+  .carousel-item__image {
+    width: 60%;
+    height: 100%;
     background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
-    width: 300px; /* Adjust this width as needed */
-    height: 300px;
+    position: relative;
+    order: 1;
   }
-  .swiper-slide:nth-child(1) { background-image: url(https://picsum.photos/300/300/?image=1083); }
-  .swiper-slide:nth-child(2) { background-image: url(https://picsum.photos/300/300/?image=1050); }
-  .swiper-slide:nth-child(3) { background-image: url(https://picsum.photos/300/300/?image=1039); }
-  .swiper-slide:nth-child(4) { background-image: url(https://picsum.photos/300/300/?image=1019); }
-  .swiper-slide:nth-child(5) { background-image: url(https://picsum.photos/300/300/?image=1015); }
-  .swiper-slide:nth-child(6) { background-image: url(https://picsum.photos/300/300/?image=999); }
-  .swiper-slide:nth-child(7) { background-image: url(https://picsum.photos/300/300/?image=976); }
-  .swiper-slide:nth-child(8) { background-image: url(https://picsum.photos/300/300/?image=944); }
-  .swiper-slide:nth-child(9) { background-image: url(https://picsum.photos/300/300/?image=884); }
-  .swiper-slide:nth-child(10) { background-image: url(https://picsum.photos/300/300/?image=883); }
+  
+  .carousel-item__subtitle,
+  .carousel-item__title,
+  .carousel-item__description,
+  .carousel-item__btn {
+    transition: opacity 0.6s ease-in-out;
+  }
+  
+  .carousel-item--1 .carousel-item__image {
+    background-image: url('https://images.pexels.com/photos/991012/pexels-photo-991012.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  }
+  
+  .carousel-item--2 .carousel-item__image {
+    background-image: url('https://images.pexels.com/photos/921294/pexels-photo-921294.png?auto=compress&cs=tinysrgb&h=750&w=1260');
+  }
+  
+  .carousel-item--3 .carousel-item__image {
+    background-image: url('https://images.pexels.com/photos/92733/pexels-photo-92733.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
+  }
+  
+  .carousel-item--4 .carousel-item__image {
+    background-image: url('https://images.pexels.com/photos/1008732/pexels-photo-1008732.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
+  }
+  
+  .carousel-item--5 .carousel-item__image {
+    background-image: url('https://images.pexels.com/photos/1029614/pexels-photo-1029614.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  }
+  
+  
+  .carousel__nav {
+    position: absolute;
+    right: 0;
+    z-index: 2;
+    background-color: #fff;
+    bottom: 0;
+  }
+  
+  .carousel__icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    fill: #5d5d5d;
+  }
+  
+  .carousel__arrow {
+    cursor: pointer;
+    display: inline-block;
+    padding: 11px 15px;
+    position: relative;
+  }
+  
+  .carousel__arrow:nth-child(1):after {
+    content: '';
+    right: -3px;
+    position: absolute;
+    width: 1px;
+    background-color: #b0b0b0;
+    height: 14px;
+    top: 50%;
+    margin-top: -7px;
+  }
+  
+  

@@ -43,28 +43,35 @@ window.addEventListener('scroll', () => {
 
 
 // PRODUCT HIGHLIGHTS
-document.addEventListener('DOMContentLoaded', function () {
-  var swiper = new Swiper('.swiper-container', {
-    effect: 'coverflow',
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: 'auto',
-    coverflowEffect: {
-      rotate: 50,
-      stretch: 0,
-      depth: 100,
-      modifier: 1,
-      slideShadows: true,
-    },
-    pagination: {
-      el: '.swiper-pagination',
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
+$(function() {
+  $('.carousel-item').eq(0).addClass('active');
+  var total = $('.carousel-item').length;
+  var current = 0;
+
+  $('#moveRight').on('click', function() {
+    var next = current + 1;
+    if (next >= total) {
+      next = 0;
+    }
+    setSlide(current, next);
   });
+
+  $('#moveLeft').on('click', function() {
+    var prev = current - 1;
+    if (prev < 0) {
+      prev = total - 1;
+    }
+    setSlide(current, prev);
+  });
+
+  function setSlide(prev, next) {
+    // Ensure the descriptions are visible for the active slide
+    $('.carousel-item').eq(prev).removeClass('active');
+    $('.carousel-item').eq(next).addClass('active');
+    current = next;
+  }
 });
+
+
+
+
