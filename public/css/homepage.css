@@ -1,10 +1,20 @@
 /* NAVBARSERZ */
 
+body{
+  background-color: #80917D;
+}
+
+.topbar{
+  box-shadow: 0 5px 5px -5px #9c6830;
+  z-index: 1000; 
+  position: relative;
+}
+
 .navbar{
     font-family: 'Rethink Sans';
     font-weight: bold;
     font-size: 20px;
-    box-shadow: 0 4px 4px -4px #9c6830;
+    background-color: #fff;
 }
 
 .navbar-brand {
@@ -104,6 +114,7 @@
     height: 40vh;
     overflow: hidden; 
     position: relative; 
+    background-color: #fff;
 }
 
   .kalinaw-transition{
@@ -216,10 +227,6 @@
   background-color:beige;
   }
 
-  * {
-    box-sizing: border-box;
-  }
-  
   .carousel {
     width: 900px;
     height: 550px;
@@ -228,15 +235,24 @@
     position: relative;
     background-color: #eaeaea;
     margin: auto;
-  }
-  
-  .carousel-item {
+}
+
+.carousel-items {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    background-color: #eaeaea;
+}
+
+.carousel-item {
     display: flex;
     width: 100%;
     height: 100%;
-    align-items: center;
-    justify-content: flex-start;
-    background-color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 500px 500px;
     flex-shrink: 0;
     position: absolute;
     top: 0;
@@ -244,15 +260,15 @@
     transition: opacity 0.6s ease-in-out;
     opacity: 0;
     z-index: 0;
-  }
-  
-  .carousel-item.active {
+}
+
+.carousel-item.active {
     opacity: 1;
     position: relative;
     z-index: 1;
-  }
-  
-  .carousel-item__info {
+}
+
+.carousel-item__info {
     height: 100%;
     display: flex;
     justify-content: center;
@@ -260,69 +276,52 @@
     padding: 0 40px;
     width: 40%;
     order: 2;
-  }
-  
-  .carousel-item__image {
-    width: 60%;
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    order: 1;
-  }
-  
-  .carousel-item__subtitle,
-  .carousel-item__title,
-  .carousel-item__description,
-  .carousel-item__btn {
-    transition: opacity 0.6s ease-in-out;
-  }
-  
-  .carousel-item--1 .carousel-item__image {
-    background-image: url('https://images.pexels.com/photos/991012/pexels-photo-991012.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
-  }
-  
-  .carousel-item--2 .carousel-item__image {
-    background-image: url('https://images.pexels.com/photos/921294/pexels-photo-921294.png?auto=compress&cs=tinysrgb&h=750&w=1260');
-  }
-  
-  .carousel-item--3 .carousel-item__image {
-    background-image: url('https://images.pexels.com/photos/92733/pexels-photo-92733.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
-  }
-  
-  .carousel-item--4 .carousel-item__image {
-    background-image: url('https://images.pexels.com/photos/1008732/pexels-photo-1008732.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
-  }
-  
-  .carousel-item--5 .carousel-item__image {
-    background-image: url('https://images.pexels.com/photos/1029614/pexels-photo-1029614.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
-  }
-  
-  
-  .carousel__nav {
+    background-color: #fff;
+}
+
+.carousel-item--1 {
+    background-image: url('/assets/img/bstchr.png');
+}
+
+.carousel-item--2 {
+    background-image: url('/assets/img/bds.png');
+}
+
+.carousel-item--3 {
+    background-image: url('/assets/img/cbs.png');
+}
+
+.carousel-item--4 {
+    background-image: url('/assets/img/tble.png');
+}
+
+.carousel-item--5 {
+    background-image: url('/assets/img/slmn.png');
+}
+
+.carousel__nav {
     position: absolute;
     right: 0;
     z-index: 2;
     background-color: #fff;
     bottom: 0;
-  }
-  
-  .carousel__icon {
+}
+
+.carousel__icon {
     display: inline-block;
     vertical-align: middle;
     width: 16px;
-    fill: #5d5d5d;
-  }
-  
-  .carousel__arrow {
+    fill: black;
+}
+
+.carousel__arrow {
     cursor: pointer;
     display: inline-block;
     padding: 11px 15px;
     position: relative;
-  }
-  
-  .carousel__arrow:nth-child(1):after {
+}
+
+.carousel__arrow:nth-child(1):after {
     content: '';
     right: -3px;
     position: absolute;
@@ -331,6 +330,9 @@
     height: 14px;
     top: 50%;
     margin-top: -7px;
-  }
+}
+
+  
+  
   
   

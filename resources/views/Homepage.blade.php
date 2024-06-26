@@ -5,9 +5,9 @@
         <link rel="stylesheet" href="/css/homepage.css">
     </head>
 <body>
-<div>
+
     <!-- Sticky Nav Bar -->
-    <div>
+    <div class="topbar">
         <nav class="navbar navbar-expand-lg fixed">
             <div class="container-fluid">
                 <a class="navbar-brand ms-auto" href="#"><img src="/assets/img/klogo.png" height="50" width="50"></a>
@@ -36,7 +36,7 @@
             </div>
         </nav>
     </div>
-</div>
+
 
  <!-- Scroll break -->
 
@@ -75,96 +75,28 @@
       </svg>
     </span>
   </div>
-  <div class="carousel-item carousel-item--1 active">
-    <div class="carousel-item__image"></div>
-    <div class="carousel-item__info">
-      <div class="carousel-item__container">
-        <h2 class="carousel-item__subtitle">The grand moment</h2>
-        <h1 class="carousel-item__title">Le tour</h1>
-        <p class="carousel-item__description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-        <a href="#" class="carousel-item__btn">Explore the tour</a>
-      </div>
-    </div>
+
+  <div class="carousel-items">
+    <div class="carousel-item carousel-item--1 active"></div>
+    <div class="carousel-item carousel-item--2"></div>
+    <div class="carousel-item carousel-item--3"></div>
+    <div class="carousel-item carousel-item--4"></div>
+    <div class="carousel-item carousel-item--5"></div>
   </div>
-  <div class="carousel-item carousel-item--2">
-    <div class="carousel-item__image"></div>
-    <div class="carousel-item__info">
-      <div class="carousel-item__container">
-        <h2 class="carousel-item__subtitle">The big window</h2>
-        <h1 class="carousel-item__title">Minimal window</h1>
-        <p class="carousel-item__description">Clear Glass Window With Brown and White Wooden Frame iste natus error sit voluptatem accusantium doloremque laudantium.</p>
-        <a href="#" class="carousel-item__btn">Read the article</a>
-      </div>
-    </div>
-  </div>
-  <div class="carousel-item carousel-item--3">
-    <div class="carousel-item__image"></div>
-    <div class="carousel-item__info">
-      <div class="carousel-item__container">
-        <h2 class="carousel-item__subtitle">Tropical palms</h2>
-        <h1 class="carousel-item__title">Palms</h1>
-        <p class="carousel-item__description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-        <a href="#" class="carousel-item__btn">Explore the palms</a>
-      </div>
-    </div>
-  </div>
-  <div class="carousel-item carousel-item--4">
-    <div class="carousel-item__image"></div>
-    <div class="carousel-item__info">
-      <div class="carousel-item__container">
-        <h2 class="carousel-item__subtitle">Beach</h2>
-        <h1 class="carousel-item__title">The beach</h1>
-        <p class="carousel-item__description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-        <a href="#" class="carousel-item__btn">Explore the beach</a>
-      </div>
-    </div>
-  </div>
-  <div class="carousel-item carousel-item--5">
-    <div class="carousel-item__image"></div>
-    <div class="carousel-item__info">
-      <div class="carousel-item__container">
-        <h2 class="carousel-item__subtitle">The white building</h2>
-        <h1 class="carousel-item__title">White building</h1>
-        <p class="carousel-item__description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-        <a href="#" class="carousel-item__btn">Read the article</a>
-      </div>
+
+  <div class="carousel-item__info">
+    <div class="carousel-item__container">
+      <h1 class="carousel-item__title">Le tour Chair</h1>
+      <p class="carousel-item__description">This chair is made of oak wood with bits of fabrics on the top and bottom. You can also swing with it and you will not fall because of its firmness.</p>
+      <a href="#" class="carousel-item__btn">Check more chairs</a>
     </div>
   </div>
 </div>
 
 
-    <!-- {{-- <div class="col col-md-6">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Crime Reports</h5>
-            <select id="timeInterval" class="colorchrt">
-                <option value="weekly" class="colorchrt">Weekly</option>
-                <option value="monthly" class="colorchrt">Monthly</option>
-                <option value="yearly" class="colorchrt">Yearly</option>
-
-            <div style="width: 100%; height: 500px;">
-                <canvas id="crimeReportsChart"></canvas>
-            </div>
-
-            </div>
-        </div>
-    </div>
-    
-    <div class="col col-md-6"> 
-      <div class = "card">
-        <div class = "card-body">
-        <h5 class="card-title" id="secondtitle">Crime cases count</h5>
-                    <div style="width: 100%; height: 300px;">
-                        <canvas id="topCrimeChart"></canvas>
-                    </div>
-                
-                </div>
-            </div>
-        </div>  --}} -->
 
 
-
-
+<!-- 
     <div class="container" style="padding: 2px">
         <div class="row align-items-center justify-content-center" >
             <div class="col-md-6">
@@ -181,7 +113,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <br><br><br>
 
 </div>
