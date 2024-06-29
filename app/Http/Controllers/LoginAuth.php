@@ -57,7 +57,7 @@ class LoginAuth extends Controller
             //check password
             if ($request->input('user_password') === $user->user_password){
                 //create session and store the credentials of the user
-                Auth::login($user);
+                Session::put('LoggedUser', $user->user_id);
                 return view("Homepage_login");
             }
             else{
@@ -68,5 +68,14 @@ class LoginAuth extends Controller
             //if wrong email used
             return back()->withErrors(['user_email' => 'Email not found.']);
         }
+    }
+
+    public function logout()
+    {
+        if (Session::has('LoggedUser')) {
+            Session::pull('LoggedUser');
+        }
+        
+        return redirect('login');
     }
 }
