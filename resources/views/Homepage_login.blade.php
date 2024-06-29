@@ -11,7 +11,7 @@
     <div>
         <nav class="navbar navbar-expand-lg fixed top">
             <div class="container-fluid">
-                <a class="navbar-brand ms-auto" href="#">Logo</a>
+                <a class="navbar-brand ms-auto" href="{{ route('home') }}">Logo</a>
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">LOGO</h5>
@@ -20,24 +20,24 @@
                     <div class="offcanvas-body">
                         <ul class="navbar-nav flex-grow-1 pe-3">
                             <li class="nav-item">
-                                <a class="nav-link mx-lg-2 active" aria-current="page" href="#">Home</a>
+                                <a class="nav-link mx-lg-2 active" aria-current="page" href="{{ route('home') }}">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link mx-lg-2" href="#">About Us</a>
+                                <a class="nav-link mx-lg-2" href="{{ route('about') }}">About Us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link mx-lg-2" href="#">View Products</a>
+                                <a class="nav-link mx-lg-2" href="{{ route('product.categories') }}">View Product Categories</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link mx-lg-2" href="#">Profile</a>
+                                <a class="nav-link mx-lg-2" href="{{ route('profile') }}">Profile</a>
                             </li>
                             <li class="nav-item">
-                                <button class="btn nav-link mx-lg-2"><i class="fa-solid fa-cart-shopping"></i></button>
+                                <a href="#" class="button btn nav-link mx-lg-2"><i class="fa-solid fa-cart-shopping"></i></a>
                             </li>
                         </ul>
                     </div>
                 </div>
-                <a href="#" class="loginbutton">Log out</a>
+                <a href="{{ route('Logout') }}" class="loginbutton">Log out</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
