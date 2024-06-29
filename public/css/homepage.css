@@ -1,5 +1,22 @@
 /* NAVBARSERZ */
 
+body{
+  background-color: #80917D;
+}
+
+.topbar{
+  box-shadow: 0 5px 5px -5px #9c6830;
+  z-index: 1000; 
+  position: relative;
+}
+
+.navbar{
+    font-family: 'Rethink Sans';
+    font-weight: bold;
+    font-size: 20px;
+    background-color: #fff;
+}
+
 .navbar-brand {
     font-weight: 500;
     color: green;
@@ -8,9 +25,9 @@
 }
 
 .loginbutton {
-    background-color: #CA763B;
+    background-color: #9c6830;
     color: white;
-    font-size: 14px;
+    font-size: 15px;
     padding: 8px 20px;
     border-radius: 50px;
     text-decoration: none;
@@ -21,7 +38,7 @@
     background-color: #80917D;
 }
 
-.navbar-nav{
+.navbar-nav{ 
     justify-content: flex-end;
 }
 .navbar-toggler {
@@ -52,7 +69,7 @@
     transform: translateX(-50%);
     width: 0;
     height: 2px;
-    background-color: #CA763B;
+    background-color: #9c6830;
     visibility: hidden;
     transition: width 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
@@ -62,6 +79,7 @@
     visibility: visible;
 }
 
+
 @media (min-width: 1880px) {
     /* No additional styles needed here for hover effect */
 }
@@ -70,11 +88,251 @@
 
 /* START OF PARALLAX */
 
-.pic1 {
-    /* The image used */
-    background-image: url('/assets/img/hmpgev1.jpg');
-    height: 500px;
+.parlx1 {
+  background-image: url('/assets/img/par.svg');
+  height: 300px; 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; 
+}
+
+
+/*   AAYUSIN PISKIT NAGPAPAGE BREAK BUSET
+  body {
+    This affects the entire page
+    max-width: 1088px;
+    margin:auto;
+    min-height:350vh;
+  
+  } */
+  .space{
+    height: 150vh
+
+  }
+
+  .kalinaw-container {
+    height: 40vh;
+    overflow: hidden; 
+    position: relative; 
+    background-color: #fff;
+}
+
+  .kalinaw-transition{
+    animation: repeat 1s forwards;
+    animation-delay: 1s;
+      
+  }
+  
+  .kalinaw{
+    margin: 0.9em ;
+    color: black;
+    font-family: Montserrat;
+    font-weight: bolder;
+    font-size: 3em;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap:10px;
+    
+  }
+
+  .kalinawL{
+    text-align: right;
+    left:5em;
+  }
+  .kalinawR{
+    left:10em;
+  }
+  @keyframes repeat{
+    100%{
+      filter: drop-shadow(0 1em 0 #80917D) drop-shadow(0 1em 0 black) drop-shadow(0 1em 0 #80917D);
+    }
+    
+  }
+  .kalinawL-transition{
+      animation: moveLeft .7s forwards;
+  /*   animation-delay:2s; */
+        animation-play-state: paused ;
+    animation-delay:  calc(var(--scroll) * -1s);
+  
+  }
+  .kalinawR-transition{
+      animation: moveRight .7s forwards;
+  /*     animation-delay:2s; */
+        animation-play-state: paused ;
+    animation-delay:  calc(var(--scroll) * -1s);
+  }
+  
+  @keyframes moveLeft {
+        0% {
+          transform: translateX(0px) rotate(0);
+    }
+    100%{
+        transform: translateX(-10em);
+    } 
+  }
+  @keyframes moveRight {
+        0% {
+          transform: translateX(0px) rotate(0);
+    }
+    100%{
+        transform: translateX(10em);
+    } 
+  }
+
+  .wrap {
+    position: relative;
+    width: 100%;
+    height: 300px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .search {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    height: 300px;
+  }
+  
+  .searchTerm {
+    width: 100%;
+    padding: 15px;
+    border: 5px solid #9c6830;
+    border-radius: 5px 0 0 5px;
+    font-size: 20px; 
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .searchButton {
+    width: 80px;
+    height: 69px;
+    background: #9c6830;
+    border: 1px solid #9c6830;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px; 
+  }
+  
+
+/* product showcase */
+ #first{
+  padding:1%;
+  outline: red dashed 1px;
+  height: 300px;
+  width: 100%;
+  background-color:beige;
+  }
+
+  .carousel {
+    width: 900px;
+    height: 550px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    background-color: #eaeaea;
+    margin: auto;
+}
+
+.carousel-items {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    background-color: #eaeaea;
+}
+
+.carousel-item {
+    display: flex;
+    width: 100%;
+    height: 100%;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-  }
+    background-size: 500px 500px;
+    flex-shrink: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.6s ease-in-out;
+    opacity: 0;
+    z-index: 0;
+}
+
+.carousel-item.active {
+    opacity: 1;
+    position: relative;
+    z-index: 1;
+}
+
+.carousel-item__info {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    width: 40%;
+    order: 2;
+    background-color: #fff;
+}
+
+.carousel-item--1 {
+    background-image: url('/assets/img/bstchr.png');
+}
+
+.carousel-item--2 {
+    background-image: url('/assets/img/bds.png');
+}
+
+.carousel-item--3 {
+    background-image: url('/assets/img/cbs.png');
+}
+
+.carousel-item--4 {
+    background-image: url('/assets/img/tble.png');
+}
+
+.carousel-item--5 {
+    background-image: url('/assets/img/slmn.png');
+}
+
+.carousel__nav {
+    position: absolute;
+    right: 0;
+    z-index: 2;
+    background-color: #fff;
+    bottom: 0;
+}
+
+.carousel__icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    fill: black;
+}
+
+.carousel__arrow {
+    cursor: pointer;
+    display: inline-block;
+    padding: 11px 15px;
+    position: relative;
+}
+
+.carousel__arrow:nth-child(1):after {
+    content: '';
+    right: -3px;
+    position: absolute;
+    width: 1px;
+    background-color: #b0b0b0;
+    height: 14px;
+    top: 50%;
+    margin-top: -7px;
+}
+
+  
+  
+  
+  
