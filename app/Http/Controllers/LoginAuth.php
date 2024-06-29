@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Hash;
 use Session;
+use Auth;
 
 class LoginAuth extends Controller
 {
@@ -55,13 +56,17 @@ class LoginAuth extends Controller
         if($user){
             //check password
             if ($request->input('user_password') === $user->user_password){
+                //create session and store the credentials of the user
+                Auth::login($user);
                 return view("Homepage_login");
             }
             else{
-                echo "gago ka mali account mo";
+                //if wrong password
+                return back()->withErrors(['user_password' => 'Incorrect password.']);
             }
         }else{
-            echo "gago ka mali account mo";
+            //if wrong email used
+            return back()->withErrors(['user_email' => 'Email not found.']);
         }
     }
 }
