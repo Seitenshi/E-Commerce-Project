@@ -21,7 +21,7 @@
                                 <a class="nav-link mx-lg-2 active" aria-current="page" href="#">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link mx-lg-2" href="#">About Us</a>
+                                <a class="nav-link mx-lg-2" href="{{ route('about') }}">About Us</a>
                             </li>
                             <li class="nav-item">
                                 <button class="btn nav-link mx-lg-2"><i class="fa-solid fa-cart-shopping"></i></button>
@@ -29,7 +29,7 @@
                         </ul>
                     </div>
                 </div>
-                <a href="#" class="loginbutton">Login</a>
+                <a href="{{ route('Login') }}" class="loginbutton">Login</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
