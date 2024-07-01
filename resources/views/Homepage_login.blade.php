@@ -32,7 +32,7 @@
                                 <a class="nav-link mx-lg-2" href="{{ route('profile') }}">Profile</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="button btn nav-link mx-lg-2"><i class="fa-solid fa-cart-shopping"></i></a>
+                                <a href="{{ route('cart') }}" class="button btn nav-link mx-lg-2"><i class="fa-solid fa-cart-shopping"></i></a>
                             </li>
                         </ul>
                     </div>
