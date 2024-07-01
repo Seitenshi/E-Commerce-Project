@@ -6,6 +6,11 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">Product Details</h3>
+                        <form action="{{ route('product.show') }}" method="post">
+                            @csrf
+                            <input type="hidden" name="prod_category" value="{{$product['prod_category']}}">
+                            <button type="submit">View Other Products</button>
+                        </form>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -23,7 +28,6 @@
                                         <label for="quantity">Quantity</label>
                                         <input type="text" name="quantity" id="quantity" value="1" placeholder="Put a valid quantity"><br><br>
                                         <button type="submit">Add to Cart</button><br>
-                                        <a href="{{ route('product.categories') }}" class="button btn">Back to Categories</a>
                                     </form>
                                 </div>
                             </div>
