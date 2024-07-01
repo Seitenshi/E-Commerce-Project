@@ -1,7 +1,7 @@
 /* NAVBARSERZ */
 
 body{
-  background-color: #80917D;
+  background-color: white;
 }
 
 .topbar{
@@ -78,7 +78,6 @@ body{
     width: 100%;
     visibility: visible;
 }
-
 
 @media (min-width: 1880px) {
     /* No additional styles needed here for hover effect */
@@ -179,7 +178,7 @@ body{
     } 
   }
 
-  .wrap {
+  /* .wrap {
     position: relative;
     width: 100%;
     height: 300px; 
@@ -215,10 +214,293 @@ body{
     border-radius: 0 5px 5px 0;
     cursor: pointer;
     font-size: 20px; 
-  }
-  
+  } */
 
-/* product showcase */
+.Midbar {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.Midbar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(222, 221, 220, 0.2); /* Adjust the opacity here */
+  z-index: 0;
+}
+
+#shpbtn{
+  background-color: #9c6830;
+  justify-content: center;
+  margin: 50px 0;
+  outline: none;
+  border: none;
+}
+
+.vidback {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    z-index: -1;
+    opacity: 1em;
+}
+.Midbar h1 {
+    justify-content: flex-start;
+    font-size: 4.5em;
+    z-index: 1;
+    color: white;
+    font-family: Montserrat;
+    font-weight: bold;
+    margin-top: -5px;
+}
+.Midbar p {
+    font-size: 2.5em;
+    margin: 45px 0;
+    z-index: 1;
+    font-family: Playfair Dsiplay;
+}
+.search-bar {
+    margin: 20px auto;
+    width: 60%;
+    height: 9%;
+    display: flex;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    border: 4px solid #9c6830;
+    font-family: Rethink Sans;
+    font-weight: bold;
+    font-size: 1.4em;
+}
+.search-bar input {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    outline: none;
+   
+}
+.search-bar button {
+    padding: 15px;
+    border: none;
+    background: #9c6830;
+    color: #fff;
+    cursor: pointer;
+}
+.ProdShows {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.ProdShow {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 500px; /* Adjust the height as needed */
+  overflow: hidden;
+}
+
+.image-container {
+  flex: 1;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+}
+
+.overlay h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 0 10px;
+}
+
+.overlay a {
+  display: inline-block;
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.overlay a:hover {
+  background-color: #e6e6e6;
+}
+
+/* section 3 */
+
+.subscription-section {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.subscription-section h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.subscription-section p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.subscription-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-group {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.input-group .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  background-color: #f1f1f1;
+  font-size: 18px;
+}
+
+.input-group input {
+  border: none;
+  padding: 10px;
+  outline: none;
+  flex: 1;
+}
+
+.input-group button {
+  border: none;
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.input-group button:hover {
+  background-color: #333;
+}
+
+.hypel {
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+.hypel a {
+  color: #fff;
+  text-decoration: none;
+  margin: 8px;
+  font-size: 1.4em;
+  transition: color 0.2s;
+}
+
+.hypel a:not(:first-child)::before {
+  content: "  ";
+  color: #fff;
+}
+
+.hypel a:not(:last-child)::after {
+  content: " | ";
+  color: #fff;
+}
+.hypel a:hover {
+  color: #80917D;
+} 
+
+.inspiration-section {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.inspiration-image {
+  flex: 1;
+  display: flex;
+}
+
+.inspiration-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.inspiration-text {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #f9f9f9;
+}
+
+.inspiration-tag {
+  color: #999;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.inspiration-text h2 {
+  font-size: 36px;
+  margin: 0 0 20px;
+}
+
+.shop-button {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 14px;
+  text-align: center;
+  transition: background-color 0.3s;
+  width: fit-content;
+}
+
+.shop-button:hover {
+  background-color: #333;
+}
+
+/* Product showcase */
  #first{
   padding:1%;
   outline: red dashed 1px;
