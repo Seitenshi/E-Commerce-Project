@@ -78,3 +78,11 @@ Route::post('/cart/product/details', [Checkout::class, 'productDetail']) //Produ
 Route::post('/cart/addproduct', [Checkout::class, 'addProduct']) //Add to cart function
     ->middleware('isLoggedIn')
     ->name('cart.add');
+
+Route::post('/cart/removeproduct', [Checkout::class, 'remove']) //Remove from cart function
+    ->middleware('isLoggedIn')
+    ->name('cart.remove');
+
+Route::post('/checkout', [Checkout::class, 'checkout']) //go to checkout page
+    ->middleware('isLoggedIn')
+    ->name('checkout');
