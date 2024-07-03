@@ -62,7 +62,7 @@
         <source src="assets/vid/loopvid.mp4" type="video/mp4">
     </video>
     <h1>Welcome to Kalinaw Crafts</h1>
-    <p>Embrace the beauty of Filipino craftsmanshiphp p. Discover our unique collection of furniture and home essentials inspired by Filipino heritage.</p>
+    <p>Embrace the beauty of Filipino craftsmanship. Discover our unique collection of furniture and home essentials inspired by Filipino heritage.</p>
     <div class="search-bar">
         <input type="text" class="searchTerm" name="search" placeholder="What are you looking for?">
         <button type="submit" class="searchButton"><i class="fa fa-search"></i></button>
