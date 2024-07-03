@@ -62,7 +62,7 @@
         <source src="assets/vid/loopvid.mp4" type="video/mp4">
     </video>
     <h1>Welcome to Kalinaw Crafts</h1>
-    <p>Embrace the beauty of Filipino craftsmanship. Discover our unique collection of furniture and home essentials inspired by Filipino heritage.</p>
+    <p>Embrace the beauty of Filipino craftsmanshiphp p. Discover our unique collection of furniture and home essentials inspired by Filipino heritage.</p>
     <div class="search-bar">
         <input type="text" class="searchTerm" name="search" placeholder="What are you looking for?">
         <button type="submit" class="searchButton"><i class="fa fa-search"></i></button>
@@ -74,7 +74,7 @@
         <a href="#FilipinoIndoorComfort">Filipino Indoor Comfort</a>
     </div>
     <div>
-        <button type="button" id="shpbtn" class="btn btn-primary btn-lg">Shop Now</button>
+        <button type="button" id="shpbut" class="btn btn-primary btn-lg">Shop Now</button>
     </div>
 </div>
 
@@ -147,29 +147,49 @@
 </div> --}}
 
   <!--Section 3 to the last -->
-<div class="subscription-section">
-    <h2>Sign up for new stories and personal offers.</h2>
-    <p>Subscribe to get notified about new stories, news and personal offers.</p>
-    <form class="subscription-form">
+ <div class="container">
+    <div class="subscription-form">
+      <h2>Sign up for new stories and personal offers.</h2>
+      <p>Subscribe to get notified about new stories, news and personal offers.</p>
+      <form>
         <div class="input-group">
-            <span class="icon">@</span>
-            <input type="email" placeholder="Your email" required>
-            <button type="submit">→</button>
+          <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+          <input type="email" class="form-control" placeholder="Your email" aria-label="Your email">
+          <button class="btn btn-outline-secondary" type="submit">→</button>
         </div>
-    </form>
-</div>
+      </form>
+    </div>
+  </div>
     <br><br><br>
 
     <div class="inspiration-section">
         <div class="inspiration-image">
-            <img src="/assets/img/chrinspi.jpg" alt="Inspiration Image">
+          <img src="/assets/img/chrinspi.jpg" alt="Inspiration Image">
         </div>
         <div class="inspiration-text">
-            <p class="inspiration-tag">INSPIRATION</p>
-            <h2>We are inspired by the realities of life today.</h2>
-            <a href="#" class="shop-button">Shop now</a>
+          <p class="inspiration-tag">INSPIRATION</p>
+          <h2>We are inspired by the realities of life today.</h2>
+          <a href="#" class="shop-button">Shop now</a>
         </div>
-    </div>
+      </div>
+<br><br><br>
+
+  <!-- Last section -->
+  <div class="container">
+    <h1 class="font-weight-bold h3 mb-5">Our Brand Partners</h1>
+    <hr />
+    <p>Responsive Slider</p>
+    <section class="customer-logos slider">
+      <div class="slide"><img src="/assets/img/chr2.jpg" alt="Brand Logo"></div>
+      <div class="slide"><img src="/assets/img/chr2.jpg" alt="Brand Logo"></div>
+      <div class="slide"><img src="/assets/img/chr2.jpg" alt="Brand Logo"></div>
+      <div class="slide"><img src="/assets/img/chr2.jpg" alt="Brand Logo"></div>
+      <div class="slide"><img src="/assets/img/chr2.jpg" alt="Brand Logo"></div>
+      <div class="slide"><img src="/assets/img/chr2.jpg" alt="Brand Logo"></div>
+      <div class="slide"><img src="/assets/img/chr2.jpg" alt="Brand Logo"></div>
+      <div class="slide"><img src="/assets/img/chr2.jpg" alt="Brand Logo"></div>
+    </section>
+  </div>
 
     <br><br><br>
 </div>

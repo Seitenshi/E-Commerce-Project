@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -8,13 +7,12 @@
 <div>
 
     <!-- Sticky Nav Bar -->
-    <div>
+    <div class="topbar">
         <nav class="navbar navbar-expand-lg fixed top">
             <div class="container-fluid">
-                <a class="navbar-brand ms-auto" href="{{ route('home') }}">Logo</a>
+                <a class="navbar-brand ms-auto" href="{{ route('home') }}"><img src="/assets/img/klogo.png" height="50" width="50"></a>
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">LOGO</h5>
                         <button type="button" class="btn-close"></button>
                     </div>
                     <div class="offcanvas-body">
