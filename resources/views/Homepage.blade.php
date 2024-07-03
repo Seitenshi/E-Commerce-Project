@@ -175,23 +175,22 @@
 <br><br><br>
 
   <!-- Last section -->
+
   <div class="container">
-    <h1 class="font-weight-bold h3 mb-5">Our Brand Partners</h1>
-    <hr />
-    <p>Responsive Slider</p>
-    <section class="customer-logos slider">
-      <div class="slide"><img src="/assets/img/chr2.jpg" alt="Brand Logo"></div>
-      <div class="slide"><img src="/assets/img/chr2.jpg" alt="Brand Logo"></div>
-      <div class="slide"><img src="/assets/img/chr2.jpg" alt="Brand Logo"></div>
-      <div class="slide"><img src="/assets/img/chr2.jpg" alt="Brand Logo"></div>
-      <div class="slide"><img src="/assets/img/chr2.jpg" alt="Brand Logo"></div>
-      <div class="slide"><img src="/assets/img/chr2.jpg" alt="Brand Logo"></div>
-      <div class="slide"><img src="/assets/img/chr2.jpg" alt="Brand Logo"></div>
-      <div class="slide"><img src="/assets/img/chr2.jpg" alt="Brand Logo"></div>
+    <h1 class="font-weight-bold h3 mb-5">GALLERY OF PRODUCTS</h1>
+    <section class="product-show slider">
+      <div class="slide"><img src="/assets/img/chr2.jpg" alt="Products Pic"></div>
+      <div class="slide"><img src="/assets/img/tble2.jpg" alt="Products Pic"></div>
+      <div class="slide"><img src="/assets/img/tble3.jpg" alt="Products Pic"></div>
+      <div class="slide"><img src="/assets/img/tble4.jpg" alt="Products Pic"></div>
+      <div class="slide"><img src="/assets/img/sofa.jpg" alt="Products Pic"></div>
+      <div class="slide"><img src="/assets/img/lamp.jpg" alt="Products Pic"></div>
+      {{-- <div class="slide"><img src="/assets/img/tble.png" alt="Products Pic"></div> --}}
     </section>
   </div>
+ <br><br><br>
+ @include('footer')
 
-    <br><br><br>
 </div>
 <script src="/js/homepage.js"></script>
 </body>

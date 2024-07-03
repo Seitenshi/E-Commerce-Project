@@ -95,15 +95,6 @@ body{
   background-size: cover; 
 }
 
-
-/*   AAYUSIN PISKIT NAGPAPAGE BREAK BUSET
-  body {
-    This affects the entire page
-    max-width: 1088px;
-    margin:auto;
-    min-height:350vh;
-  
-  } */
   .space{
     height: 150vh
 
@@ -505,25 +496,39 @@ body{
 }
 
 /* Last Section */
+.container h1{
+  margin: 90px 20px;
+  font-family: Montserrat;
+  font-weight: bold;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.product-show {
+  width: 100%;
+}
+
 .slick-slide {
-  margin: 0px 20px;
+  margin: 0 10px;
 }
 
 .slick-slide img {
   width: 100%;
+  height: 300px; /* Set a fixed height */
+  object-fit: fill; /* Ensures images cover the container while maintaining aspect ratio */
+  display: block;
 }
 
 .slick-slider {
   position: relative;
   display: block;
   box-sizing: border-box;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  -webkit-touch-callout: none;
-  -khtml-user-select: none;
-  -ms-touch-action: pan-y;
   touch-action: pan-y;
   -webkit-tap-highlight-color: transparent;
 }
@@ -542,15 +547,10 @@ body{
 
 .slick-list.dragging {
   cursor: pointer;
-  cursor: hand;
 }
 
 .slick-slider .slick-track,
 .slick-slider .slick-list {
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
-  -o-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 
@@ -558,7 +558,7 @@ body{
   position: relative;
   top: 0;
   left: 0;
-  display: block;
+  display: flex;
 }
 
 .slick-track:before,
@@ -576,7 +576,7 @@ body{
 }
 
 .slick-slide {
-  display: none;
+  display: block;
   float: left;
   height: 100%;
   min-height: 1px;
@@ -615,6 +615,8 @@ body{
 .slick-arrow.slick-hidden {
   display: none;
 }
+
+
 
 /* Product showcase */
  /* #first{
