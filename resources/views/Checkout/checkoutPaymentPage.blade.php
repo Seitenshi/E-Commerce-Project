@@ -46,11 +46,16 @@
 
         <div class="row">
             <div class="col-md-12">
-                <form action="" method="post">
+                <form action="{{ route('payment') }}" method="post">
+                    @csrf
                     @foreach ($shoppingCartItems as $key=>$value)
-                        <input type="hidden" name="order_id[]" value="{{$value->order_id}}">
+                        <input type="hidden" name="order_ids[]" value="{{$value->order_id}}">
                     @endforeach
-                    <select name="payment" id="payment">
+                    <input type="hidden" name="total" value="{{$total}}">
+                    <label for="ship_addr">Shipping Address: </label>
+                    <input type="text" name="ship_addr" id="ship_addr" value="{{$user['user_addr']}}" required><br>
+                    <span style = "color: red; font-style: italic" >*Default Address is used, but you can change the address manually</span><br><br>
+                    <select name="payment_method" id="payment">
                         <option value="NaN" disabled selected>Choose Payment Method</option>
                         <option value="card">Debit/Credit Card</option>
                         <option value="cash">Cash on Delivery</option>
