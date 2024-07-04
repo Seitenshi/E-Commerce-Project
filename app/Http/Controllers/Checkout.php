@@ -14,7 +14,7 @@ class Checkout extends Controller
     //Checkout functions
     public function viewShoppingCart(){
         $userId = Session::get('LoggedUser');
-        $items = ShoppingCart::where('user_id', '=', $userId)->get();
+        $items = ShoppingCart::where('user_id', '=', $userId)->where('status','=','cart')->get();
 
         return view('Checkout.shoppingCart', compact('items'));
     }
@@ -81,4 +81,5 @@ class Checkout extends Controller
 
         return view('Checkout.checkoutPaymentPage', compact('user','shoppingCartItems'));
     }
+
 }
