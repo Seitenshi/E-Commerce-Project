@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        @include('Paks')
+        <link rel="stylesheet" href="/css/checkout_payment.css">
+    </head>
+
 <div>
     <!-- It is not the man who has too little, but the man who craves more, that is poor. - Seneca -->
 

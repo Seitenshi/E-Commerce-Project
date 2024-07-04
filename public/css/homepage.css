@@ -95,15 +95,6 @@ body{
   background-size: cover; 
 }
 
-
-/*   AAYUSIN PISKIT NAGPAPAGE BREAK BUSET
-  body {
-    This affects the entire page
-    max-width: 1088px;
-    margin:auto;
-    min-height:350vh;
-  
-  } */
   .space{
     height: 150vh
 
@@ -241,13 +232,42 @@ body{
   z-index: 0;
 }
 
-#shpbtn{
+/* #shpbut {
   background-color: #9c6830;
   justify-content: center;
   margin: 50px 0;
   outline: none;
   border: none;
+} */
+
+
+#shpbut {
+  background-color: #9c6830;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: .5em 1.2em;
+  font-weight: bold;
+  border: none;
+  margin: 40px;
+  color: white;
+  transition: background-color 0.4s, color 0.4s, border 0.4s;
+  z-index: 1;
 }
+
+#shpbut:hover {
+  background-color: red;
+  color: #9c6830;
+  border: 2px solid #9c6830;
+}
+
+#shpbut.clicked {
+  background-color: transparent;
+  color: #9c6830;
+  border: 2px solid #9c6830;
+}
+
+
 
 .vidback {
     position: absolute;
@@ -360,66 +380,36 @@ body{
 
 /* section 3 */
 
-.subscription-section {
-  text-align: center;
-  background-color: #ffffff;
-  padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.subscription-section h2 {
-  font-size: 32px;
-  margin-bottom: 10px;
-}
-
-.subscription-section p {
-  font-size: 16px;
-  color: #666;
-  margin-bottom: 20px;
-}
-
 .subscription-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
+  margin: 50px 0;
+}
+.subscription-form h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: Montserrat;
+}
+.subscription-form p {
+  font-size: 1.3rem;
+  color: #666;
+  font-family: Playfair Display;
+}
+.subscription-form .input-group {
+  width: 700px;
+  height: 60px;
+  margin: 30px auto;
 }
 
-.input-group {
-  display: flex;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  overflow: hidden;
+.subscription-form .form-control {
+  border-radius: 0;
+  border: 1px solid #666;
+  font-family: Rethink Sans;
+}
+.subscription-form .btn {
+  border-radius: 0;
 }
 
-.input-group .icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 10px;
-  background-color: #f1f1f1;
-  font-size: 18px;
-}
-
-.input-group input {
-  border: none;
-  padding: 10px;
-  outline: none;
-  flex: 1;
-}
-
-.input-group button {
-  border: none;
-  background-color: #000;
-  color: #fff;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.input-group button:hover {
-  background-color: #333;
-}
+/* hyperlinks  */
 
 .hypel {
   display: flex;
@@ -451,7 +441,8 @@ body{
 .inspiration-section {
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 100vh; /* Full viewport height */
+  background-color: #f9f9f9;
 }
 
 .inspiration-image {
@@ -460,9 +451,10 @@ body{
 }
 
 .inspiration-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 90%;
+  height: 80%;
+  margin: 80px 60px;
+  
 }
 
 .inspiration-text {
@@ -471,7 +463,8 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #f9f9f9;
+  font-family: Montserrat;
+  font-weight: bold;
 }
 
 .inspiration-tag {
@@ -483,6 +476,8 @@ body{
 .inspiration-text h2 {
   font-size: 36px;
   margin: 0 0 20px;
+  font-family: Montserrat;
+  font-weight: bolder;
 }
 
 .shop-button {
@@ -500,8 +495,131 @@ body{
   background-color: #333;
 }
 
+/* Last Section */
+.container h1{
+  margin: 90px 20px;
+  font-family: Montserrat;
+  font-weight: bold;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.product-show {
+  width: 100%;
+}
+
+.slick-slide {
+  margin: 0 10px;
+}
+
+.slick-slide img {
+  width: 100%;
+  height: 300px; /* Set a fixed height */
+  object-fit: fill; /* Ensures images cover the container while maintaining aspect ratio */
+  display: block;
+}
+
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  user-select: none;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.slick-list:focus {
+  outline: none;
+}
+
+.slick-list.dragging {
+  cursor: pointer;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+}
+
+.slick-track:before,
+.slick-track:after {
+  display: table;
+  content: "";
+}
+
+.slick-track:after {
+  clear: both;
+}
+
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+
+.slick-slide {
+  display: block;
+  float: left;
+  height: 100%;
+  min-height: 1px;
+}
+
+[dir="rtl"] .slick-slide {
+  float: right;
+}
+
+.slick-slide img {
+  display: block;
+}
+
+.slick-slide.slick-loading img {
+  display: none;
+}
+
+.slick-slide.dragging img {
+  pointer-events: none;
+}
+
+.slick-initialized .slick-slide {
+  display: block;
+}
+
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+
+.slick-arrow.slick-hidden {
+  display: none;
+}
+
+
+
 /* Product showcase */
- #first{
+ /* #first{
   padding:1%;
   outline: red dashed 1px;
   height: 300px;
@@ -612,7 +730,7 @@ body{
     height: 14px;
     top: 50%;
     margin-top: -7px;
-}
+} */
 
   
   

@@ -1,5 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        @include('Paks')
+        <link rel="stylesheet" href="/css/productspage.css">
+    </head>
+
 <div>
-    <!-- Live as if you were to die tomorrow. Learn as if you were to live forever. - Mahatma Gandhi -->
+   
 
     <div class="container">
         <div class="row">

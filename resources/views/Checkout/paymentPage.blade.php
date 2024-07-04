@@ -1,3 +1,6 @@
-<div>
-    <!-- The whole future lies in uncertainty: live immediately. - Seneca -->
-</div>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        @include('Paks')
+        <link rel="stylesheet" href="/css/payment_page.css">
+    </head>
