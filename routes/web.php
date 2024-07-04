@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginAuth;
 use App\Http\Controllers\MainHome;
 use App\Http\Controllers\Checkout;
 use App\Http\Controllers\Products;
+use App\Http\Controllers\Transactions;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -86,3 +87,7 @@ Route::post('/cart/removeproduct', [Checkout::class, 'remove']) //Remove from ca
 Route::post('/checkout', [Checkout::class, 'checkout']) //go to checkout page
     ->middleware('isLoggedIn')
     ->name('checkout');
+
+Route::post('/checkout/payment', [Transactions::class, 'payment']) //go to complete payment page
+    ->middleware('isLoggedIn')
+    ->name('payment');
