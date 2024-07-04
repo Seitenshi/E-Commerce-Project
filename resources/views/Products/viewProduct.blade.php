@@ -12,7 +12,7 @@
         <hr>
         <br>
         <!-- Product Image & Buy Now / Add to Cart--> 
-        <div class="row">
+        <div class="row"><!-- gawin mo nalang inline dito para magpantay yung both div--> 
             <div class="col-md-6">
                 {{-- <img src="{{asset('images/'.$product['prod_image'])}}" class="img-responsive"> --}}
                 Image here
