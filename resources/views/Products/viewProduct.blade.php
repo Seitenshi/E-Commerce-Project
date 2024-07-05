@@ -61,7 +61,7 @@
 
             <div class="col-md-6">
                 {{-- Buy Now --}}
-                <form action="" method="post">
+                <form action="{{route('buynow')}}" method="post">
                     @csrf
                     <input type="hidden" name="prod_id" value="{{$product['prod_id']}}">
                     <button type="submit">Buy Now</button>

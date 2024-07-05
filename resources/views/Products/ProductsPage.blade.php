@@ -12,6 +12,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h1>{{$prod_category}}</h1>
+                <a href="{{ route('product.categories') }}" class="button btn">Back to Categories</a>
             </div>   
         </div>
         <br>
@@ -40,6 +41,5 @@
             </div>
             <br><br>
         @endforeach
-        <a href="{{ route('product.categories') }}" class="button btn">Back to Categories</a>
     </div>
 </div>
