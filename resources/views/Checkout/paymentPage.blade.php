@@ -14,6 +14,11 @@
                     <div class="card">
                         <div class="card-header">
                             {{-- <a href="{{ route('cart') }}" class="button btn nav-link mx-lg-2"><i class="fa-solid fa-cart-shopping">Back to Shopping Cart</i></a><br> --}}
+                            <form action="{{route('product.view')}}" method="post">
+                                @csrf
+                                <input type="hidden" name="prod_id" value="{{$product['prod_id']}}">
+                                <button type="submit">Back to Product Details</button>
+                            </form>
                             <h3 class="card-title">Payment Page</h3>
                         </div>
                         <div class="card-body">
