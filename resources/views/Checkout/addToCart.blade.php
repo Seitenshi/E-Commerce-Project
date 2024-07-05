@@ -73,7 +73,7 @@
                                         <span>{{$product['prod_category']}}</span><br>
                                         <label for="price">Product Price: </label>
                                         <span>PHP {{$product['prod_price']}}</span><br>
-                                        <label for="quantity">Quantity</label>
+                                        <label for="quantity">Quantity: </label>
                                         <input type="text" name="quantity" id="quantity" value="1" placeholder="Put a valid quantity"><br><br>
                                         <button type="submit">Add to Cart</button><br>
                                     </form>
