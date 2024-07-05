@@ -20,7 +20,7 @@
                         <h4>Items:</h4>
                         <hr>
                         <div class="row">
-                            <table>
+                            <table style="margin-left: 10px">
                                 <thead>
                                     <th>Product Name</th>
                                     <th>Quantity</th>
@@ -62,7 +62,7 @@
                     <label for="ship_addr">Shipping Address: </label>
                     <input type="text" name="ship_addr" id="ship_addr" value="{{$user['user_addr']}}" required><br>
                     <span style = "color: red; font-style: italic" >*Default Address is used, but you can change the address manually</span><br><br>
-                    <select name="payment_method" id="payment">
+                    <select name="payment_method" id="payment" required>
                         <option value="NaN" disabled selected>Choose Payment Method</option>
                         <option value="card">Debit/Credit Card</option>
                         <option value="cash">Cash on Delivery</option>
