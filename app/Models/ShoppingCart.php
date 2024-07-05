@@ -18,5 +18,6 @@ class ShoppingCart extends Model
         'prod_name',
         'prod_price',
         'quantity',
+        'status', 
     ];
 }
