@@ -23,8 +23,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    {{-- {{ route('cart.add') }} --}}
-                                    <form action="" method="post">
+                                    <form action="{{ route('buynow.pay') }}" method="post">
                                         @csrf
                                         <input type="hidden" name="prod_id" value="{{$product['prod_id']}}">
                                         <label for="name">Product Name: </label>
@@ -33,7 +32,7 @@
                                         <span>{{$product['prod_category']}}</span><br>
                                         <label for="price">Product Price: </label>
                                         <span>PHP {{$product['prod_price']}}</span><br>
-                                        <label for="quantity">Quantity</label>
+                                        <label for="quantity">Quantity: </label>
                                         <input type="text" name="quantity" id="quantity" value="1" placeholder="Put a valid quantity"><br><br>
                                         <button type="submit">Proceed to Payment</button><br>
                                     </form>
