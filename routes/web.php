@@ -88,6 +88,19 @@ Route::post('/checkout', [Checkout::class, 'checkout']) //go to checkout page
     ->middleware('isLoggedIn')
     ->name('checkout');
 
-Route::post('/checkout/payment', [Transactions::class, 'payment']) //go to complete payment page
+Route::post('/checkout/payment', [Transactions::class, 'payment']) //go to complete payment page - from cart
     ->middleware('isLoggedIn')
     ->name('payment');
+
+//Buy Now - checkout Functions
+Route::post('/buyNow', [Transactions::class, 'buyNow']) //Buy Now page
+    ->middleware('isLoggedIn')
+    ->name('buynow');
+
+Route::post('/buyNow/paymentPage', [Transactions::class, 'buyNowPayment']) //go to checkout page - from buy now
+    ->middleware('isLoggedIn')
+    ->name('buynow.pay');
+
+Route::post('/buyNow/payment', [Transactions::class, 'paymentBuyNow']) //go to payment page - from buy now
+    ->middleware('isLoggedIn')
+    ->name('buynow.payment');
