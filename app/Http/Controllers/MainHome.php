@@ -20,6 +20,11 @@ class MainHome extends Controller
         return view("Aboutpage");
     }
 
+    //about us
+    public function aboutLogged(){
+        return view("Aboutpage_login");
+    }
+
     //Search for keywords - gives result based on keyword that is tagged on per product i.e. wood chair
 
     //profile
@@ -57,5 +62,12 @@ class MainHome extends Controller
         } else {
             return redirect('login')->withErrors(['message' => 'User not found. Please log in again.']);
         }
+    }
+
+    //store locator
+
+    public function locator(){
+
+        return view('storeLocator');
     }
 }
