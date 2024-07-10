@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Tracker;
 use Hash;
 use Session;
 
@@ -21,6 +22,8 @@ class Products extends Controller
         $prod_category = $request->input('prod_category');
 
         $products = Product::where('prod_category', '=', $prod_category)->get();
+
+        Tracker::where('note', $prod_category)->increment('visits');
 
         return view('Products.ProductsPage', compact('prod_category','products'));
     }
