@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Tracker;
 use App\Http\Controllers\LoginAuth;
 use App\Http\Controllers\MainHome;
 use App\Http\Controllers\Checkout;
@@ -18,15 +19,19 @@ use App\Http\Controllers\Admin;
 |
 */
 
-Route::get('/', function () {
-    return view('Homepage');
+Route::group(['middleware' => 'noBack'], function () {
+    // Routes that should not be accessed after logging in
+    Route::get('/', function () {//index
+        Tracker::where('note', 'visit')->increment('visits');
+        return view('Homepage');
+    })->middleware('userNotLoggedIn')->name('index');
+
+    Route::get('/login', [LoginAuth::class, 'login']) //login page
+    ->middleware('userLoggedIn')
+    ->name('Login');
 });
 
 //Login Auth Controller
-Route::get('/login', [LoginAuth::class, 'login']) //login page
-    ->middleware('userLoggedIn')
-    ->name('Login');
-
 Route::get('/logout', [LoginAuth::class, 'logout'])->name('Logout');; //logout
 
 Route::post('/adduser', [LoginAuth::class, 'store']) //sign up function
@@ -117,3 +122,16 @@ Route::post('/buyNow/paymentPage', [Transactions::class, 'buyNowPayment']) //go 
 Route::post('/buyNow/payment', [Transactions::class, 'paymentBuyNow']) //go to payment page - from buy now
     ->middleware('isLoggedIn')
     ->name('buynow.payment');
+
+//Admin
+Route::get('/admin', [Admin::class, 'admin']) //Admin Page
+    ->middleware('isLoggedIn')
+    ->name('admin');
+
+Route::get('/admin/shipping', [Admin::class, 'admin']) //Admin Page
+    ->middleware('isLoggedIn')
+    ->name('admin');
+
+Route::get('/admin', [Admin::class, 'admin']) //Admin Page
+    ->middleware('isLoggedIn')
+    ->name('admin');
