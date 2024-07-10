@@ -141,7 +141,8 @@
     <div class="modal-content">
         <span class="close">&times;</span>
         <h2>Update Password</h2><br>
-        <center><form>
+        <center>
+            <form>
             <div class="form-floating mb-3">
                 <input type="password" class="form-control" id="currentPassword" placeholder=" ">
                 <label for="currentPassword">Current Password</label>
