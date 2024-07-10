@@ -125,4 +125,10 @@ class Transactions extends Controller
 
         return view('Checkout.completePayment', compact('transaction_deets', 'order_id'));
     }
+
+    //Returns / Cancellations
+    public function returnCancellation(Request $request){
+
+        return view('Returns');
+    }
 }
