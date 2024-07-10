@@ -1,5 +1,11 @@
 /* NAVBARSERZ */
 
+:root {
+    --blue: #5167A3;
+    --white: #fff;
+    --orange: #CA763B;
+    }
+
 body{
     background-color: white;
   }
@@ -78,3 +84,336 @@ body{
       width: 100%;
       visibility: visible;
   }
+
+
+  
+  /* Contents */
+.custom-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 equal columns */
+    grid-template-rows: repeat(2, 1fr); /* 2 equal rows */
+    height: 100vh; /* Full viewport height */
+    gap: 10px; /* Optional: to add some spacing between the grid items */
+}
+
+.section {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+}
+
+.text {
+    transition: opacity 0.3s ease-in-out;
+    font-family: Montserrat;
+    font-weight: bold;
+}
+
+.view-now {
+    display: none;
+    position: relative;
+    background: #444;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    letter-spacing: 0.1rem;
+    font-size: 1rem;
+    padding: 1rem 3rem;
+    transition: 0.2s;
+    font-family: Rethink Sans;
+    font-weight: bold;
+}
+
+.view-now:hover {
+    letter-spacing: 0.2rem;
+    padding: 1.1rem 3.1rem;
+    background: var(--clr);
+    color: var(--clr);
+    animation: box 3s infinite;
+}
+
+.view-now::before {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    background: #272822;
+}
+
+.view-now span {
+    position: relative;
+    z-index: 1;
+}
+
+.view-now i {
+    position: absolute;
+    inset: 0;
+    display: block;
+}
+
+.view-now i::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    left: 80%;
+    top: -2px;
+    border: 2px solid var(--clr);
+    background: #272822;
+    transition: 0.2s;
+}
+
+.view-now:hover i::before {
+    width: 15px;
+    left: 20%;
+    animation: move 3s infinite;
+}
+
+.view-now i::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    left: 20%;
+    bottom: -2px;
+    border: 2px solid var(--clr);
+    background: #272822;
+    transition: 0.2s;
+}
+
+.view-now:hover i::after {
+    width: 15px;
+    left: 80%;
+    animation: move 3s infinite;
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes box {
+    0% {
+        box-shadow: #27272c;
+    }
+    50% {
+        box-shadow: 0 0 25px var(--clr);
+    }
+    100% {
+        box-shadow: #27272c;
+    }
+}
+
+.section:hover .text {
+    opacity: 0;
+}
+
+.section:hover .view-now {
+    display: block;
+}
+
+.summer-furniture {
+    grid-column: 3 / 4; /* Place in the third column */
+    grid-row: 1 / 3; /* Span from the first row to the second row */
+    background-image: url('/assets/img/filipinochairs1.png'); /* Replace with actual path */
+    background-size: cover; /* Ensure the image covers the whole area */
+    background-position: center;
+}
+
+.baskets {
+    grid-column: 2 / 3; /* Place in the second column */
+    grid-row: 1 / 2; /* Place in the first row */
+    background-image: url('/assets/img/wovenbaskets1.png'); /* Replace with actual path */
+    background-size: cover; /* Ensure the image covers the whole area */
+    background-position: center;
+}
+
+.woven-mats {
+    grid-column: 1 / 2; /* Place in the first column */
+    grid-row: 1 / 2; /* Place in the first row */
+    background-image: url('/assets/img/wovenmats1.png'); /* Replace with actual path */
+    background-size: cover; /* Ensure the image covers the whole area */
+    background-position: center;
+}
+
+.filipino-indoor {
+    grid-column: 1 / 3; /* Span across the first and second columns */
+    grid-row: 2 / 3; /* Place in the second row */
+    background-image: url('/assets/img/indoorcomfort1.png'); /* Replace with actual path */
+    background-size: cover; /* Ensure the image covers the whole area */
+    background-position: center;
+}
+
+/* SECTION 2 GRID */
+.custom-container2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 equal columns */
+    grid-template-rows: repeat(2, 1fr); /* 2 equal rows */
+    height: 100vh; /* Full viewport height */
+    gap: 10px; /* Optional: to add some spacing between the grid items */
+}
+
+
+.tables {
+    grid-column: 1 / 2; /* Place in the first column */
+    grid-row: 1 / 3; /* Span from the first row to the second row */
+    background-image: url('/assets/img/tablesfil.jpg'); /* Replace with actual path */
+}
+
+.surfaces {
+    grid-column: 2 / 3; /* Place in the second column */
+    grid-row: 1 / 2; /* Place in the first row */
+    background-image: url('/assets/img/countertop.jpg'); /* Replace with actual path */
+}
+
+.racks {
+    grid-column: 3 / 4; /* Place in the third column */
+    grid-row: 1 / 2; /* Place in the first row */
+    background-image: url('/assets/img/racksprod.png'); /* Replace with actual path */
+}
+
+.outdoor-furniture {
+    grid-column: 2 / 4; /* Span across the second and third columns */
+    grid-row: 2 / 3; /* Place in the second row */
+    background-image: url('/assets/img/outdoor1.jpg'); /* Replace with actual path */
+}
+
+/* TEXT SCROLL */
+.text-scroll {
+    background: var(--orange);
+    overflow: hidden;
+    padding: 0.5em 0;
+    color: var(--white);
+    width:100%;
+
+}
+
+.text-scroll div:nth-child(1) {
+    white-space: nowrap;
+    font-size: 2.5em;
+    letter-spacing: 5px;
+    color: var(--white);
+    font-weight: 600;
+    text-transform: uppercase;
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    -moz-animation: my-animation 20s linear infinite;
+    -webkit-animation: my-animation 20s linear infinite;
+    animation: my-animation 20s linear infinite;
+    font-family: Rethink Sans;
+}
+
+.text-scroll div:nth-child(1) span {
+    /* font-family: 'Libre Baskerville', serif; */
+    -webkit-text-stroke: 2px var(--white);
+    color: var(--white);
+}
+
+@-webkit-keyframes my-animation {
+    from {
+        -webkit-transform: translateX(100%);
+    }
+    to {
+        -webkit-transform: translateX(-100%);
+    }
+}
+
+@keyframes my-animation {
+    from {
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+    }
+    to {
+        -moz-transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
+
+/* FAQEEHHHSS */
+
+.faq-section {
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+}
+
+.faq-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.faq-columns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.faq-column {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.accordion {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    outline: none;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.accordion:hover {
+    background-color: #e9e9e9;
+}
+
+.accordion:after {
+    content: '\002B';
+    font-size: 1.5em;
+    float: right;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-top: none;
+}

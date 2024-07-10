@@ -2,8 +2,9 @@
 <html lang="en">
     <head>
         @include('Paks')
-        <link rel="stylesheet" href="/css/homepage.css">
+        <link rel="stylesheet" href="/css/profile.css">
     </head>
+<body>
 <div>
 
     <!-- Sticky Nav Bar -->
@@ -24,13 +25,13 @@
                                 <a class="nav-link mx-lg-2" href="{{ route('about') }}">About Us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link mx-lg-2" href="{{ route('product.categories') }}">View Product Categories</a>
+                                <a class="nav-link mx-lg-2" href="{{ route('product.categories') }}">Products</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link mx-lg-2 active" href="{{ route('profile') }}">Profile</a>
+                                <a class="nav-link mx-lg-2 active" href="{{ route('profile') }}"><img width="26" height="26" src="https://img.icons8.com/laces/64/gender-neutral-user.png" alt="gender-neutral-user"/></a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('cart') }}" class="button btn nav-link mx-lg-2"><i class="fa-solid fa-cart-shopping"></i></a>
+                                <a href="{{ route('cart') }}" class="button btn nav-link mx-lg-2"><img width="26" height="26" src="https://img.icons8.com/ios/50/shopping-bag--v1.png" alt="shopping-bag--v1"/></a>
                             </li>
                         </ul>
                     </div>
@@ -47,8 +48,58 @@
 
 <br><br>
     
-    <!-- Profile section -->
-    <div class="container">
+<div class="container">
+    <form action="{{ route('update.profile') }}" method="post">
+        @csrf
+    <div class="header">PROFILE INFORMATION</div>
+    <div class="profile-info">
+        <img src="/assets/img/defprof.png" alt="Profile Picture">
+        <table>
+            <tr>
+                <th>First Name:</th>
+                <td>{{$user['user_fname']}}</td>
+                <th>Last Name:</th>
+                <td>{{$user['user_lname']}}</td>
+            </tr>
+            <tr>
+                <th>Email:</th>
+                <td>{{$user['user_email']}}</td>
+                <th>Contact No:</th>
+                <td>{{$user['user_contact']}}</td>
+            </tr>
+            <tr>
+                <th>Address:</th>
+                <td>{{$user['user_addr']}}</td>
+                <th>Country:</th>
+                <td>India</td>
+            </tr>
+        </table>
+        </form>
+    </div>
+    <div class="summary">
+        <div>
+            <h3>PURCHASE SUMMARY</h3>
+            <p>Total Purchase: ₹4,950.00</p>
+            <p>Last 7 Days: ₹0.00</p>
+            <p>Last 30 Days: ₹4,950.00</p>
+        </div>
+        <div>
+            <h3>OTHERS INFO</h3>
+            <p>Wished Products: 0</p>
+            <p>User Since: 16 Feb, 2019</p>
+            <p>Last Login: 05 Mar, 2019</p>
+        </div>
+        <div>
+            <h3>PACKAGE INFO</h3>
+            <p>Remaining Upload Amount: 2</p>
+            <p>Current Package: Default</p>
+            <p>Payment Type: None</p>
+        </div>
+    </div>
+    <div class="update-password">
+        <button id="updatePasswordBtn">Update Password</button>
+    </div>
+    {{-- <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <form action="{{ route('update.profile') }}" method="post">
@@ -75,8 +126,6 @@
                         <label for="name">Confirm Password: </label>
                         <input type="password" name="confirm_user_password" id="confirm_user_password" required>
                         <br>
-                        <br>
-                        <br>
                         <input type="hidden" name="user_id" value="{{$user['user_id']}}">
                         <button type="submit" class="btn btn-primary">Update</button>
                         <a href="{{ route('home') }}" class="button btn">Back to home</a>
@@ -84,6 +133,41 @@
                 </form>
             </div>
         </div>
-    </div>   
-
+    </div>    --}}
 </div>
+
+<!-- The Modal -->
+<div id="updatePasswordModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Update Password</h2><br>
+        <center><form>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="currentPassword" placeholder=" ">
+                <label for="currentPassword">Current Password</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="user_password" placeholder=" ">
+                <label for="user_password">New Password</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="confirm_user_password" placeholder=" ">
+                <label for="confirm_user_password">Confirm New Password</label>
+            </div>
+            <input type="hidden" name="user_id" value="{{$user['user_id']}}">
+            <button type="submit" class="submit">Update Password</button>
+            </form>
+        </center>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<script src="/js/profilepage.js"></script>
+</body>

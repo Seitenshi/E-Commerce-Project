@@ -24,7 +24,7 @@
                                 <a class="nav-link mx-lg-2 active" href="{{ route('about') }}">About Us</a>
                             </li>
                             <li class="nav-item">
-                                <button class="btn nav-link mx-lg-2"><i class="fa-solid fa-cart-shopping"></i></button>
+                                <a href=" " class="button btn nav-link mx-lg-2"><img width="26" height="26" src="https://img.icons8.com/ios/50/shopping-bag--v1.png" alt="shopping-bag--v1"/></a>
                             </li>
                         </ul>
                     </div>

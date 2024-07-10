@@ -1,0 +1,270 @@
+/* NAVBARSERZ */
+
+body{
+    background-color: white;
+  }
+  
+  .topbar{
+    box-shadow: 0 5px 5px -5px #9c6830;
+    z-index: 1000; 
+    position: relative;
+  }
+  
+  .navbar{
+      font-family: 'Rethink Sans';
+      font-weight: bold;
+      font-size: 20px;
+      background-color: #fff;
+  }
+  
+  .navbar-brand {
+      font-weight: 500;
+      color: green;
+      font-size: 24px;
+      transition: color 0.3s;
+  }
+  
+  .loginbutton {
+      background-color: #9c6830;
+      color: white;
+      font-size: 15px;
+      padding: 8px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+  }
+  
+  .loginbutton:hover {
+      background-color: #80917D;
+  }
+  
+  .navbar-nav{ 
+      justify-content: flex-end;
+  }
+  .navbar-toggler {
+      border: none;
+      font-size: 1.25rem;
+  }
+  
+  .navbar-toggler:focus, .btn-close:focus {
+      box-shadow: none;
+      outline: none;
+  }
+  
+  .nav-link {
+      color: grey;
+      font-weight: 500;
+      position: relative;
+  }
+  
+  .nav-link:hover, .nav-link:active, .nav-link.active {
+      color: black;
+  }
+  
+  .nav-link::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background-color: #9c6830;
+      visibility: hidden;
+      transition: width 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  }
+  
+  .nav-link:hover::before, .nav-link:active::before, .nav-link.active::before {
+      width: 100%;
+      visibility: visible;
+  }
+  
+  @media (min-width: 1880px) {
+      /* No additional styles needed here for hover effect */
+  }
+
+/* content */
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    background-color: #134B42;
+    color: white;
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.profile-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.profile-info img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.profile-info table {
+    width: 85%;
+    border-collapse: collapse;
+}
+
+.profile-info th, .profile-info td {
+    text-align: left;
+    padding: 5px 15px;
+}
+
+.profile-info th {
+    width: 120px;
+}
+
+.summary {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.summary div {
+    width: 30%;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.summary div h3 {
+    background-color: #e0e0e0;
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+    margin: -10px -10px 10px -10px;
+    font-size: 18px;
+}
+
+.update-password {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.update-password button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #134B42;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 8px;
+}
+
+.modal h2{
+    font-family: Montserrat;
+    font-weight: bold;
+    text-align: center;
+}
+
+.modal form {
+  display: flex; /* Use flexbox for centering inside the form */
+  flex-direction: column; /* Arrange items in a column */
+  background-color: #134B42;
+  padding: 20px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  width: 80%;
+  font-family: Rethink Sans;
+}
+
+.form-control {
+  background-color: #134B42;
+  border: none;
+  border-bottom: 1px solid #fff;
+  border-radius: 0;
+  color: #134B42;
+  
+}
+
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #08d;
+}
+
+.form-floating > label {
+  color: #eee;
+}
+
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+  color: black;
+  transform: translateY(-1.5em) scale(0.85);
+}
+
+.submit {
+  background-color: #CA763B;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  cursor: pointer;
+  font-size: 18px;
+  height: 50px;
+  margin-top: 38px;
+  outline: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.submit:active {
+  background-color: #AEBA8A;
+}
+
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

@@ -24,13 +24,13 @@
                                 <a class="nav-link mx-lg-2" href="{{ route('about') }}">About Us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link mx-lg-2" href="{{ route('product.categories') }}">View Product Categories</a>
+                                <a class="nav-link mx-lg-2" href="{{ route('product.categories') }}">Products</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link mx-lg-2" href="{{ route('profile') }}">Profile</a>
+                                <a class="nav-link mx-lg-2 active" href="{{ route('profile') }}"><img width="26" height="26" src="https://img.icons8.com/laces/64/gender-neutral-user.png" alt="gender-neutral-user"/></a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('cart') }}" class="button btn nav-link mx-lg-2"><i class="fa-solid fa-cart-shopping"></i></a>
+                                <a href="{{ route('cart') }}" class="button btn nav-link mx-lg-2"><img width="26" height="26" src="https://img.icons8.com/ios/50/shopping-bag--v1.png" alt="shopping-bag--v1"/></a>
                             </li>
                         </ul>
                     </div>
