@@ -50,9 +50,21 @@ Route::post('/profile/update', [MainHome::class, 'updateProfile']) //Update prof
     ->middleware('isLoggedIn')
     ->name('update.profile');
 
+Route::get('/cart/return', [Transactions::class, 'returnCancellation']) //return page
+    ->middleware('isLoggedIn')
+    ->name('cart.return');
+
 //Misc
 Route::get('/about', [MainHome::class, 'about']) //about us
     ->name('about');
+
+Route::get('/aboutpage', [MainHome::class, 'aboutLogged']) //About us logged in
+    ->middleware('isLoggedIn') 
+    ->name('logged.about');
+
+Route::get('/locator', [MainHome::class, 'locator']) //locator
+    ->name('locator');
+
 
 //Product Functions
 Route::get('/categories', [Products::class, 'viewCategories']) //view Categories
