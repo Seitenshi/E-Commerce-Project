@@ -4,6 +4,7 @@
         @include('Paks')
         <link rel="stylesheet" href="/css/productcategory.css">
     </head>
+<body> 
 
     <div class="topbar">
         <nav class="navbar navbar-expand-lg fixed top">
@@ -22,13 +23,13 @@
                                 <a class="nav-link mx-lg-2" href="{{ route('about') }}">About Us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link mx-lg-2 active" href="{{ route('product.categories') }}">View Product Categories</a>
+                                <a class="nav-link mx-lg-2" href="{{ route('product.categories') }}">Products</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link mx-lg-2" href="{{ route('profile') }}">Profile</a>
+                                <a class="nav-link mx-lg-2 active" href="{{ route('profile') }}"><img width="26" height="26" src="https://img.icons8.com/laces/64/gender-neutral-user.png" alt="gender-neutral-user"/></a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('cart') }}" class="button btn nav-link mx-lg-2"><i class="fa-solid fa-cart-shopping"></i></a>
+                                <a href="{{ route('cart') }}" class="button btn nav-link mx-lg-2"><img width="26" height="26" src="https://img.icons8.com/ios/50/shopping-bag--v1.png" alt="shopping-bag--v1"/></a>
                             </li>
                         </ul>
                     </div>
@@ -42,6 +43,106 @@
     </div>
 
     <br><br>
+
+    <div class="text-scroll">
+        <div><span>Shop Now -- </span><span>Shop Now -- </span><span>Shop Now -- </span><span>Shop Now -- </span><span>Shop Now -- </span><span>Shop Now -- </span><span>Shop Now -- </span>
+            <span>Shop Now -- </span><span>Shop Now -- </span><span>Shop Now -- </span><span>Shop Now -- </span><span>Shop Now -- </span><span>Shop Now -- </span><span>Shop Now -- </span><span>Shop Now -- </span>
+            <span>Shop Now -- </span><span>Shop Now -- </span><span>Shop Now -- </span><span>Shop Now -- </span><span>Shop Now -- </span><span>Shop Now -- </span><span>Shop Now -- </span><span>Shop Now -- </span>
+            <span>Shop Now -- </span><span>Shop Now -- </span><span>Shop Now -- </span><span>Shop Now -- </span><span>Shop Now -- </span><span>Shop Now -- </span><span>Shop Now -- </span><span>Shop Now -- </span>
+            <span>Shop Now -- </span><span>Shop Now -- </span><span>Shop Now -- </span><span>Shop Now -- </span><span>Shop Now -- </span><span>Shop Now -- </span><span>Shop Now -- </span><span>Shop Now -- </span>
+            <span>Shop Now -- </span><span>Shop Now -- </span><span>Shop Now -- </span><span>Shop Now -- </span><span>Shop Now -- </span><span>Shop Now -- </span><span>Shop Now -- </span><span>Shop Now -- </span>
+        </div>
+</div>
+
+    <br><br>
+
+<!-- Product grids -->
+    <div class="custom-container">
+        <div class="section woven-mats">
+            <div class="overlay">
+                <h2 class="text">WOVEN MATS</h2>
+                <button style="--clr:#EEA83B" class="view-now"><span>View Now</span><i></i></button>
+            </div>
+        </div>
+        <div class="section baskets">
+            <div class="overlay">
+                <h2 class="text">BASKETS</h2>
+                <button style="--clr:#EEA83B" class="view-now"><span>View Now</span><i></i></button>
+            </div>
+        </div>
+        <div class="section summer-furniture">
+            <div class="overlay">
+                <h2 class="text">SUMMER FURNITURE SALE</h2>
+                <button style="--clr:#EEA83B" class="view-now"><span>View Now</span><i></i></button>
+            </div>
+        </div>
+        <div class="section filipino-indoor">
+            <div class="overlay">
+                <h2 class="text">FILIPINO INDOOR COMFORT</h2>
+                <button style="--clr:#EEA83B" class="view-now"><span>View Now</span><i></i></button>
+            </div>
+        </div>
+    </div>
+
+    <br><br><br>
+
+    <div class="custom-container2">
+        <div class="section tables">
+            <div class="overlay">
+                <h2 class="text">TABLES</h2>
+                <button style="--clr:#EEA83B" class="view-now"><span>View Now</span><i></i></button>
+            </div>
+        </div>
+        <div class="section surfaces">
+            <div class="overlay">
+                <h2 class="text">SURFACES</h2>
+                <button style="--clr:#EEA83B" class="view-now"><span>View Now</span><i></i></button>
+            </div>
+        </div>
+        <div class="section racks">
+            <div class="overlay">
+                <h2 class="text">RACKS</h2>
+                <button style="--clr:#EEA83B" class="view-now"><span>View Now</span><i></i></button>
+            </div>
+        </div>
+        <div class="section outdoor-furniture">
+            <div class="overlay">
+                <h2 class="text">FILIPINO OUTDOOR FURNITURE</h2>
+                <button style="--clr:#EEA83B" class="view-now"><span>View Now</span><i></i></button>
+            </div>
+        </div>
+    </div>
+
+<br><br>
+
+<!-- FAQQEHHHHH -->
+<div class="faq-section">
+    <div class="faq-title">Frequently Asked Questions</div>
+
+    <div class="faq-columns">
+        <div class="faq-column">
+            <button class="accordion">How do you choose what materials to use?</button>
+            <div class="panel">
+                <p>We carefully select materials based on their quality, durability, and environmental impact. We prioritize sustainable and eco-friendly materials wherever possible.</p>
+            </div>
+
+            <button class="accordion">Where are your products made?</button>
+            <div class="panel">
+                <p>Our products are made in various locations, including both local and international factories that meet our high standards for quality and ethical practices.</p>
+            </div>
+        </div>
+
+        <div class="faq-column">
+            <button class="accordion">What are you doing to be more sustainable?</button>
+            <div class="panel">
+                <p>We are constantly working on reducing our environmental footprint by using sustainable materials, minimizing waste, and implementing eco-friendly practices throughout our supply chain.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <br><br><br>
+
 
 <div>
     <!-- No surplus words or unnecessary actions. - Marcus Aurelius -->
@@ -57,7 +158,7 @@
                     <form action="{{ route('product.show') }}" method="post">
                         @csrf
                         <input type="hidden" name="prod_category" value="Baskets">
-                        <center><button type="submit">View Products</button></center>
+                        <center><button type="submit">View Productss</button></center>
                     </form>
                 </div>
             </div>
@@ -75,7 +176,7 @@
                     <form action="{{ route('product.show') }}" method="post">
                         @csrf
                         <input type="hidden" name="prod_category" value="Indoor Comfort">
-                        <center><button type="submit">View Products</button></center>
+                        <center><button type="submit">View Productss</button></center>
                     </form>
                 </div>
             </div>
@@ -93,7 +194,7 @@
                     <form action="{{ route('product.show') }}" method="post">
                         @csrf
                         <input type="hidden" name="prod_category" value="Mats">
-                        <center><button type="submit">View Products</button></center>
+                        <center><button type="submit">View Productss</button></center>
                     </form>
                 </div>
             </div>
@@ -111,7 +212,7 @@
                     <form action="{{ route('product.show') }}" method="post">
                         @csrf
                         <input type="hidden" name="prod_category" value="Outdoor Furniture">
-                        <center><button type="submit">View Products</button></center>
+                        <center><button type="submit">View Productss</button></center>
                     </form>
                 </div>
             </div>
@@ -129,7 +230,7 @@
                     <form action="{{ route('product.show') }}" method="post">
                         @csrf
                         <input type="hidden" name="prod_category" value="Racks">
-                        <center><button type="submit">View Products</button></center>
+                        <center><button type="submit">View Productss</button></center>
                     </form>
                 </div>
             </div>
@@ -147,7 +248,7 @@
                     <form action="{{ route('product.show') }}" method="post">
                         @csrf
                         <input type="hidden" name="prod_category" value="Surfaces">
-                        <center><button type="submit">View Products</button></center>
+                        <center><button type="submit">View Productss</button></center>
                     </form>
                 </div>
             </div>
@@ -165,7 +266,7 @@
                     <form action="{{ route('product.show') }}" method="post">
                         @csrf
                         <input type="hidden" name="prod_category" value="Tables">
-                        <center><button type="submit">View Products</button></center>
+                        <center><button type="submit">View Productss</button></center>
                     </form>
                 </div>
             </div>
@@ -183,7 +284,7 @@
                     <form action="{{ route('product.show') }}" method="post">
                         @csrf
                         <input type="hidden" name="prod_category" value="Others">
-                        <center><button type="submit">View Products</button></center>
+                        <center><button type="submit">View Productss</button></center>
                     </form>
                 </div>
             </div>
@@ -193,3 +294,5 @@
     </div>
 
 </div>
+<script src="/js/productcat.js"></script>
+</body>
