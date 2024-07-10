@@ -6,6 +6,7 @@ use App\Http\Controllers\MainHome;
 use App\Http\Controllers\Checkout;
 use App\Http\Controllers\Products;
 use App\Http\Controllers\Transactions;
+use App\Http\Controllers\Admin;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
