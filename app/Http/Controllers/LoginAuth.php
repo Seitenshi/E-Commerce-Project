@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Tracker;
 use Hash;
 use Session;
 use Auth;
@@ -13,6 +14,7 @@ class LoginAuth extends Controller
 {
     //Login Controller
     public function login(){
+        Tracker::where('id', '1')->increment('visits');
         return view("LoginAuth.Login");
     }
     
@@ -50,24 +52,36 @@ class LoginAuth extends Controller
             'user_password' => 'required|min:8|max:32',
         ]);
 
-        $user = User::where('user_email', '=', $request->input('user_email'))->first();
-        
-        //check if user exists
-        if($user){
-            //check password
-            if ($request->input('user_password') === $user->user_password){
-                //create session and store the credentials of the user
-                Session::put('LoggedUser', $user->user_id);
-                return view("Homepage_login");
-            }
-            else{
+        if($request->input('user_email') === 'admin@kalinaw.com'){
+            if($request->input('user_password') === 'kalinawcrafts'){
+                Session::put('LoggedUser', 'admin');
+                return redirect()->route('admin');
+            }else{
                 //if wrong password
                 return back()->withErrors(['user_password' => 'Incorrect password.']);
             }
+
         }else{
-            //if wrong email used
-            return back()->withErrors(['user_email' => 'Email not found.']);
+            $user = User::where('user_email', '=', $request->input('user_email'))->first();
+            
+            //check if user exists
+            if($user){
+                //check password
+                if ($request->input('user_password') === $user->user_password){
+                    //create session and store the credentials of the user
+                    Session::put('LoggedUser', $user->user_id);
+                    return view("Homepage_login");
+                }
+                else{
+                    //if wrong password
+                    return back()->withErrors(['user_password' => 'Incorrect password.']);
+                }
+            }else{
+                //if wrong email used
+                return back()->withErrors(['user_email' => 'Email not found.']);
+            }
         }
+        
     }
 
     public function logout()
