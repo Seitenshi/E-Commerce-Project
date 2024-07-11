@@ -358,7 +358,6 @@ body{
 }
 
 /* FAQEEHHHSS */
-
 .faq-section {
     width: 100%;
     margin: auto;
@@ -369,6 +368,8 @@ body{
     text-align: center;
     font-size: 2em;
     margin-bottom: 20px;
+    font-family: Rethink Sans;
+    font-weight: bold;
 }
 
 .faq-columns {
@@ -393,6 +394,9 @@ body{
     outline: none;
     font-size: 1.1em;
     transition: background-color 0.3s ease;
+    position: relative;
+    font-family: Montserrat;
+    font-weight: bold;
 }
 
 .accordion:hover {
@@ -402,10 +406,13 @@ body{
 .accordion:after {
     content: '\002B';
     font-size: 1.5em;
-    float: right;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-.active:after {
+.accordion.active:after {
     content: "\2212";
 }
 
@@ -416,4 +423,7 @@ body{
     overflow: hidden;
     border: 1px solid #ddd;
     border-top: none;
+    font-family: Rethink Sans;
 }
+
+

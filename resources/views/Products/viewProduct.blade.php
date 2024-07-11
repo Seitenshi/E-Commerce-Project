@@ -4,7 +4,7 @@
         @include('Paks')
         <link rel="stylesheet" href="/css/viewproduct.css">
     </head>
-
+<body>
 <div class="topbar">
     <nav class="navbar navbar-expand-lg fixed top">
         <div class="container-fluid">
@@ -22,10 +22,10 @@
                             <a class="nav-link mx-lg-2" href="{{ route('about') }}">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link mx-lg-2" href="{{ route('product.categories') }}">Products</a>
+                            <a class="nav-link mx-lg-2 active" href="{{ route('product.categories') }}">Products</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link mx-lg-2 active" href="{{ route('profile') }}"><img width="26" height="26" src="https://img.icons8.com/laces/64/gender-neutral-user.png" alt="gender-neutral-user"/></a>
+                            <a class="nav-link mx-lg-2" href="{{ route('profile') }}"><img width="26" height="26" src="https://img.icons8.com/laces/64/gender-neutral-user.png" alt="gender-neutral-user"/></a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('cart') }}" class="button btn nav-link mx-lg-2"><img width="26" height="26" src="https://img.icons8.com/ios/50/shopping-bag--v1.png" alt="shopping-bag--v1"/></a>
@@ -40,6 +40,37 @@
         </div>
     </nav>
 </div>
+
+<br><br><br> <!-- Non Functional Puro design lang :>>> -->
+<div class="viewprod-container">
+    <div class="product-image">
+        <img src="/assets/img/chrinspi.jpg" alt="Filipino Classic Woven Chair">
+    </div>
+    <div class="product-details">
+        <div class="breadcrumb">
+            <a href="#">Shop</a>
+            <a href="#">View Products</a>
+            <a href="#">Summer Furniture Sale</a> <!-- Gawing dynamic from the products page-->
+            <span>Filipino Classic Woven Chair</span> <!-- Current Page-->
+        </div>
+        <h1>Filipino Classic Woven Chair</h1>
+        <p class="price">₱1,250</p>
+        <p class="size">Size: 50 x 20 x 40</p>
+        <div class="actions">
+            <button class="add-to-cart">Add to Cart</button>
+            <button class="checkout-now">Checkout Now</button>
+        </div>
+        <div class="description">
+            <h2>Description:</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+        </div>
+    </div>
+</div>
+
+
+
+<br><br>
+
 
 
     <div class="container">
@@ -86,3 +117,5 @@
         </div>
     </div>
 </div>
+
+</body>

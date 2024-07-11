@@ -4,6 +4,7 @@
         @include('Paks')
         <link rel="stylesheet" href="/css/shopcart.css">
     </head>
+<body> 
 
      <!-- Sticky Nav Bar -->
      <div class="topbar">
@@ -23,13 +24,13 @@
                                 <a class="nav-link mx-lg-2" href="{{ route('about') }}">About Us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link mx-lg-2" href="{{ route('product.categories') }}">View Product Categories</a>
+                                <a class="nav-link mx-lg-2" href="{{ route('product.categories') }}">Products</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link mx-lg-2" href="{{ route('profile') }}">Profile</a>
+                                <a class="nav-link mx-lg-2" href="{{ route('profile') }}"><img width="26" height="26" src="https://img.icons8.com/laces/64/gender-neutral-user.png" alt="gender-neutral-user"/></a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('cart') }}" class="button btn nav-link mx-lg-2 active"><i class="fa-solid fa-cart-shopping"></i></a>
+                                <a href="{{ route('cart') }}" class="button btn nav-link mx-lg-2 active"><img width="26" height="26" src="https://img.icons8.com/ios/50/shopping-bag--v1.png" alt="shopping-bag--v1"/></a>
                             </li>
                         </ul>
                     </div>
@@ -42,7 +43,70 @@
         </nav>
     </div>
 
+<br><br>
+<div class="shopcart-container">
+    <div class="shopping-cart">
+        <h1>Shopping Cart</h1>
+        <table class="product-table">
+            <thead>
+                <tr>
+                    <th>PRODUCT DETAILS</th>
+                    <th>QUANTITY</th>
+                    <th>PRICE</th>
+                    <th>TOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="product-info">
+                        <img src="/assets/img2/ot4.png" alt="Hommed Light Jumper">
+                        <div class="product-description">
+                            <h2>Hommed Light Jumper</h2>
+                            <a href="#" class="remove-link">REMOVE</a>
+                        </div>
+                    </td>
+                    <td class="product-quantity">
+                        <input type="number" value="2" min="1">
+                    </td>
+                    <td class="product-price">P35.00</td>
+                    <td class="product-total">P70.00</td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="#" class="continue-shopping">← CONTINUE SHOPPING</a>
+    </div>
+    <div class="order-summary">
+        <h2>Order Summary</h2>
+        <hr>
+        <div class="summary-item">
+            <span>ITEMS</span>
+            <span>2</span>
+        </div>
+        <div class="summary-item">
+            <span>SHIPPING</span>
+            <select>
+                <option>Standard Delivery - P4.00</option>
+            </select>
+        </div>
+        <div class="summary-item total">
+            <span>TOTAL COST</span>
+            <span>P74.00</span>
+        </div>
+        <button class="checkout">CHECKOUT</button>
+        <div class="promo-code">
+            <input type="text" placeholder="PROMOTIONAL CODE">
+            <button>APPLY</button>
+        </div>
+    </div>
 </div>
+
+
+
+
+
+
+
+<br><br>
 
 <div>
 
@@ -114,53 +178,5 @@
     </div>
 
 </div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const checkboxes = document.querySelectorAll('.order-checkbox');
-        const totalSpan = document.getElementById('total');
-        const checkoutForm = document.getElementById('checkout-form');
-    
-        function calculateTotal() {
-            let total = 0;
-            checkboxes.forEach(function(checkbox) {
-                if (checkbox.checked) {
-                    const price = parseFloat(checkbox.getAttribute('data-price'));
-                    const quantity = parseInt(checkbox.getAttribute('data-quantity'));
-                    total += price * quantity;
-                }
-            });
-            totalSpan.textContent = total.toFixed(2);
-        }
-    
-        function updateHiddenInputs() {
-            // Clear previous hidden inputs
-            document.querySelectorAll('.order-input').forEach(function(input) {
-                input.remove();
-            });
-    
-            // Add new hidden inputs for checked checkboxes
-            checkboxes.forEach(function(checkbox) {
-                if (checkbox.checked) {
-                    const hiddenInput = document.createElement('input');
-                    hiddenInput.type = 'hidden';
-                    hiddenInput.name = 'order_ids[]';
-                    hiddenInput.value = checkbox.value;
-                    hiddenInput.classList.add('order-input');
-                    checkoutForm.appendChild(hiddenInput);
-                }
-            });
-        }
-    
-        function handleCheckboxChange() {
-            calculateTotal();
-            updateHiddenInputs();
-        }
-    
-        checkboxes.forEach(function(checkbox) {
-            checkbox.addEventListener('change', handleCheckboxChange);
-        });
-    
-        handleCheckboxChange();
-    });
-</script>
+<script src="/js/shoppingcart.js"></script>
+</body>

@@ -78,3 +78,120 @@ body{
       width: 100%;
       visibility: visible;
   }
+
+  /* CONTENTS */
+  .viewprod-container {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    align-items: flex-start; /* Align items at the start of the container */
+}
+
+.product-image {
+    flex: 1;
+    display: flex;
+    align-items: flex-start; /* Align image at the start */
+    height: 100%;
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+}
+
+.product-details {
+    flex: 1;
+    margin-left: 30px;
+}
+
+.span{
+    color: #555;
+    font-family: Montserrat;
+    font-weight: bold;
+}
+
+.breadcrumb {
+    margin: 20px 0;
+    font-size: 15px;
+    font-family: Montserrat;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    position: relative;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb a + a::before {
+    content: " > ";
+    margin: 0 5px;
+    color: #000;
+    text-decoration: none;
+}
+
+.breadcrumb span::before {
+    content: " > ";
+    margin: 0 5px;
+    color: #000;
+}
+
+h1 {
+    margin: 20px 0;
+    font-family: Montserrat;
+    font-weight: bold;
+}
+
+.price {
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+    font-family: Montserrat;
+}
+
+.size {
+    font-size: 16px;
+    color: #666;
+    font-family: Montserrat;
+}
+
+.add-to-cart, .checkout-now {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-top: 5px;
+    font-family: Rethink Sans;
+}
+
+.add-to-cart {
+    background-color: #6f6f6f;
+    color: #fff;
+}
+
+.checkout-now {
+    background-color: #3c3c3c;
+    color: #fff;
+}
+
+.description {
+    margin-top: 30px;
+}
+
+.description h2 {
+    margin: 0 0 20px 0;
+    font-family: Montserrat;
+    font-weight: bold;
+}
+
+.description p {
+    font-size: 16px;
+    color: #666;
+    font-family: Rethink Sans;
+}
