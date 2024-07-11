@@ -8,12 +8,12 @@
 
     {{-- Shipping --}}
     <div>
-        <a href="{{route('admin')}}" class="button btn">Shipping</a>
+        <a href="{{route('admin.shipping')}}" class="button btn">Shipping</a>
     </div>
 
     {{-- Product Management --}}
     <div>
-        <a href="{{route('admin')}}" class="button btn">Product Management</a>
+        <a href="{{route('admin.product')}}" class="button btn">Product Management</a>
     </div>
 
     <a href="{{ route('Logout') }}" class="loginbutton">Log out</a>
