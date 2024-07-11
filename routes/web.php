@@ -128,10 +128,38 @@ Route::get('/admin', [Admin::class, 'admin']) //Admin Page
     ->middleware('isLoggedIn')
     ->name('admin');
 
-Route::get('/admin/shipping', [Admin::class, 'admin']) //Admin Page
+Route::get('/admin/shipping', [Admin::class, 'shipping']) //Admin Shipping page
     ->middleware('isLoggedIn')
-    ->name('admin');
+    ->name('admin.shipping');
 
-Route::get('/admin', [Admin::class, 'admin']) //Admin Page
+Route::post('/admin/shipping/view', [Admin::class, 'shippingDetails']) //Admin view order Ship page
     ->middleware('isLoggedIn')
-    ->name('admin');
+    ->name('admin.shippingView');
+
+Route::post('/admin/shipping/view/change', [Admin::class, 'updateShipDetails']) //update shipping status
+    ->middleware('isLoggedIn')
+    ->name('admin.shippingUpdate');
+
+Route::get('/admin/products', [Admin::class, 'productmanagement']) //Admin Product Management
+    ->middleware('isLoggedIn')
+    ->name('admin.product');
+
+Route::get('/admin/products/add', [Admin::class, 'addProduct']) //Admin add Product page
+    ->middleware('isLoggedIn')
+    ->name('admin.addproduct');
+
+Route::post('/admin/products/add/store', [Admin::class, 'store']) //Admin store Product 
+    ->middleware('isLoggedIn')
+    ->name('admin.store');
+
+Route::get('/admin/products/edit', [Admin::class, 'editProduct']) //Admin edit Product page
+    ->middleware('isLoggedIn')
+    ->name('admin.editproduct');
+
+Route::post('/admin/products/edit/store', [Admin::class, 'update']) //Admin store edit Product 
+    ->middleware('isLoggedIn')
+    ->name('admin.update');
+
+Route::post('/admin/products/delete', [Admin::class, 'delete']) //Admin delete Product 
+    ->middleware('isLoggedIn')
+    ->name('admin.delete');
