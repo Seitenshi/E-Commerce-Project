@@ -3,6 +3,30 @@
     <head>
         @include('Paks')
         <link rel="stylesheet" href="/css/profile.css">
+        <!-- Include DataTables CSS -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+        <!-- Include jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- Include DataTables JS -->
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#DataTable').DataTable({
+                    "order": [[3, "desc"]] // Order by the fourth column (Order Date) in descending order
+                });
+            });
+        </script>
+
+    <style>
+        .cart-count {
+        background-color: #CA763B ;
+        color: white;
+        border-radius: 12px; /* Adjust the value for rounder or less rounded corners */
+        padding: 2px 6px; /* Adjust padding to fit your design */
+        font-size: 0.75em; /* Adjust font size to fit your design */
+        font-weight: bold;
+        }
+    </style>
     </head>
 <body>
 <div>
@@ -31,7 +55,7 @@
                                 <a class="nav-link mx-lg-2 active" href="{{ route('profile') }}"><img width="26" height="26" src="https://img.icons8.com/laces/64/gender-neutral-user.png" alt="gender-neutral-user"/></a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('cart') }}" class="button btn nav-link mx-lg-2"><img width="26" height="26" src="https://img.icons8.com/ios/50/shopping-bag--v1.png" alt="shopping-bag--v1"/></a>
+                                <a href="{{ route('cart') }}" class="button btn nav-link mx-lg-2"><img width="26" height="26" src="https://img.icons8.com/ios/50/shopping-bag--v1.png" alt="shopping-bag--v1"/><sup class="cart-count">{{$totalcart}}</sup></a>
                             </li>
                         </ul>
                     </div>
@@ -71,7 +95,7 @@
                 <th>Address:</th>
                 <td>{{$user['user_addr']}}</td>
                 <th>Country:</th>
-                <td>India</td>
+                <td>Philippines</td>
             </tr>
         </table>
         </form>
@@ -79,23 +103,73 @@
     <div class="summary">
         <div>
             <h3>PURCHASE SUMMARY</h3>
-            <p>Total Purchase: ₹4,950.00</p>
-            <p>Last 7 Days: ₹0.00</p>
-            <p>Last 30 Days: ₹4,950.00</p>
-        </div>
-        <div>
-            <h3>OTHERS INFO</h3>
-            <p>Wished Products: 0</p>
-            <p>User Since: 16 Feb, 2019</p>
-            <p>Last Login: 05 Mar, 2019</p>
-        </div>
-        <div>
-            <h3>PACKAGE INFO</h3>
-            <p>Remaining Upload Amount: 2</p>
-            <p>Current Package: Default</p>
-            <p>Payment Type: None</p>
+            <p>Total Purchase: P{{number_format($totalspend,2)}}</p>
+            <p>Total Orders: {{$totalshipping}}</p>
+            <p>Items in Cart: {{$totalcart}}</p>
         </div>
     </div>
+    
+    <div class="container" style="width: 100%">
+        <div class="row">
+            <div class="col-lg-12">
+                <table class="table" id="DataTable">
+                    <thead>
+                        <tr>
+                            <th>Transaction ID</th>
+                            <th>Payment Method</th>
+                            <th>Shipping Address</th>
+                            <th>Order Date</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($shipping as $key=>$value)
+                            @php
+                                $payment_method;
+                                if($value->method === 'cash'){
+                                    $payment_method = 'Cash on Delivery';
+                                }else if($value->method === 'card'){
+                                    $payment_method = 'Credit/Debit Card';
+                                }else{
+                                    $payment_method = 'Third-Party Payment Handler';
+                                }
+                            @endphp
+                            <tr>
+                                <td>{{$value->transac_id}}</td>
+                                <td>{{$payment_method}}</td>
+                                <td>{{$value->ship_addr}}</td>
+                                <td>{{$value->date_ordered}}</td>
+                                <td>P{{number_format($value->total,2)}}</td>
+                                <td>
+                                    @php
+                                        if($value->shipping === 'packing'){
+                                            echo '<span style="color: Red">Packing Order</span>';
+                                        }else if($value->shipping === 'shipped'){
+                                            echo '<span style="color: rgb(255, 166, 0)">Order Shipped</span>';
+                                        }else if($value->shipping === 'delivered'){
+                                            echo '<span style="color: Green">Order Delivered</span>';
+                                        }
+                                    @endphp
+                                </td>
+                                <td>
+                                    <form action="{{route('user.viewOrder')}}" method="post">
+                                        @csrf
+                                        <input type="hidden" name="id" value="{{$value->transac_id}}">
+                                        <input type="hidden" name="user_id" value="{{$value->user_id}}">
+                                        <input type="hidden" name="order_ids" value="{{$value->order_id}}">
+                                        <button type="submit">View Order</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
     <div class="update-password">
         <button id="updatePasswordBtn">Update Password</button>
     </div>
@@ -142,26 +216,26 @@
         <span class="close">&times;</span>
         <h2>Update Password</h2><br>
         <center>
-            <form>
-            <div class="form-floating mb-3">
-                <input type="password" class="form-control" id="currentPassword" placeholder=" ">
-                <label for="currentPassword">Current Password</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="password" class="form-control" id="user_password" placeholder=" ">
-                <label for="user_password">New Password</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="password" class="form-control" id="confirm_user_password" placeholder=" ">
-                <label for="confirm_user_password">Confirm New Password</label>
-            </div>
-            <input type="hidden" name="user_id" value="{{$user['user_id']}}">
-            <button type="submit" class="submit">Update Password</button>
+            <form action="{{ route('update.profile') }}" method="post">
+                @csrf
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" name="current_password" id="currentPassword" placeholder=" ">
+                    <label for="currentPassword">Current Password</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" name="user_password" id="user_password" placeholder=" ">
+                    <label for="user_password">New Password</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" name="confirm_user_password" id="confirm_user_password" placeholder=" ">
+                    <label for="confirm_user_password">Confirm New Password</label>
+                </div>
+                <input type="hidden" name="user_id" value="{{$user['user_id']}}">
+                <button type="submit" class="submit">Update Password</button>
             </form>
         </center>
     </div>
 </div>
-
 
 
 
