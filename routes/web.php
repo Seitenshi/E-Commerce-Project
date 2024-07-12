@@ -71,6 +71,10 @@ Route::get('/aboutpage', [MainHome::class, 'aboutLogged']) //About us logged in
 Route::get('/locator', [MainHome::class, 'locator']) //locator
     ->name('locator');
 
+Route::post('/profile/viewOrder', [MainHome::class, 'viewOrder']) //View Order Profile
+    ->middleware('isLoggedIn')
+    ->name('user.viewOrder');
+
 
 //Product Functions
 Route::get('/categories', [Products::class, 'viewCategories']) //view Categories
