@@ -100,13 +100,13 @@ class Admin extends Controller
         return view('Admin.addProduct');
     }
 
-    public function store(Request $request){ // store values /public/assets/img2/
+    public function store(Request $request) {
         $prod_category = $request->input('prod_category');
         $prod_name = $request->input('prod_name');
         $prod_desc = $request->input('prod_desc');
         $prod_price = $request->input('prod_price');
         
-        // Define the initial character for each category
+        // Define the initial characters for each category
         $category_initials = [
             'Baskets' => 'b',
             'Indoor Comfort' => 'ic',
@@ -115,19 +115,19 @@ class Admin extends Controller
             'Outdoor Furniture' => 'of',
             'Racks' => 'r',
             'Surfaces' => 's',
-            'Tables' =>'t',
+            'Tables' => 't',
         ];
-
+    
         // Get the initial characters for the given category
         $initial = $category_initials[$prod_category] ?? '';
-
+    
         // Retrieve the last file name for the given category
         $last_file_name = DB::table('products')
             ->where('prod_category', $prod_category)
             ->where('file_name', 'like', "{$initial}%")
             ->orderBy('file_name', 'desc')
             ->value('file_name');
-
+    
         // Extract the numeric part and increment it
         if ($last_file_name) {
             $initial_length = strlen($initial);
@@ -135,23 +135,22 @@ class Admin extends Controller
         } else {
             $last_number = 0;
         }
-
+    
         $new_number = $last_number + 1;
         $new_file_name = $initial . $new_number;
-
+    
         // Handle file upload
-        if ($request->hasFile('prod_image')) {
-            $file = $request->file('prod_image');
+        if ($request->hasFile('prod_file')) {
+            $file = $request->file('prod_file');
             $extension = $file->getClientOriginalExtension();
             $new_file_name_with_extension = $new_file_name . '.' . $extension;
-
-            // Move the file to the specified directory
+    
+            // Move the file
             $file->move(public_path('assets/img2'), $new_file_name_with_extension);
         } else {
-            return back()->withErrors(['prod_image' => 'Product image is required.']);
+            return back()->withErrors(['prod_file' => 'Product image is required.']);
         }
-
-        // Save the new product with the generated file name
+    
         $product = new Product([
             'prod_category' => $prod_category,
             'prod_name' => $prod_name,
@@ -159,32 +158,69 @@ class Admin extends Controller
             'prod_price' => $prod_price,
             'file_name' => $new_file_name_with_extension, // Save the file name with extension
         ]);
-
+    
         $product->save();
-        
-        
+    
         return redirect()->route('admin.product');
     }
 
-    public function editProduct(Request $request){ // edit values
-
-        return view('Admin.editProduct');
+    public function editProduct(Request $request) {
+        $product = Product::find($request->input('id'));
+        return view('Admin.editProduct', compact('product'));
     }
-
-    public function update(Request $request){ // update the values
-        
+    
+    public function update(Request $request) {//update product details
+        $request->validate([
+            'prod_category' => 'required',
+            'prod_name' => 'required',
+            'prod_desc' => 'required',
+            'prod_price' => 'required|numeric',
+            'prod_file' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:12048',
+        ]);
+    
+        $product = Product::find($request->input('id'));
+    
+        if ($request->hasFile('prod_file')) {
+            $file = $request->file('prod_file');
+            $extension = $file->getClientOriginalExtension();
+            $new_file_name = $product->file_name; // Preserve existing file name
+            $new_file_name_with_extension = $new_file_name . '.' . $extension;
+    
+            // Move the new file 
+            $file->move(public_path('assets/img2'), $new_file_name_with_extension);
+    
+            // Update the file name 
+            $product->file_name = $new_file_name_with_extension;
+        }
+    
+        $product->prod_category = $request->input('prod_category');
+        $product->prod_name = $request->input('prod_name');
+        $product->prod_desc = $request->input('prod_desc');
+        $product->prod_price = $request->input('prod_price');
+    
+        // Save the updated product
+        $product->save();
+    
         return redirect()->route('admin.product');
     }
 
-    public function delete(Request $request){ // delete the product
+    public function delete(Request $request){ // delete the product and the image file
         $id = $request->input('id');
         
         $product = Product::find($id);
-        if($product){
+        $file_name = $product->file_name;
+        
+        if ($product) {
+            $file_path = public_path('assets/img2/' . $file_name);
+            if (file_exists($file_path)) {
+                unlink($file_path); // Delete the file
+            }
+            
+            
             $product->delete();
         }
+        
         return redirect()->route('admin.product');
-
-    }
+    }    
     
 }
