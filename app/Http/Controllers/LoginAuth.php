@@ -70,7 +70,8 @@ class LoginAuth extends Controller
                 if ($request->input('user_password') === $user->user_password){
                     //create session and store the credentials of the user
                     Session::put('LoggedUser', $user->user_id);
-                    return view("Homepage_login");
+                    $userId = Session::get('LoggedUser');
+                    return redirect()->route('home');
                 }
                 else{
                     //if wrong password
