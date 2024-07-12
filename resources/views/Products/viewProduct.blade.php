@@ -44,34 +44,55 @@
 <br><br><br> <!-- Non Functional Puro design lang :>>> -->
 <div class="viewprod-container">
     <div class="product-image">
-        <img src="/assets/img/chrinspi.jpg" alt="Filipino Classic Woven Chair">
+        <img src="{{asset('assets/img2/'.$product['file_name'])}}" alt="{{$product['prod_name']}}">
     </div>
     <div class="product-details">
-        <div class="breadcrumb">
-            <a href="#">Shop</a>
-            <a href="#">View Products</a>
-            <a href="#">Summer Furniture Sale</a> <!-- Gawing dynamic from the products page-->
-            <span>Filipino Classic Woven Chair</span> <!-- Current Page-->
-        </div>
-        <h1>Filipino Classic Woven Chair</h1>
-        <p class="price">₱1,250</p>
-        <p class="size">Size: 50 x 20 x 40</p>
+        <form action="{{ route('product.show') }}" method="post" id="myForm1">
+            @csrf
+            <input type="hidden" name="prod_category" value="{{$product['prod_category']}}">
+            <div class="breadcrumb">
+                <a href="{{route('product.categories')}}">Shop</a>
+                <a href="{{route('product.categories')}}">View Products</a>
+                <a href="javascript:void(0);" onclick="document.getElementById('myForm1').submit();">{{$product['prod_category']}}</a>
+                <span>{{$product['prod_name']}}</span> <!-- Current Page-->
+            </div>
+         </form>
+        <h1>{{$product['prod_name']}}</h1>
+        <p class="price">₱{{number_format($product['prod_price'],2)}}</p>
+        <br>
         <div class="quantity">
             <label for="quantity">Quantity:</label>
-            <input type="number" id="quantity" name="quantity" min="1" value="1">
+            <input type="number" id="prod_quantity" name="prod_quantity" min="1" value="1">
         </div>
         <div class="actions">
-            <button class="add-to-cart">Add to Cart</button>
-            <button class="checkout-now">Buy Now</button>
+            {{-- add to cart --}}
+            <form action="{{ route('cart.add') }}" method="post">
+                @csrf
+                <input type="hidden" name="prod_id" value="{{$product['prod_id']}}">
+                <input type="hidden" name="quantity" id="buy-quantity" value="1" ><br><br>
+                <button class="add-to-cart" type="submit">Add to Cart</button>
+            </form>
+
+            {{-- buy now --}}
+            <form action="{{ route('buynow.pay') }}" method="post">
+                @csrf
+                <input type="hidden" name="prod_id" value="{{$product['prod_id']}}">
+                <input type="hidden" name="quantity" id="buy-quantity" value="1">
+                <button type="submit"class="checkout-now">Buy Now</button><br>
+            </form>
         </div>
         <div class="description">
             <h2>Description:</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+            <p>{{$product['prod_desc']}}</p>
         </div>
     </div>
 </div>
 
-
+<script>
+    document.getElementById('prod_quantity').addEventListener('input', function() {
+        document.getElementById('buy-quantity').value = this.value;
+    });
+</script>
 
 
 <br><br>
