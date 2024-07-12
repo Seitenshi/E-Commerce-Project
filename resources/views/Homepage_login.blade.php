@@ -71,24 +71,36 @@
 
 <div class="Midbar">
     <video autoplay loop muted plays-inline class="vidback">
-        <source src="assets/vid/loopvid.mp4" type="video/mp4">
+      <source src="assets/vid/loopvid.mp4" type="video/mp4">
     </video>
-    <h1>Welcome to Kalinaw Crafts</h1>
+    <h1>Welcome to Kalinaw Crafts, {{ $user->user_fname }}</h1>
     <p>Embrace the beauty of Filipino craftsmanship. Discover our unique collection of furniture and home essentials inspired by Filipino heritage.</p>
     <div class="search-bar">
         <input type="text" class="searchTerm" name="search" placeholder="What are you looking for?">
         <button type="submit" class="searchButton"><i class="fa fa-search"></i></button>
     </div>
     <div class="hypel">
-        <a href="#FilipinoThemedChairs">Filipino Themed Chairs</a>
-        <a href="#NewArrivals">New Arrivals</a>
-        <a href="#SummaryFurnitureSale">Summary Furniture Sale</a>
-        <a href="#FilipinoIndoorComfort">Filipino Indoor Comfort</a>
+      <form action="{{ route('product.show') }}" method="post" id="myForm1" style="display: inline;">
+          @csrf
+          <input type="hidden" name="prod_category" value="Indoor Comfort">
+          <a href="javascript:void(0);" onclick="document.getElementById('myForm1').submit();">Filipino Indoor Comfort</a>
+      </form>
+      <form action="{{ route('product.show') }}" method="post" id="myForm2" style="display: inline;">
+          @csrf
+          <input type="hidden" name="prod_category" value="Others">
+          <a href="javascript:void(0);" onclick="document.getElementById('myForm2').submit();">Summer Furniture Sale</a>
+      </form>
+      <form action="{{ route('product.show') }}" method="post" id="myForm3" style="display: inline;">
+          @csrf
+          <input type="hidden" name="prod_category" value="Baskets">
+          <a href="javascript:void(0);" onclick="document.getElementById('myForm3').submit();">Filipino Baskets</a>
+      </form>
     </div>
     <div>
-        <button type="button" id="shpbut" class="btn btn-primary btn-lg">Shop Now</button>
+        <button type="button" id="shpbut" class="btn btn-primary btn-lg" onclick="console.log('Button clicked'); window.location.href='{{ route('product.categories') }}'">Shop Now</button>
     </div>
 </div>
+<br>
 
  <!-- Product highlights -->
 
@@ -99,7 +111,7 @@
         </div>
         <div class="overlay">
             <h3>Handcrafted Sofa</h3>
-            <a href="#">shop now</a>
+            <a href="{{route('product.categories')}}">shop now</a>
         </div>
     </div>
     <div class="ProdShow">
@@ -108,7 +120,7 @@
         </div>
         <div class="overlay">
             <h3>Filipino Racks</h3>
-            <a href="#">shop now</a>
+            <a href="{{route('product.categories')}}">shop now</a>
         </div>
     </div>
     <div class="ProdShow">
@@ -117,7 +129,7 @@
         </div>
         <div class="overlay">
             <h3>Elegant Coffee Tables</h3>
-            <a href="#">shop now</a>
+            <a href="{{route('product.categories')}}">shop now</a>
         </div>
     </div>
 </div>
@@ -179,7 +191,7 @@
         <div class="inspiration-text">
           <p class="inspiration-tag">INSPIRATION</p>
           <h2>We are inspired by the realities of life today.</h2>
-          <a href="#" class="shop-button">Shop now</a>
+          <a href="{{route('product.categories')}}" class="shop-button">Shop now</a>
         </div>
       </div>
 <br><br><br>
