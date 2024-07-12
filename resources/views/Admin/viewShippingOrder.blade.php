@@ -24,9 +24,15 @@
                             <tbody class="table-group-divider">
                                 @foreach ($order_ids as $key=>$value)
                                     <tr>
-                                        <td>Image here</td>
+                                        <td>
+                                            @foreach ($pics as $pic)
+                                                @if ($value->prod_id == $pic->prod_id)
+                                                    <img src="{{ asset('assets/img2/' . $pic->file_name) }}" alt="{{$pic->file_name}}" style="width: 150px; height:150px">
+                                                @endif
+                                            @endforeach
+                                        </td>
                                         <td>{{$value->prod_name}}</td>
-                                        <td>{{$value->prod_price}}</td>
+                                        <td>P{{number_format($value->prod_price,2)}}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -64,7 +70,7 @@
                                             Service Provider: LalaMove
                                         
                                     </td>
-                                    <td><span><h6>Total: P{{$transaction['total']}}</h6></span></td>
+                                    <td><span><h6>Total: P{{number_format($transaction['total'],2)}}</h6></span></td>
                                 </tr>
                             </tfoot>
                         </table>
