@@ -46,17 +46,34 @@
 <!-- Others Products -->
 
 <div class="breadcrumb">
-    <a href="#">Shop</a> 
-    <a href="#">View Products</a><a></a> 
-    <span>Summer Furniture Sale</span>
+    <a href="{{route('product.categories')}}">Shop</a> 
+    <a href="{{route('product.categories')}}">View Products</a><a></a> 
+    <span>{{$prod_category}}</span>
 </div>
 
 <div class="prods-container">
     <div class="section summer-furniture">
         <div class="overlay">
-            <h2 class="text">SUMMER FURNITURE SALE</h2>
+            <h2 class="text">{{$prod_category}}</h2>
         </div>
-        <img src="{{ asset('assets/img/filipinochairs1.png') }}" alt="Summer Furniture Sale" class="left-side">
+        @if ($prod_category === "Mats")
+            <img src="{{ asset('assets/img/wovenmats1.png') }}" alt="{{$prod_category}}" class="left-side">
+        @elseif ($prod_category === "Baskets")
+            <img src="{{ asset('assets/img/wovenbaskets1.png' ) }}" alt="{{$prod_category}}" class="left-side">
+        @elseif ($prod_category === "Indoor Comfort")
+            <img src="{{ asset('assets/img/indoorcomfort1.png' ) }}" alt="{{$prod_category}}" class="left-side">
+        @elseif ($prod_category === "Others")
+            <img src="{{ asset('assets/img/filipinochairs1.png' ) }}" alt="{{$prod_category}}" class="left-side">
+        @elseif ($prod_category === "Tables")
+            <img src="{{ asset('assets/img/tablesfil.jpg' ) }}" alt="{{$prod_category}}" class="left-side">
+        @elseif ($prod_category === "Surfaces")
+            <img src="{{ asset('assets/img/countertop.jpg' ) }}" alt="{{$prod_category}}" class="left-side">
+        @elseif ($prod_category === "Racks")
+            <img src="{{ asset('assets/img/racksprod.png' ) }}" alt="{{$prod_category}}" class="left-side">
+        @elseif ($prod_category === "Outdoor Furniture")
+            <img src="{{ asset('assets/img/outdoor1.jpg' ) }}" alt="{{$prod_category}}" class="left-side">
+        @endif
+        
     </div>
     <div class="right-side">
         @foreach ($products as $product)
@@ -64,6 +81,13 @@
                 <img src="{{ asset('assets/img2/' . $product->file_name) }}" alt="{{ $product->name }}">
                 <div class="product-name">{{ $product->prod_name }}</div>
                 <div class="price">₱{{ number_format($product->prod_price, 2) }}</div>
+                <div>
+                    <form action="{{ route('product.view') }}" method="post">
+                        @csrf
+                        <input type="hidden" name="prod_id" value="{{$product->prod_id}}">
+                        <button type="submit" class="view-now" >View</button>
+                    </form>
+                </div>
             </div>
         @endforeach
     </div>
