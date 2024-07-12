@@ -65,6 +65,7 @@ class Admin extends Controller
         $transaction = Transaction::where('transac_id',$request->input('id'))->first();
         $user_id = User::where('user_id',$request->input('user_id'))->first();
         $order_id = json_decode($request->input('order_ids'),true); //array of order ids
+        $pics = Product::all();
 
         // Check if $order_id is an array, if not, convert it to an array
         if (!is_array($order_id)) {
@@ -73,7 +74,7 @@ class Admin extends Controller
 
         $order_ids = ShoppingCart::whereIn('order_id',$order_id)->get(); //pull of order_id data
 
-        return view('Admin.viewShippingOrder',compact('transaction','user_id','order_ids'));
+        return view('Admin.viewShippingOrder',compact('transaction','user_id','order_ids','pics'));
     }
 
     public function updateShipDetails(Request $request){
