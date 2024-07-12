@@ -57,43 +57,56 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td class="product-info">
-                        <img src="/assets/img2/ot4.png" alt="Hommed Light Jumper">
-                        <div class="product-description">
-                            <input type="checkbox" class="select-item">
-                            <h2>Hommed Light Jumper</h2>
-                            <a href="#" class="remove-link">REMOVE</a>
-                        </div>
-                    </td>
-                    <td class="product-quantity">
-                        <input type="number" value="2" min="1">
-                    </td>
-                    <td class="product-price">P35.00</td>
-                    <td class="product-total">P70.00</td>
-                </tr>
+                @foreach ($items as $key=>$value )
+                    <tr>
+                        <td class="product-info">
+                            @foreach ($pics as $pic)
+                                @if ($value->prod_id == $pic->prod_id)
+                                    <img src="{{ asset('assets/img2/' . $pic->file_name) }}" alt="{{$pic->file_name}}">
+                                @endif
+                            @endforeach
+                            <div class="product-description">
+                                <input type="checkbox" class="select-item order-checkbox" name="order_id" data-price="{{ $value->prod_price }}" data-quantity="{{ $value->quantity }}" id="order_id_{{$value->order_id}}" value="{{$value->order_id}}">
+                                <h2>{{$value->prod_name}}</h2>
+                                {{-- remove link --}}
+                                <form action="{{ route('cart.remove') }}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="order_id" value="{{$value->order_id}}">
+                                    <button type="submit" class="remove-link">Remove</button>
+                                </form>
+                            </div>
+                        </td>
+                        <td class="product-quantity">
+                            <input type="number" value="{{$value->quantity}}" min="1" disabled>
+                        </td>
+                        <td class="product-price">P{{$value->prod_price}}</td>
+                        <td class="product-total">P{{$value->prod_price / $value->quantity }}</td>
+                    </tr>       
+                @endforeach
+                    
             </tbody>
         </table>
-        <a href="#" class="continue-shopping">← CONTINUE SHOPPING</a>
+        <a href="{{ route('product.categories') }}" class="continue-shopping">← CONTINUE SHOPPING</a>
     </div>
     <div class="order-summary">
         <h2>Order Summary</h2>
         <hr>
         <div class="summary-item">
             <span>ITEMS</span>
-            <span>2</span>
+            <span id="quan">0</span>
         </div>
         <div class="summary-item">
             <span>SHIPPING</span>
-            <select>
-                <option>Standard Delivery - P4.00</option>
-            </select>
+            <span>Standard - LalaMove</span>
         </div>
         <div class="summary-item total">
             <span>TOTAL COST</span>
-            <span>P74.00</span>
+            <span>P<span id="total">0</span></span>
         </div>
-        <button class="checkout">CHECKOUT</button>
+        <form action="{{ route('checkout') }}" method="post" id="checkout-form">
+            @csrf
+            <button class="checkout" type="submit">CHECKOUT</button>
+        </form>
         <div class="promo-code">
             <input type="text" placeholder="PROMOTIONAL CODE">
             <button>APPLY</button>
@@ -141,7 +154,7 @@
                                 @foreach ($items as $key=>$value )
                                     <tr>
                                         <td><input type="checkbox" name="order_id" class="order-checkbox" data-price="{{ $value->prod_price }}" data-quantity="{{ $value->quantity }}" id="order_id_{{$value->order_id}}" value="{{$value->order_id}}"></td>
-                                        <td colspan="2">Image</td>
+                                        <td colspan="2"><img src="{{ asset('assets/img2/' . $value->file_name) }}" alt="{{$value->prod_name}}"></td>
                                         <td colspan="2"> </td>
                                         <td colspan="3">{{$value->prod_name}}</td>
                                         <td id="order_id_{{$value->order_id}}_price">PHP {{$value->prod_price}}</td>
