@@ -14,10 +14,11 @@
                             <center><h4>Add Product</h4></center>
                         </div>
                         <div class="card-body">
-                            <form action="{{route('admin.store')}}" method="post">
+                            <form action="{{ route('admin.store') }}" method="post" enctype="multipart/form-data">
+                                @csrf
                                 <div class="form-group">
                                     <label for="prod_category" style="font-weight: bold">Product Category: </label>
-                                    <select name="prod_category" id="" required>
+                                    <select name="prod_category" required>
                                         <option value="NaN" selected disabled>Select Category</option>
                                         <option value="Baskets">Baskets</option>
                                         <option value="Indoor Comfort">Indoor Comfort</option>
@@ -32,22 +33,22 @@
                                 <br>
                                 <div class="form-group">
                                     <label for="prod_name" style="font-weight: bold">Product Name: </label>
-                                    <input type="text" name="prod_name" id="" required>
+                                    <input type="text" name="prod_name" required>
                                 </div>
                                 <br>
                                 <div class="form-group">
                                     <label for="prod_desc" style="font-weight: bold">Product Description: </label>
-                                    <input type="textarea" name="prod_desc" id="" required>
+                                    <textarea name="prod_desc" required></textarea>
                                 </div>
                                 <br>
                                 <div class="form-group">
                                     <label for="prod_price" style="font-weight: bold">Product Price: </label>
-                                    <input type="text" name="prod_price" id="" required>
+                                    <input type="text" name="prod_price" required>
                                 </div>
                                 <br>
                                 <div class="form-group">
                                     <label for="prod_file" style="font-weight: bold">Product Image: </label>
-                                    <input type="file" name="prod_file" id="" required>
+                                    <input type="file" name="prod_file" required>
                                 </div>
                                 <br>
                                 <button type="submit">Save</button>
