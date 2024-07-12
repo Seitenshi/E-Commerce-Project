@@ -410,13 +410,16 @@ body{
   }
   
   /* hyperlinks  */
-  
   .hypel {
     display: flex;
     justify-content: center;
     z-index: 1;
   }
-  
+
+  .hypel form {
+    margin: 0;
+  }
+
   .hypel a {
     color: #fff;
     text-decoration: none;
@@ -424,19 +427,15 @@ body{
     font-size: 1.4em;
     transition: color 0.2s;
   }
-  
-  .hypel a:not(:first-child)::before {
-    content: "  ";
-    color: #fff;
-  }
-  
-  .hypel a:not(:last-child)::after {
+
+  .hypel form:not(:first-child)::before {
     content: " | ";
     color: #fff;
   }
+
   .hypel a:hover {
     color: #80917D;
-  } 
+  }
   
   .inspiration-section {
     display: flex;
