@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\Product;
+use App\Models\ShoppingCart;
+use App\Models\User;
+use App\Models\Transaction;
 use App\Models\Tracker;
 use Hash;
 use Session;
@@ -15,7 +19,7 @@ class Products extends Controller
     
     public function viewCategories(){
         $totalcart = ShoppingCart::where('user_id',Session::get('LoggedUser'))->where('status','cart')->count(); //THE CART COUNT
-        return view('Products.ProductCategory','totalcart');
+        return view('Products.ProductCategory',compact('totalcart'));
     }
 
     public function viewProductsPerCategory(Request $request){
