@@ -78,3 +78,118 @@ body{
       width: 100%;
       visibility: visible;
   }
+
+  /* CONTENTSS SHEESH */
+
+.payment-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.logo {
+    max-width: 150px;
+}
+
+.progress-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.step {
+    width: 30%;
+    padding: 10px;
+    text-align: center;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.step.active {
+    background-color: #0051ba;
+    color: white;
+}
+
+.delivery-details {
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.delivery-details h2 {
+    margin-top: 0;
+}
+
+.delivery-details form {
+    display: flex;
+    flex-direction: column;
+}
+
+.delivery-details label {
+    margin-top: 10px;
+}
+
+.delivery-details input {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.phone-input {
+    display: flex;
+    align-items: center;
+}
+
+.phone-input span {
+    padding: 10px;
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+}
+
+.phone-input input {
+    border-radius: 0 5px 5px 0;
+    flex: 1;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background-color: #0051ba;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.order-summary {
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+}
+
+.order-summary h3 {
+    margin-top: 0;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.order-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}

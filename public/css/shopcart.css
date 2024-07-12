@@ -80,7 +80,7 @@ body{
   }
 
  /* CONTENTS */
-.shopcart-container {
+ .shopcart-container {
     display: flex;
     justify-content: space-evenly;
     padding: 20px;
@@ -137,6 +137,12 @@ body{
     flex: 1; 
 }
 
+.product-description-header {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Add space between checkbox and product name */
+}
+
 .product-description h2 {
     margin: 0;
     font-size: 18px;
@@ -151,6 +157,7 @@ body{
     font-size: 14px;
     color: #9c6830;
     text-decoration: none;
+    margin-top: 10px;
 }
 
 .product-description a:hover {
@@ -165,9 +172,26 @@ body{
 .product-quantity input {
     width: 50px;
     padding: 5px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    text-align: center;
+    border: 2px solid #9c6830; 
+    border-radius: 3px; 
+    background-color: #fff; 
+    text-align: center; 
+    appearance: none; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-family: Montserrat;
+    font-size: 16px;
+    cursor: pointer; 
+    position: relative;
+}
+
+.product-quantity input:hover {
+    border-color: #80917D; 
+}
+
+.product-quantity input:focus {
+    outline: none;
+    box-shadow: 0 0 3px 3px rgba(128, 145, 125, 0.5); 
 }
 
 .product-price,
@@ -271,5 +295,42 @@ body{
     text-decoration: none;
 }
 
+/* Custom Checkbox Style */
+.select-item {
+    appearance: none; /* Remove default checkbox styling */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #9c6830; 
+    border-radius: 3px; 
+    background-color: #fff; 
+    cursor: pointer; 
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.select-item:checked {
+    background-color: #9c6830; 
+    border-color: #9c6830; 
+}
+
+.select-item:checked::before {
+    content: '✓'; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    font-size: 16px;
+    color: #fff; 
+}
+
+.select-item:hover {
+    border-color: #80917D; 
+}
 
 
+.select-item:focus {
+    outline: none;
+    box-shadow: 0 0 3px 3px rgba(128, 145, 125, 0.5);
+}

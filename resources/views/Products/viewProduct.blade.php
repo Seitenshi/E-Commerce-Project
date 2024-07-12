@@ -56,9 +56,13 @@
         <h1>Filipino Classic Woven Chair</h1>
         <p class="price">₱1,250</p>
         <p class="size">Size: 50 x 20 x 40</p>
+        <div class="quantity">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" value="1">
+        </div>
         <div class="actions">
             <button class="add-to-cart">Add to Cart</button>
-            <button class="checkout-now">Checkout Now</button>
+            <button class="checkout-now">Buy Now</button>
         </div>
         <div class="description">
             <h2>Description:</h2>
@@ -66,6 +70,7 @@
         </div>
     </div>
 </div>
+
 
 
 

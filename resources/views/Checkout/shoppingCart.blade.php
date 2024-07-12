@@ -61,6 +61,7 @@
                     <td class="product-info">
                         <img src="/assets/img2/ot4.png" alt="Hommed Light Jumper">
                         <div class="product-description">
+                            <input type="checkbox" class="select-item">
                             <h2>Hommed Light Jumper</h2>
                             <a href="#" class="remove-link">REMOVE</a>
                         </div>
@@ -99,6 +100,7 @@
         </div>
     </div>
 </div>
+
 
 
 

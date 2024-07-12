@@ -80,7 +80,7 @@ body{
   }
 
   /* CONTENTS */
-  .viewprod-container {
+.viewprod-container {
     display: flex;
     width: 100%;
     margin: 0 auto;
@@ -112,7 +112,7 @@ body{
 }
 
 .breadcrumb {
-    margin: 20px 0;
+    margin: 10px 0;
     font-size: 15px;
     font-family: Montserrat;
 }
@@ -160,13 +160,31 @@ h1 {
     font-family: Montserrat;
 }
 
+.quantity {
+    margin: 14px 0;
+    font-size: 16px;
+    color: #666;
+    font-family: Montserrat;
+}
+
+.quantity label {
+    margin-right: 10px;
+}
+
+.quantity input {
+    width: 50px;
+    padding: 5px;
+    font-size: 16px;
+    font-family: Montserrat;
+}
+
 .add-to-cart, .checkout-now {
     padding: 10px 20px;
     font-size: 16px;
     border: none;
     cursor: pointer;
     margin-right: 10px;
-    margin-top: 5px;
+    margin-top: 7px;
     font-family: Rethink Sans;
 }
 
