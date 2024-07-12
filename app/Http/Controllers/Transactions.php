@@ -15,6 +15,7 @@ class Transactions extends Controller
 {
     //payment function
     public function payment(Request $request){
+        $totalcart = ShoppingCart::where('user_id',Session::get('LoggedUser'))->where('status','cart')->count(); //THE CART COUNT
         $userId = Session::get('LoggedUser');//user id
         $orderIds = $request->input('order_ids', []); //order ids - array
         $j_orderIds = json_encode($orderIds, true); //encoded json for transaction items
@@ -49,7 +50,7 @@ class Transactions extends Controller
             $order->save();
         }
 
-        return view('Checkout.completePayment', compact('transaction_deets', 'orderIds'));
+        return view('Checkout.completePayment', compact('transaction_deets', 'orderIds','totalcart'));
     }
 
     //Buy Now page
@@ -66,13 +67,15 @@ class Transactions extends Controller
         $user = User::where('user_id','=', $userId)->first();
         $product = Product::where('prod_id', '=', $request->input('prod_id'))->first(); // get product details
         $quantity = $request->input('quantity');
+        $totalcart = ShoppingCart::where('user_id',Session::get('LoggedUser'))->where('status','cart')->count(); //THE CART COUNT
         
 
-        return view('Checkout.paymentPage',compact('product','user','quantity'));
+        return view('Checkout.paymentPage',compact('product','user','quantity','totalcart'));
     }
 
     //payment function - buynow
     public function paymentBuyNow(Request $request){
+        $totalcart = ShoppingCart::where('user_id',Session::get('LoggedUser'))->where('status','cart')->count(); //THE CART COUNT
         $userId = Session::get('LoggedUser');//user id
         $ldate = date('Y-m-d'); //date ordered
         $method = $request->input('payment_method'); //method
@@ -123,7 +126,7 @@ class Transactions extends Controller
         
         $transaction->save(); 
 
-        return view('Checkout.completePayment', compact('transaction_deets', 'order_id'));
+        return view('Checkout.completePayment', compact('transaction_deets', 'order_id','totalcart'));
     }
 
     //Returns / Cancellations
