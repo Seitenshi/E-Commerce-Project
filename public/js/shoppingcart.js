@@ -2,18 +2,22 @@
 document.addEventListener('DOMContentLoaded', function() {
     const checkboxes = document.querySelectorAll('.order-checkbox');
     const totalSpan = document.getElementById('total');
+    const totalqSpan = document.getElementById('quan');
     const checkoutForm = document.getElementById('checkout-form');
 
     function calculateTotal() {
         let total = 0;
+        let totalq = 0;
         checkboxes.forEach(function(checkbox) {
             if (checkbox.checked) {
                 const price = parseFloat(checkbox.getAttribute('data-price'));
                 const quantity = parseInt(checkbox.getAttribute('data-quantity'));
                 total += price * quantity;
+                totalq += quantity;
             }
         });
         totalSpan.textContent = total.toFixed(2);
+        totalqSpan.textContent = totalq;
     }
 
     function updateHiddenInputs() {
