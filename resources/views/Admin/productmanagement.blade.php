@@ -29,11 +29,13 @@
                             <td>{{$value->prod_category}}</td>
                             <td>{{$value->prod_price}}</td>
                             <td>
-                                <form action="" method="post" style="display: inline;">
+                                <form action="{{route('admin.editproduct')}}" method="post" style="display: inline;">
+                                    @csrf
                                     <input type="hidden" name="id" value="{{$value->prod_id}}">
                                     <button type="submit">Edit</button>
                                 </form>
-                                <form action="" method="post" style="display: inline;">
+                                <form action="{{route('admin.delete')}}" method="post" style="display: inline;">
+                                    @csrf
                                     <input type="hidden" name="id" value="{{$value->prod_id}}">
                                     <button type="submit">Delete</button>
                                 </form>
