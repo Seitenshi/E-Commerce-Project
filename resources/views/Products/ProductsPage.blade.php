@@ -61,9 +61,9 @@
     <div class="right-side">
         @foreach ($products as $product)
             <div class="product">
-                <img src="{{ asset('assets/img2/' . $product->image) }}" alt="{{ $product->name }}">
-                <div class="product-name">{{ $product->name }}</div>
-                <div class="price">₱{{ number_format($product->price, 2) }}</div>
+                <img src="{{ asset('assets/img2/' . $product->file_name) }}" alt="{{ $product->name }}">
+                <div class="product-name">{{ $product->prod_name }}</div>
+                <div class="price">₱{{ number_format($product->prod_price, 2) }}</div>
             </div>
         @endforeach
     </div>
