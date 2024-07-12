@@ -152,7 +152,7 @@ Route::post('/admin/products/add/store', [Admin::class, 'store']) //Admin store 
     ->middleware('isLoggedIn')
     ->name('admin.store');
 
-Route::get('/admin/products/edit', [Admin::class, 'editProduct']) //Admin edit Product page
+Route::post('/admin/products/edit', [Admin::class, 'editProduct']) //Admin edit Product page
     ->middleware('isLoggedIn')
     ->name('admin.editproduct');
 
