@@ -3,30 +3,8 @@
     <head>
         @include('Paks')
         <link rel="stylesheet" href="/css/profile.css">
-        <!-- Include DataTables CSS -->
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
-        <!-- Include jQuery -->
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <!-- Include DataTables JS -->
         <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
-        <script>
-            $(document).ready(function() {
-                $('#DataTable').DataTable({
-                    "order": [[3, "desc"]] // Order by the fourth column (Order Date) in descending order
-                });
-            });
-        </script>
-
-    <style>
-        .cart-count {
-        background-color: #CA763B ;
-        color: white;
-        border-radius: 12px; /* Adjust the value for rounder or less rounded corners */
-        padding: 2px 6px; /* Adjust padding to fit your design */
-        font-size: 0.75em; /* Adjust font size to fit your design */
-        font-weight: bold;
-        }
-    </style>
     </head>
 <body>
 <div>
@@ -237,12 +215,7 @@
     </div>
 </div>
 
-
-
-
-
-
-
-
+<br><br>
+@include('footer')
 <script src="/js/profilepage.js"></script>
 </body>

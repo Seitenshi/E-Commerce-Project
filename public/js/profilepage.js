@@ -23,3 +23,10 @@
          modal.style.display = "none";
      }
  }
+
+//  bler js
+$(document).ready(function() {
+    $('#DataTable').DataTable({
+        "order": [[3, "desc"]] // Order by the fourth column (Order Date) in descending order
+    });
+});

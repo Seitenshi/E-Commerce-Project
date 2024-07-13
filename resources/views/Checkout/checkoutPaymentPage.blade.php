@@ -51,55 +51,103 @@
 
 <br><br>
 <div class="payment-container">
-    <header>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Ikea_logo.svg" alt="IKEA Logo" class="logo">
-    </header>
-    <div class="progress-bar">
-        <div class="step active">Your Details</div>
-        <div class="step">Services</div>
-        <div class="step">Payment</div>
+    <div class="progress-container">
+        <div class="progress-step completed">
+            <div class="step-icon"><span>&#10003;</span></div>
+            <div class="step-label">Details</div>
+        </div>
+        <div class="progress-line"></div>
+        <div class="progress-step">
+            <div class="step-icon"><img src="path/to/services-icon.png" alt="Services Icon"></div>
+            <div class="step-label">Services</div>
+        </div>
+        <div class="progress-line"></div>
+        <div class="progress-step">
+            <div class="step-icon"><img src="path/to/payment-icon.png" alt="Payment Icon"></div>
+            <div class="step-label">Payment</div>
+        </div>
     </div>
-    <section class="delivery-details">
-        <h2>Please enter your delivery details</h2>
-        <p>Delivery details will be used in the next step to find the best delivery and pickup options.</p>
-        <form>
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" value="amierlingad@gmail.com">
-            
-            <label for="fullname">Full name</label>
-            <input type="text" id="fullname" name="fullname" value="AMIERJOHN LINGAD">
-            
-            <label for="phone">Phone number</label>
-            <div class="phone-input">
-                <span>PH (+63)</span>
-                <input type="tel" id="phone" name="phone" value="9278413351">
+    <div class="content">
+        <div class="main-section">
+            <div class="notification">
+                <p><strong>Get ready to receive your delivery.</strong><br>
+                Please prepare the necessary permits and additional fees for your delivery. <a href="#">Learn more.</a></p>
+                <button class="close-btn">&times;</button>
             </div>
-            
-            <button type="submit">Proceed</button>
-        </form>
-    </section>
-    <aside class="order-summary">
-        <h3>Order Summary</h3>
-        <div class="order-item">
-            <div class="item-name">FRÖJERED</div>
-            <div class="item-price">₱900</div>
-            <div class="item-description">Drawer front, light bamboo, 60x20 cm</div>
+            <section class="delivery-details">
+                <h2>Please confirm or edit details</h2>
+                <p>Delivery address will be used at the next step to finding the best delivery and pickup options.</p>
+                <div class="address-info">
+                    <p><strong>Delivery address</strong></p>
+                    <p>
+                        Daineee<br>
+                        sDFEW<br>
+                        MARCILLA<br>
+                        Coron<br>
+                        Palawan<br>
+                        +63 928 739 7277<br>
+                        cartz.cloud@gmail.com
+                    </p>
+                    <button class="edit-btn">Edit</button>
+                    <p class="pinpoint">📍 Pinpoint not added</p>
+                    <button class="address-btn">Select a different address</button>
+                    <p><strong>Order confirmation email</strong></p>
+                    <p>cartz.cloud@gmail.com</p>
+                </div>
+                <button class="continue-btn">Continue to services</button>
+            </section>
         </div>
-        <div class="order-item">
-            <div class="item-name">VOXTORP</div>
-            <div class="item-price">₱600</div>
-            <div class="item-description">Door, walnut effect, 40x40 cm</div>
-        </div>
-        <div class="order-item">
-            <div class="item-name">VARSTA</div>
-            <div class="item-price">₱990</div>
-            <div class="item-description">Drawer front, stainless steel, 60x20 cm</div>
-        </div>
-        <div class="order-total">
-            <span>Subtotal price</span>
-            <span>₱2,490</span>
-        </div>
-    </aside>
+        <aside class="order-summary">
+            <h3>Order Summary</h3>
+            <div class="order-total">
+                <span>Total price</span>
+                <span>₱410</span>
+            </div>
+            <p>Incl. VAT %</p>
+            <div class="delivery-info">
+                <h4>Delivery details</h4>
+                <p>
+                    Daineee<br>
+                    sDFEW<br>
+                    MARCILLA<br>
+                    Coron<br>
+                    Palawan<br>
+                    +63 928 739 7277<br>
+                    cartz.cloud@gmail.com
+                </p>
+                <h4>Delivery method</h4>
+                <p>Parcel delivery<br>Expected delivery time<br>2-17 days</p>
+            </div>
+            <h4>Products</h4>
+            <div class="order-item">
+                <img src="path/to/mopsig-image.png" alt="MOPSIG">
+                <div>
+                    <div class="item-name">MOPSIG</div>
+                    <div class="item-price">₱150</div>
+                    <div class="item-description">12-piece flatware set</div>
+                    <div class="item-quantity">Qty: 1</div>
+                </div>
+            </div>
+            <div class="order-item">
+                <img src="path/to/prickig-image.png" alt="PRICKIG">
+                <div>
+                    <div class="item-name">PRICKIG</div>
+                    <div class="item-price">₱60</div>
+                    <div class="item-description">Microwave lid, gray, 26 cm</div>
+                    <div class="item-quantity">Qty: 1</div>
+                </div>
+            </div>
+            <div class="order-item">
+                <img src="path/to/spruttig-image.png" alt="SPRUTTIG">
+                <div>
+                    <div class="item-name">SPRUTTIG</div>
+                    <div class="item-price">₱100</div>
+                    <div class="item-description">Hanger, black</div>
+                    <div class="item-quantity">₱100/10 pieces</div>
+                </div>
+            </div>
+        </aside>
+    </div>
 </div>
 
 
@@ -169,3 +217,5 @@
         </div>
     </div>
 </div>
+<script src="/js/checkoutpage.js"></script>
+</body>
