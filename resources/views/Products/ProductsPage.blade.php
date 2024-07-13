@@ -78,19 +78,27 @@
     <div class="right-side">
         @foreach ($products as $product)
             <div class="product">
-                <img src="{{ asset('assets/img2/' . $product->file_name) }}" alt="{{ $product->name }}">
-                <div class="product-name">{{ $product->prod_name }}</div>
-                <div class="price">₱{{ number_format($product->prod_price, 2) }}</div>
-                <div>
-                    <form action="{{ route('product.view') }}" method="post">
+                <div class="image-container">
+                    <img src="{{ asset('assets/img2/' . $product->file_name) }}" alt="{{ $product->name }}">
+                    <div class="overlay"></div>
+                    <form action="{{ route('product.view') }}" method="post" class="view-form">
                         @csrf
                         <input type="hidden" name="prod_id" value="{{$product->prod_id}}">
-                        <button type="submit" class="view-now" >View</button>
+                        <button type="submit" class="view-now">
+                            View Product
+                            <span class="first"></span>
+                            <span class="second"></span>
+                            <span class="third"></span>
+                            <span class="fourth"></span>
+                        </button>
                     </form>
                 </div>
+                <div class="product-name">{{ $product->prod_name }}</div>
+                <div class="price">₱{{ number_format($product->prod_price, 2) }}</div>
             </div>
         @endforeach
     </div>
+    
 </div>
 <br><br>
 @include('footer')

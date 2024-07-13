@@ -86,6 +86,7 @@ body{
     margin: 0 auto;
     padding: 20px;
     align-items: flex-start; /* Align items at the start of the container */
+    
 }
 
 .product-image {

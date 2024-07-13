@@ -170,19 +170,123 @@ body{
     text-align: center;
     padding: 5px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: relative; /* Ensure the product container can position its children */
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 260px; /* Fixed height for all images to make them equal */
 }
 
 .product img {
     width: 100%;
-    height: 260px; /* Fixed height for all images to make them equal */
+    height: 100%;
     object-fit: contain;
     margin-bottom: 5px;
     background-color: #f0f0f0; /* Same gray background as container */
-  
 }
 
-.product-name, .price {
+
+.view-form {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+
+.product:hover .view-form {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+    transition: opacity 0.3s;
+}
+
+.view-now {
+    border: none;
+    padding: 10px 25px;
+    font-size: 15px; /* Adjusted font size */
+    position: relative;
+    background: transparent;
+    color: white;
+    text-transform: uppercase;
+    border: 3px solid #80917D;
+    cursor: pointer;
+    transition: all 0.7s;
+    overflow: hidden;
+    border-radius: 100px;
+    z-index: 1; /* Ensure the button stays on top of other elements */
+    font-family: Rethink Sans;
+    font-weight: bold;
+}
+
+.view-now:hover {
+    color: white;
+}
+
+.view-now span {
+    transition: all 0.7s;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    width: 25%;
+    background: #80917D;
+}
+
+.view-now .first {
+    top: 0;
+    right: 100%;
+}
+
+.view-now:hover .first {
+    right: 0;
+}
+
+.view-now .second {
+    top: -100%;
+    left: 25%;
+}
+
+.view-now:hover .second {
+    top: 0;
+    left: 50%;
+}
+
+.view-now .third {
+    top: 100%;
+    left: 50%;
+}
+
+.view-now:hover .third {
+    top: 0;
+    left: 25%;
+}
+
+.view-now .fourth {
+    top: 0;
+    left: 100%;
+}
+
+.view-now:hover .fourth {
+    left: 0;
+}
+
+.product-name {
     font-size: 16px;
     margin: 5px 0;
     color: #333;
+    font-family: Montserrat;
+    font-weight: bold;
+    
+}
+
+.price{
+    font-family: Display Fair;
+    font-size: 1.3em;
 }

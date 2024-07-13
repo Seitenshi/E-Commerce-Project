@@ -290,10 +290,20 @@ body{
     background: #80917D;
 }
 
-.remove-link{
+.remove-link {
     margin-top: 10px;
     text-decoration: none;
+    background-color: transparent;
+    border: none;
+    color: #9c6830; 
+    cursor: pointer;
+    transition: color 0.3s ease; 
 }
+
+.remove-link:hover {
+    color: #80917D; /* Color on hover */
+}
+
 
 /* Custom Checkbox Style */
 .select-item {

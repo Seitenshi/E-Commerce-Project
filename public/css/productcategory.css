@@ -85,15 +85,20 @@ body{
       visibility: visible;
   }
 
-
   
   /* Contents */
 .custom-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr; /* 3 equal columns */
     grid-template-rows: repeat(2, 1fr); /* 2 equal rows */
-    height: 100vh; /* Full viewport height */
-    gap: 10px; /* Optional: to add some spacing between the grid items */
+    height: 100vh; 
+    gap: 7px; 
+}
+
+.custom-container > div {
+    border-radius: 20px; 
+    border: 2px; /* Example border for clarity */
+    padding: 20px; /* Example padding for spacing */
 }
 
 .section {
@@ -274,8 +279,14 @@ body{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr; /* 3 equal columns */
     grid-template-rows: repeat(2, 1fr); /* 2 equal rows */
-    height: 100vh; /* Full viewport height */
-    gap: 10px; /* Optional: to add some spacing between the grid items */
+    height: 100vh; 
+    gap: 7px; 
+}
+
+.custom-container2 > div {
+    border-radius: 20px; 
+    border: 2px; /* Example border for clarity */
+    padding: 20px; /* Example padding for spacing */
 }
 
 
