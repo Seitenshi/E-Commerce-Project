@@ -1,11 +1,52 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const steps = document.querySelectorAll('.progress-bar .step');
-    
-    steps.forEach((step, index) => {
-        step.addEventListener('click', () => {
-            steps.forEach(s => s.classList.remove('active'));
+
+
+// try
+let currentStep = 1;
+
+function updateProgressBar() {
+    for (let i = 1; i <= 3; i++) {
+        const step = document.getElementById(`step${i}`);
+        if (i < currentStep) {
+            step.classList.add('completed');
+            step.classList.remove('active');
+        } else if (i === currentStep) {
             step.classList.add('active');
-            // Add any additional functionality you need here, like showing different content based on step
-        });
-    });
+            step.classList.remove('completed');
+        } else {
+            step.classList.remove('active', 'completed');
+        }
+    }
+}
+
+function nextStep() {
+    if (currentStep < 3) {
+        currentStep++;
+        updateProgressBar();
+    }
+}
+
+function prevStep() {
+    if (currentStep > 1) {
+        currentStep--;
+        updateProgressBar();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    updateProgressBar();
 });
+
+
+// prompt
+// document.addEventListener('DOMContentLoaded', () => {
+//     const continueButton = document.getElementById('continue-button');
+//     const backButton = document.getElementById('back-to-cart');
+
+//     continueButton.addEventListener('click', () => {
+//         alert('Proceeding to services...');
+//     });
+
+//     backButton.addEventListener('click', () => {
+//         alert('Going back to cart...');
+//     });
+// });

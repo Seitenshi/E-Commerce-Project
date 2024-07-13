@@ -79,11 +79,12 @@ body{
       visibility: visible;
   }
 
+
   /* CONTENTSS SHEESH */
-  
+
 .payment-container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
     padding: 20px;
     display: flex;
@@ -91,16 +92,12 @@ body{
     align-items: center;
 }
 
-header .logo {
-    width: 150px;
-    margin-bottom: 20px;
-}
-
+/* final progress bar don't alter */
 .progress-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .progress-step {
@@ -111,19 +108,25 @@ header .logo {
 }
 
 .progress-step.completed .step-icon {
-    background-color: #0051ba;
+    background-color: #9c6830;
     color: #fff;
 }
 
 .step-icon {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background-color: #e0e0e0;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 5px;
+}
+
+.step-icon img {
+    width: 35px;
+    height: 35px;
+    opacity: 0.5;
 }
 
 .step-label {
@@ -137,6 +140,36 @@ header .logo {
     margin: 0 10px;
 }
 
+.active .step-icon img {
+    opacity: 1;
+}
+
+.active .step-label {
+    color: #9c6830;
+}
+
+.completed .step-icon img {
+    opacity: 1;
+    filter: grayscale(100%) brightness(0) invert(1);
+}
+
+.completed .step-label {
+    color: #9c6830
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+/* up until here dont alter this is the end of progress bars */
+
 .content {
     display: flex;
     width: 100%;
@@ -145,34 +178,6 @@ header .logo {
 
 .main-section {
     width: 65%;
-}
-
-.notification {
-    background-color: #eaf6ff;
-    border-left: 5px solid #0051ba;
-    padding: 15px;
-    margin-bottom: 20px;
-    position: relative;
-}
-
-.notification p {
-    margin: 0;
-    font-size: 14px;
-}
-
-.notification a {
-    color: #0051ba;
-    text-decoration: underline;
-}
-
-.notification .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
 }
 
 .delivery-details {
@@ -218,47 +223,91 @@ header .logo {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
-    width: 30%;
+    width: 500px;
+    font-family: Arial, sans-serif;
+    margin-left: 50px;
 }
 
-.order-summary h3 {
+.order-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.order-summary p {
+    margin: 0;
+    font-size: 14px;
+    color: #999;
+}
+
+.order-summary h4 {
     font-size: 18px;
-    margin-bottom: 10px;
+    padding-bottom: 5px;
 }
-
 .order-summary .order-total {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.order-summary .order-total span {
     font-size: 16px;
+}
+
+.order-summary h4 {
     margin-bottom: 10px;
 }
 
-.order-summary .delivery-info,
-.order-summary .order-item {
-    margin-bottom: 10px;
+.order-summary .order-items {
+    margin-bottom: 20px;
 }
 
 .order-summary .order-item {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    margin-bottom: 10px;
 }
 
 .order-summary .order-item img {
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     margin-right: 10px;
 }
 
-.order-summary .order-item .item-name {
+.order-summary .item-details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.order-summary .item-name-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.order-summary .item-name {
     font-weight: bold;
+    font-size: 16px;
 }
 
-.order-summary .order-item .item-price,
-.order-summary .order-item .item-quantity {
+.order-summary .item-price {
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.order-summary .item-description,
+.order-summary .item-quantity,
+.order-summary .item-note {
     font-size: 14px;
+    color: #666;
+    margin-top: 5px;
 }
 
-.order-summary .order-item .item-description {
+.order-summary .item-note {
     font-size: 12px;
-    color: #666;
+    color: #999;
 }

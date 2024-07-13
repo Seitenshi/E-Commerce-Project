@@ -49,31 +49,36 @@
     
     </div>
 
-<br><br>
+<br>
+
+
 <div class="payment-container">
+    <!-- progress bar wag na galawin oks na to -->
     <div class="progress-container">
-        <div class="progress-step completed">
-            <div class="step-icon"><span>&#10003;</span></div>
-            <div class="step-label">Details</div>
+        <div class="progress-step completed" id="step1">
+            <div class="step-icon">
+                <img width="50" height="50" src="https://img.icons8.com/ios/50/gender-neutral-user--v1.png" alt="gender-neutral-user--v1"/>
+            </div>
+            <div class="step-label">Your Details</div>
         </div>
         <div class="progress-line"></div>
-        <div class="progress-step">
-            <div class="step-icon"><img src="path/to/services-icon.png" alt="Services Icon"></div>
-            <div class="step-label">Services</div>
+        <div class="progress-step" id="step2">
+            <div class="step-icon">
+                <img width="50" height="50" src="https://img.icons8.com/ios/50/free-shipping.png" alt="free-shipping"/>
+            </div>
+            <div class="step-label">Shipping</div>
         </div>
         <div class="progress-line"></div>
-        <div class="progress-step">
-            <div class="step-icon"><img src="path/to/payment-icon.png" alt="Payment Icon"></div>
+        <div class="progress-step" id="step3">
+            <div class="step-icon">
+                <img width="50" height="50" src="https://img.icons8.com/ios/50/bank-card-back-side--v1.png" alt="bank-card-back-side--v1"/>
+            </div>
             <div class="step-label">Payment</div>
         </div>
     </div>
+    
     <div class="content">
         <div class="main-section">
-            <div class="notification">
-                <p><strong>Get ready to receive your delivery.</strong><br>
-                Please prepare the necessary permits and additional fees for your delivery. <a href="#">Learn more.</a></p>
-                <button class="close-btn">&times;</button>
-            </div>
             <section class="delivery-details">
                 <h2>Please confirm or edit details</h2>
                 <p>Delivery address will be used at the next step to finding the best delivery and pickup options.</p>
@@ -88,66 +93,66 @@
                         +63 928 739 7277<br>
                         cartz.cloud@gmail.com
                     </p>
-                    <button class="edit-btn">Edit</button>
-                    <p class="pinpoint">📍 Pinpoint not added</p>
-                    <button class="address-btn">Select a different address</button>
-                    <p><strong>Order confirmation email</strong></p>
-                    <p>cartz.cloud@gmail.com</p>
-                </div>
                 <button class="continue-btn">Continue to services</button>
             </section>
         </div>
+        <!-- unahin -->
         <aside class="order-summary">
-            <h3>Order Summary</h3>
             <div class="order-total">
-                <span>Total price</span>
-                <span>₱410</span>
+                <span style="font-size: 23px; padding-top:6px;">Subtotal price</span>
+                <span style="font-size: 30px">₱2,490</span>
             </div>
-            <p>Incl. VAT %</p>
-            <div class="delivery-info">
-                <h4>Delivery details</h4>
-                <p>
-                    Daineee<br>
-                    sDFEW<br>
-                    MARCILLA<br>
-                    Coron<br>
-                    Palawan<br>
-                    +63 928 739 7277<br>
-                    cartz.cloud@gmail.com
-                </p>
-                <h4>Delivery method</h4>
-                <p>Parcel delivery<br>Expected delivery time<br>2-17 days</p>
-            </div>
+            <hr>
             <h4>Products</h4>
-            <div class="order-item">
-                <img src="path/to/mopsig-image.png" alt="MOPSIG">
-                <div>
-                    <div class="item-name">MOPSIG</div>
-                    <div class="item-price">₱150</div>
-                    <div class="item-description">12-piece flatware set</div>
-                    <div class="item-quantity">Qty: 1</div>
+            <div class="order-items">
+                <div class="order-item">
+                    <img src="assets/img2/ot1.png" alt="FRÖJERED">
+                    <div class="item-details">
+                        <div class="item-name-price">
+                            <div class="item-name">FRÖJERED</div>
+                            <div class="item-price">₱900</div>
+                        </div>
+                        <div>
+                            <div class="item-description">Drawer front, light bamboo, 60x20 cm</div>
+                            <div class="item-quantity">Quantity: 1</div>
+                        </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="order-item">
+                        <img src="assets/img2/ot2.png" alt="VOXTORP">
+                        <div class="item-details">
+                            <div class="item-name-price">
+                                <div class="item-name">Mats</div>
+                                <div class="item-price">₱900</div>
+                            </div>
+                            <div class="item-description">Door, walnut effect, 40x40 cm</div>
+                            <div class="item-quantity">Quantity: 1</div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="order-item">
+                        <img src="assets/img2/ot3.png" alt="VÄRSTA">
+                        <div class="item-details">
+                            <div class="item-name-price">
+                                <div class="item-name">Mats</div>
+                                <div class="item-price">₱900</div>
+                            </div>
+                            <div class="item-description">Drawer front, stainless steel, 60x20 cm</div>
+                            <div class="item-quantity">Quantity: 1</div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="order-item">
-                <img src="path/to/prickig-image.png" alt="PRICKIG">
-                <div>
-                    <div class="item-name">PRICKIG</div>
-                    <div class="item-price">₱60</div>
-                    <div class="item-description">Microwave lid, gray, 26 cm</div>
-                    <div class="item-quantity">Qty: 1</div>
-                </div>
-            </div>
-            <div class="order-item">
-                <img src="path/to/spruttig-image.png" alt="SPRUTTIG">
-                <div>
-                    <div class="item-name">SPRUTTIG</div>
-                    <div class="item-price">₱100</div>
-                    <div class="item-description">Hanger, black</div>
-                    <div class="item-quantity">₱100/10 pieces</div>
-                </div>
-            </div>
+            </aside>
+            
         </aside>
+        
     </div>
+</div>
+
+<div class="buttons">
+    <button onclick="prevStep()">Previous</button>
+    <button onclick="nextStep()">Next</button>
 </div>
 
 
