@@ -6,7 +6,7 @@
     </head>
 <body>
     <div>
-    
+
         <!-- Sticky Nav Bar -->
         <div class="topbar">
             <nav class="navbar navbar-expand-lg fixed top">
@@ -22,16 +22,16 @@
                                     <a class="nav-link mx-lg-2" aria-current="page" href="{{ route('home') }}">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link mx-lg-2" href="{{ route('about') }}">About Us</a>
+                                    <a class="nav-link mx-lg-2" href="{{ route('logged.about') }}">About Us</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link mx-lg-2" href="{{ route('product.categories') }}">Products</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link mx-lg-2" href="{{ route('profile') }}"><img width="26" height="26" src="https://img.icons8.com/laces/64/gender-neutral-user.png" alt="gender-neutral-user"/></a>
+                                    <a class="nav-link mx-lg-2 active" href="{{ route('profile') }}"><img width="26" height="26" src="https://img.icons8.com/laces/64/gender-neutral-user.png" alt="gender-neutral-user"/></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('cart') }}" class="button btn nav-link mx-lg-2 active"><img width="26" height="26" src="https://img.icons8.com/ios/50/shopping-bag--v1.png" alt="shopping-bag--v1"/></a>
+                                    <a href="{{ route('cart') }}" class="button btn nav-link mx-lg-2"><img width="26" height="26" src="https://img.icons8.com/ios/50/shopping-bag--v1.png" alt="shopping-bag--v1"/><sup class="cart-count">{{$totalcart}}</sup></a>
                                 </li>
                             </ul>
                         </div>
@@ -43,6 +43,8 @@
                 </div>
             </nav>
         </div>
+    
+    </div>
 
  <br><br>
  
