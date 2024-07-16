@@ -19,7 +19,8 @@ class MainHome extends Controller
     public function homepageLogged(){
         $userId = Session::get('LoggedUser');
         $user = User::find($userId);
-        return view("Homepage_login",compact('user'));
+        $totalcart = ShoppingCart::where('user_id',Session::get('LoggedUser'))->where('status','cart')->count(); //THE CART COUNT
+        return view("Homepage_login",compact('user','totalcart'));
     }
 
     //about us
@@ -29,7 +30,8 @@ class MainHome extends Controller
 
     //about us
     public function aboutLogged(){
-        return view("Aboutpage_login");
+        $totalcart = ShoppingCart::where('user_id',Session::get('LoggedUser'))->where('status','cart')->count(); //THE CART COUNT
+        return view("Aboutpage_login",compact('totalcart'));
     }
 
     //Search for keywords - gives result based on keyword that is tagged on per product i.e. wood chair
