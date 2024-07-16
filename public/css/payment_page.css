@@ -78,3 +78,93 @@ body{
       width: 100%;
       visibility: visible;
   }
+
+  /* cartz */
+.cart-count {
+    background-color: #CA763B ;
+    color: white;
+    border-radius: 12px; /* Adjust the value for rounder or less rounded corners */
+    padding: 2px 6px; /* Adjust padding to fit your design */
+    font-size: 0.75em; /* Adjust font size to fit your design */
+    font-weight: bold;
+}
+
+/* resibowz */
+.invoice {
+    width: 700px;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    color: #333;
+}
+
+.invoice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.invoice-number {
+    font-size: 24px;
+    color: #999;
+}
+
+.invoice-logo img {
+    height: 60px;
+}
+
+.invoice-title {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.invoice-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.invoice-info-left, .invoice-info-right {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.invoice-info-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.invoice-info-item .label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.invoice-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.invoice-table th, .invoice-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: right;
+}
+
+.invoice-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+.invoice-table tfoot td {
+    font-weight: bold;
+}
+
+.invoice-table td:first-child {
+    text-align: left;
+}

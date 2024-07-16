@@ -85,7 +85,7 @@
             <p>Total Orders: {{$totalshipping}}</p>
             <p>Items in Cart: {{$totalcart}}</p>
         </div>
-    </div>
+    </div> 
     
     <div class="container" style="width: 100%">
         <div class="row">
