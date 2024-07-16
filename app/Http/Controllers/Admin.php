@@ -22,19 +22,40 @@ class Admin extends Controller
             $totalSales += $t;
         }
         // prescriptive
+        if($totalSales < 10000){
+            $sales = "<span style=\"color:red;\">Implement a loyalty program to encourage repeat purchases.</span>";
+        }else{
+            $sales = "<span style=\"color:green;\">Continue what you've been doing and generate Sales! </span>";
+
+        }
     
         // total orders
         $totalOrders = ShoppingCart::where('status', 'paid')->count();
         // prescriptive
-    
+        $orders;
+        if($totalOrders < 50){
+            $orders = "<span style=\"color:red;\">Offer limited-time discounts or promotions to encourage more orders.</span>";
+        }else{
+            $orders = "<span style=\"color:green;\">Continue what you've been doing and generate Orders! </span>";
+
+        }
         // total add to carts
         $totalCart = ShoppingCart::where('status', 'cart')->count();
         // prescriptive
-    
+        if($totalCart < 50){
+            $carts = "<span style=\"color:red;\">Collaborate with local influencers to boost visibility. </span>";
+        }else{
+            $carts = "<span style=\"color:green;\">Continue what you've been doing and generate traction! </span>";
+
+        }
         // Site visits
         $siteVisits = Tracker::where('note', 'visit')->pluck('visits')->first();
         // prescriptive
-    
+        if($siteVisits < 100){
+            $visits = "<span style=\"color:red;\">Optimize SEO to increase organic traffic. </span>";
+        }else{
+            $visits = "<span style=\"color:green;\">Continue what you've been doing and generate tractions and site visits! </span>";
+        }
         // top categories
         $categories = [
             'Baskets' => Tracker::where('note', 'Baskets')->pluck('visits')->first(),
@@ -52,7 +73,7 @@ class Admin extends Controller
     
         
     
-        return view('Admin.admin', compact('totalSales', 'totalOrders', 'totalCart', 'siteVisits', 'categories', 'topCategory'));
+        return view('Admin.admin', compact('totalSales', 'totalOrders', 'totalCart', 'siteVisits', 'categories', 'topCategory','sales','orders','carts','visits'));
     }
 
     public function shipping(){
