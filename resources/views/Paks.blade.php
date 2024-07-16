@@ -39,6 +39,17 @@
 
     <!-- Icons -->
     <script src="https://kit.fontawesome.com/39de4bde27.js" crossorigin="anonymous"></script>
+    
+    <style>
+        .cart-count {
+            background-color: #CA763B ;
+            color: white;
+            border-radius: 12px; /* Adjust the value for rounder or less rounded corners */
+            padding: 2px 6px; /* Adjust padding to fit your design */
+            font-size: 0.75em; /* Adjust font size to fit your design */
+            font-weight: bold;
+        }                                       
+    </style>
 </head>
 
 
