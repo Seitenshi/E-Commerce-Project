@@ -24,7 +24,7 @@
                                 <a class="nav-link mx-lg-2" aria-current="page" href="{{ route('home') }}">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link mx-lg-2" href="{{ route('about') }}">About Us</a>
+                                <a class="nav-link mx-lg-2" href="{{ route('logged.about') }}">About Us</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link mx-lg-2" href="{{ route('product.categories') }}">Products</a>
