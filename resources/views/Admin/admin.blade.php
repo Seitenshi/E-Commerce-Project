@@ -23,12 +23,12 @@
             <div class="col-md-12">
                 {{-- Total sales --}}
                 <div>
-                    Total Sales: 
+                    Monthly Sales: 
                     {{$totalSales}}
                 </div>
                 {{-- Prescriptive analytics --}}
                 <div>
-                    recommendations go here
+                    Recommendation: {{$sales}}
                 </div>
             </div>
         </div>
@@ -37,13 +37,13 @@
             <div class="col-md-12">
                 {{-- Total orders --}}
                 <div>
-                    Total Orders: 
+                    Monthly Orders: 
                     {{$totalOrders}}
                 </div>
 
                 {{-- Prescriptive analytics --}}
                 <div>
-                    recommendations go here
+                    Recommendation: {{$orders}}
                 </div>
             </div>
         </div>
@@ -58,7 +58,7 @@
 
                 {{-- Prescriptive analytics --}}
                 <div>
-                    recommendations go here
+                    Recommendation: {{$carts}}
                 </div>
             </div>
         </div>
@@ -67,13 +67,13 @@
             <div class="col-md-12">
                 {{-- Site visits --}}
                 <div>
-                    Total Site Visits: 
+                    Monthly Site Visits: 
                     {{$siteVisits}}
                 </div>
 
                 {{-- Prescriptive analytics --}}
                 <div>
-                    recommendations go here
+                    Recommendation: {{$visits}}
                 </div>
             </div>
         </div>
