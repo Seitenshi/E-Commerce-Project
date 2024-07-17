@@ -83,23 +83,35 @@ class MainHome extends Controller
     }
     
 
+    // Define the generateRandomString function inside the controller
+    private function generateRandomString($length = 7) {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
+    }
+
     public function viewOrder(Request $request){
-        $totalcart = ShoppingCart::where('user_id',Session::get('LoggedUser'))->where('status','cart')->count(); //THE CART COUNT
+        $totalcart = ShoppingCart::where('user_id', Session::get('LoggedUser'))->where('status', 'cart')->count(); //THE CART COUNT
         $pics = Product::all();
-        $order_ids=array();
-        $transaction = Transaction::where('transac_id',$request->input('id'))->first();
-        $user_id = User::where('user_id',Session::get('LoggedUser'))->first();
-        $order_id = json_decode($request->input('order_ids'),true); //array of order ids
-        $pics = Product::all();
+        $transaction = Transaction::where('transac_id', $request->input('id'))->first();
+        $user_id = User::where('user_id', Session::get('LoggedUser'))->first();
+        $order_id = json_decode($request->input('order_ids'), true); // array of order ids
 
         // Check if $order_id is an array, if not, convert it to an array
         if (!is_array($order_id)) {
             $order_id = [$order_id];
         }
 
-        $order_ids = ShoppingCart::whereIn('order_id',$order_id)->get(); //pull of order_id data
+        $order_ids = ShoppingCart::whereIn('order_id', $order_id)->get(); // pull of order_id data
+        $randomString = $this->generateRandomString();
+        // Create the tracking URL
+        $trackingUrl = 'https://www.lalamove.com/track?order_id=' . $randomString;
 
-        return view('User.viewOrder',compact('transaction','user_id','order_ids','pics','totalcart'));
+        return view('User.viewOrder', compact('transaction', 'user_id', 'order_ids', 'pics', 'totalcart', 'trackingUrl'));
     }
 
     //store locator
