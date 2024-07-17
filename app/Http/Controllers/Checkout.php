@@ -81,11 +81,11 @@ class Checkout extends Controller
         $userId = Session::get('LoggedUser');
         $user = User::find($userId); // get addr
         $totalcart = ShoppingCart::where('user_id',Session::get('LoggedUser'))->where('status','cart')->count(); //THE CART COUNT
-        
+        $pics = Product::all();
         $orderIds = $request->input('order_ids', []); //array can turn into json or just string for transaction table
         $shoppingCartItems = ShoppingCart::whereIn('order_id', $orderIds)->get();
 
-        return view('Checkout.checkoutPaymentPage', compact('user','shoppingCartItems','totalcart'));
+        return view('Checkout.checkoutPaymentPage', compact('user','shoppingCartItems','totalcart','pics'));
     }
 
 }
