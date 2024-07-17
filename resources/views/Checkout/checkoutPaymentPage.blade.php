@@ -1,3 +1,11 @@
+<?php
+    $total = 0;
+    foreach($shoppingCartItems as $key=>$value){
+        $totalprice = $value->quantity * $value->prod_price;
+        $total += $totalprice;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -85,13 +93,11 @@
                 <div class="address-info">
                     <p><strong>Delivery address:</strong></p>
                     <p>
-                        Daineee<br>
-                        sDFEW<br>
-                        MARCILLA<br>
-                        Coron<br>
-                        Palawan<br>
-                        +63 928 739 7277<br>
-                        cartz.cloud@gmail.com
+                        First Name: {{$user['user_fname']}} <br>
+                        Last Name: {{$user['user_lname']}} <br>
+                        Address: {{$user['user_addr']}} <br>
+                        Contact Number: {{$user['user_contact']}} <br>
+                        Email: {{$user['user_email']}}
                     </p>
                     <div class="separator">
                         <div class="line"></div>
@@ -101,10 +107,10 @@
                     <p class="des1">Enter Your Desired Address</p>
                     <div class="row g-3 desad2">
                         <div class="col-sm-7">
-                            <input type="text" class="form-control form-control-green desad2-input" placeholder="City" aria-label="City">
+                            <input type="text" class="form-control form-control-green desad2-input" placeholder="Address" aria-label="Address">
                         </div>
                         <div class="col-sm">
-                            <input type="text" class="form-control form-control-green desad2-input" placeholder="State" aria-label="State">
+                            <input type="text" class="form-control form-control-green desad2-input" placeholder="City" aria-label="City">
                         </div>
                         <div class="col-sm">
                             <input type="text" class="form-control form-control-green desad2-input" placeholder="Zip" aria-label="Zip">
@@ -128,49 +134,32 @@
         <div class="order-summary">
             <div class="order-total">
                 <span style="font-size: 23px; padding-top:16px;">Subtotal price</span>
-                <span style="font-size: 30px; padding-top: 12px;">₱2,490</span>
+                <span style="font-size: 30px; padding-top: 12px;">₱{{number_format($total,2)}}</span>
             </div>
             <hr>
             <h4 style="font-weight: bold;">Products</h4>
             <div class="order-items">
-                <div class="order-item">
-                    <img src="assets/img2/ot1.png" alt="FRÖJERED">
-                    <div class="item-details">
-                        <div class="item-name-price">
-                            <div class="item-name">FRÖJERED</div>
-                            <div class="item-price">₱900</div>
-                        </div>
-                        <div>
-                            <div class="item-description">Drawer front, light bamboo, 60x20 cm</div>
-                            <div class="item-quantity">Quantity: 1</div>
-                        </div>
-                        </div>
-                    </div>
-                    <hr>
+                @foreach ($shoppingCartItems as $key=>$value)
                     <div class="order-item">
-                        <img src="assets/img2/ot2.png" alt="VOXTORP">
+                        @foreach ($pics as $pic)
+                            @if ($value->prod_id == $pic->prod_id)
+                                <img src="{{ asset('assets/img2/' . $pic->file_name) }}" alt="{{$pic->file_name}}">
+                            @endif
+                        @endforeach
                         <div class="item-details">
                             <div class="item-name-price">
-                                <div class="item-name">Mats</div>
-                                <div class="item-price">₱900</div>
+                                <div class="item-name">{{$value->prod_name}}</div>
+                                <div class="item-price">₱{{number_format($value->prod_price,2)}}</div>
                             </div>
-                            <div class="item-description">Door, walnut effect, 40x40 cm</div>
-                            <div class="item-quantity">Quantity: 1</div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="order-item">
-                        <img src="assets/img2/ot3.png" alt="VÄRSTA">
-                        <div class="item-details">
-                            <div class="item-name-price">
-                                <div class="item-name">Mats</div>
-                                <div class="item-price">₱900</div>
+                            <div>
+                                <div class="item-quantity">Quantity: {{$value->quantity}}</div>
                             </div>
-                            <div class="item-description">Drawer front, stainless steel, 60x20 cm</div>
-                            <div class="item-quantity">Quantity: 1</div>
+                            </div>
                         </div>
+                        <hr>
                     </div>
-                </div>
+                @endforeach
+                
             </div>
             
         </aside>
@@ -223,17 +212,17 @@
         <div class="delivery-summary">
             <div class="delivery-total">
                 <span style="font-size: 23px; padding-top:16px;">Total price</span>
-                <span style="font-size: 30px; padding-top: 12px;">₱2,490</span>
+                <span style="font-size: 30px; padding-top: 12px;">₱{{number_format($total,2)}}</span>
             </div>
             <hr>
             <h4>Delivery Details</h4>
-            <p>Daineee</p>
-            <p>sDFEW</p>
-            <p>MARCILLA</p>
-            <p>Coron</p>
-            <p>Palawan</p>
-            <p>+63 928 739 7277</p>
-            <p>cartz.cloud@gmail.com</p>
+            <p>
+                First Name: {{$user['user_fname']}} <br>
+                Last Name: {{$user['user_lname']}} <br>
+                Address: {{$user['user_addr']}} <br>
+                Contact Number: {{$user['user_contact']}} <br>
+                Email: {{$user['user_email']}}
+            </p>
             <hr>
             <div id="delivery-method-section">
                 <!-- This section is initially empty or contains a default message -->
@@ -243,44 +232,26 @@
             <hr>
             <h4>Products</h4>
             <div class="order-items">
-                <div class="order-item">
-                    <img src="assets/img2/ot1.png" alt="FRÖJERED">
-                    <div class="item-details">
-                        <div class="item-name-price">
-                            <div class="item-name">FRÖJERED</div>
-                            <div class="item-price">₱900</div>
+                @foreach ($shoppingCartItems as $key=>$value)
+                    <div class="order-item">
+                        @foreach ($pics as $pic)
+                            @if ($value->prod_id == $pic->prod_id)
+                                <img src="{{ asset('assets/img2/' . $pic->file_name) }}" alt="{{$pic->file_name}}">
+                            @endif
+                        @endforeach
+                        <div class="item-details">
+                            <div class="item-name-price">
+                                <div class="item-name">{{$value->prod_name}}</div>
+                                <div class="item-price">₱{{number_format($value->prod_price,2)}}</div>
+                            </div>
+                            <div>
+                                <div class="item-quantity">Quantity: {{$value->quantity}}</div>
+                            </div>
+                            </div>
                         </div>
-                        <div>
-                            <div class="item-description">Drawer front, light bamboo, 60x20 cm</div>
-                            <div class="item-quantity">Quantity: 1</div>
-                        </div>
+                        <hr>
                     </div>
-                </div>
-                <hr>
-                <div class="order-item">
-                    <img src="assets/img2/ot2.png" alt="VOXTORP">
-                    <div class="item-details">
-                        <div class="item-name-price">
-                            <div class="item-name">Mats</div>
-                            <div class="item-price">₱900</div>
-                        </div>
-                        <div class="item-description">Door, walnut effect, 40x40 cm</div>
-                        <div class="item-quantity">Quantity: 1</div>
-                    </div>
-                </div>
-                <hr>
-                <div class="order-item">
-                    <img src="assets/img2/ot3.png" alt="VÄRSTA">
-                    <div class="item-details">
-                        <div class="item-name-price">
-                            <div class="item-name">Mats</div>
-                            <div class="item-price">₱900</div>
-                        </div>
-                        <div class="item-description">Drawer front, stainless steel, 60x20 cm</div>
-                        <div class="item-quantity">Quantity: 1</div>
-                    </div>
-                </div>
-            </div>
+                @endforeach
         </div>
     </section>
 </div>
@@ -381,17 +352,17 @@
             <div class="delivery-summary">
                 <div class="delivery-total">
                     <span style="font-size: 23px; padding-top:16px;">Total price</span>
-                    <span style="font-size: 30px; padding-top: 12px;">₱2,490</span>
+                    <span style="font-size: 30px; padding-top: 12px;">₱{{number_format($total,2)}}</span>
                 </div>
                 <hr>
                 <h4>Delivery Details</h4>
-                <p>Daineee</p>
-                <p>sDFEW</p>
-                <p>MARCILLA</p>
-                <p>Coron</p>
-                <p>Palawan</p>
-                <p>+63 928 739 7277</p>
-                <p>cartz.cloud@gmail.com</p>
+                <p>
+                    First Name: {{$user['user_fname']}} <br>
+                    Last Name: {{$user['user_lname']}} <br>
+                    Address: {{$user['user_addr']}} <br>
+                    Contact Number: {{$user['user_contact']}} <br>
+                    Email: {{$user['user_email']}}
+                </p>
                 <hr>
                 <div id="delivery-method-section">
                     <h4>Delivery method</h4>
@@ -400,45 +371,26 @@
                 <hr>
                 <h4>Products</h4>
                 <div class="order-items">
+                    @foreach ($shoppingCartItems as $key=>$value)
                     <div class="order-item">
-                        <img src="assets/img2/ot1.png" alt="FRÖJERED">
+                        @foreach ($pics as $pic)
+                            @if ($value->prod_id == $pic->prod_id)
+                                <img src="{{ asset('assets/img2/' . $pic->file_name) }}" alt="{{$pic->file_name}}">
+                            @endif
+                        @endforeach
                         <div class="item-details">
                             <div class="item-name-price">
-                                <div class="item-name">FRÖJERED</div>
-                                <div class="item-price">₱900</div>
+                                <div class="item-name">{{$value->prod_name}}</div>
+                                <div class="item-price">₱{{number_format($value->prod_price,2)}}</div>
                             </div>
                             <div>
-                                <div class="item-description">Drawer front, light bamboo, 60x20 cm</div>
-                                <div class="item-quantity">Quantity: 1</div>
+                                <div class="item-quantity">Quantity: {{$value->quantity}}</div>
+                            </div>
                             </div>
                         </div>
+                        <hr>
                     </div>
-                    <hr>
-                    <div class="order-item">
-                        <img src="assets/img2/ot2.png" alt="VOXTORP">
-                        <div class="item-details">
-                            <div class="item-name-price">
-                                <div class="item-name">Mats</div>
-                                <div class="item-price">₱900</div>
-                            </div>
-                            <div class="item-description">Door, walnut effect, 40x40 cm</div>
-                            <div class="item-quantity">Quantity: 1</div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="order-item">
-                        <img src="assets/img2/ot3.png" alt="VÄRSTA">
-                        <div class="item-details">
-                            <div class="item-name-price">
-                                <div class="item-name">Mats</div>
-                                <div class="item-price">₱900</div>
-                            </div>
-                            <div class="item-description">Drawer front, stainless steel, 60x20 cm</div>
-                            <div class="item-quantity">Quantity: 1</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                @endforeach
         </div>
     </section>
 </div>
@@ -465,7 +417,7 @@
                                     <th>Price</th>
                                 </thead>
                                 @php
-                                    $total = 0;
+                                    
                                 @endphp
                                 <tbody>
                                     @foreach($shoppingCartItems as $key=>$value)
