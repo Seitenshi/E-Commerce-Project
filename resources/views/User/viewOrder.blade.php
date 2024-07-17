@@ -93,7 +93,13 @@
                                                 }
                                             @endphp
                                             <br>
-                                            Service Provider: LalaMove
+                                            Service Provider: LalaMove <br>
+                                            @php
+                                                if($transaction['shipping'] === 'shipped'){
+                                                    echo '<span style="font-weight:bold">Track your order here: </span><a href="{{ $trackingUrl }}">'.$trackingUrl.'</a>';
+                                                }
+                                            @endphp
+                                            
                                         
                                     </td>
                                     <td><span><h6>Total: P{{number_format($transaction['total'],2)}}</h6></span></td>
