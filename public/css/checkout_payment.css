@@ -81,7 +81,7 @@ body{
 
 
   /* CONTENTSS SHEESH */
-
+/* Order deets pagee */
 .payment-container {
     width: 100%;
     max-width: 1300px;
@@ -90,6 +90,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 
 /* final progress bar don't alter */
@@ -98,6 +99,7 @@ body{
     align-items: center;
     justify-content: center;
     margin-bottom: 30px;
+    
 }
 
 .progress-step {
@@ -131,6 +133,8 @@ body{
 
 .step-label {
     font-size: 14px;
+    font-family: Montserrat;
+    font-weight: bold;
 }
 
 .progress-line {
@@ -170,6 +174,27 @@ button {
 }
 /* up until here dont alter this is the end of progress bars */
 
+/* OR LINES */
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.separator .line {
+    flex-grow: 1;
+    height: 1px;
+    background-color: #ddd;
+}
+
+.separator span {
+    padding: 0 10px;
+    font-weight: bold;
+    color: black;
+    font-family: Display Fair;
+}
+
 .content {
     display: flex;
     width: 100%;
@@ -180,17 +205,86 @@ button {
     width: 65%;
 }
 
+.def1{
+    color: red; 
+    font-style: italic;
+    text-align: center;
+}
+
+.des1{
+    font-family: Montserrat;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.form-control.desad2-input {
+    border: 2px solid #9c6830;
+    border-radius: 12px; 
+    padding: 8px; 
+}
+
+
+.desad2{
+    font-family: 'Rethink Sans';
+}
+
+.progressbuttns {
+    display: flex;
+    justify-content: space-between; /* Aligns span to the left and buttons to the right */
+    align-items: center; /* Vertically center-align items */
+    margin-top: 20px;
+    width: 100%; /* Ensure the container takes full width */
+}
+
+.progressbuttns span {
+    flex-grow: 1; /* Allows the span to take up remaining space */
+}
+
+.progressbuttns button {
+    cursor: pointer;
+    background-color: #9c6830;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-family: 'Rethink Sans';
+    font-size: 16px;
+    margin-left: 10px; /* Adds space between buttons */
+    display: flex;
+    align-items: center; /* Vertically center-align items */
+    padding: 10px 20px;
+}
+
+.progcon {
+    width: 30px; 
+    height: 30px; 
+    margin-right: 10px; /* Space between the image and the text */
+}
+
+.progressbuttns button {
+    transition-duration: 0.4s;
+  }
+  
+.progressbuttns button:hover {
+    background-color: #80917D; /* Green */
+    color: white;
+}
+
 .delivery-details {
     padding: 20px;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-bottom: 20px;
+    box-shadow: 3px 4px 5px 5px #80917D;
 }
 
 .delivery-details h2 {
     font-size: 20px;
     margin-bottom: 10px;
+    text-align: center;
+    font-family: Montserrat;
+    font-weight: bold;
 }
 
 .delivery-details p {
@@ -224,8 +318,9 @@ button {
     border: 1px solid #ddd;
     border-radius: 5px;
     width: 500px;
-    font-family: Arial, sans-serif;
+    font-family: Montserrat;
     margin-left: 50px;
+    box-shadow: 3px 4px 5px 5px #80917D;
 }
 
 .order-total {
@@ -256,13 +351,6 @@ button {
     font-size: 16px;
 }
 
-.order-summary h4 {
-    margin-bottom: 10px;
-}
-
-.order-summary .order-items {
-    margin-bottom: 20px;
-}
 
 .order-summary .order-item {
     display: flex;
@@ -297,6 +385,7 @@ button {
 .order-summary .item-price {
     font-size: 16px;
     white-space: nowrap;
+    font-weight: bold;
 }
 
 .order-summary .item-description,
@@ -305,9 +394,451 @@ button {
     font-size: 14px;
     color: #666;
     margin-top: 5px;
+    font-family: Montserrat;
 }
 
-.order-summary .item-note {
-    font-size: 12px;
-    color: #999;
+/* SHIPPING PAGE */
+.payship-container {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.shipping-section {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.shipping-container {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 60%;
+    box-shadow: 3px 4px 5px 5px #80917D;
+    flex-shrink: 0;
+}
+
+.shipping-container h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-family: Montserrat;
+    font-weight: bold;
+    text-align: center;
+}
+
+.shipping-container .option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.shipping-container .option.selected {
+    background-color: #f0f0f0;
+    border: 2px solid #9c6830;;
+}
+
+.shipping-container .option:hover {
+    background-color: #f0f0f0;
+}
+
+.shipping-container label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 98%;
+}
+
+.shipping-container .label-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.shipping-container .label-content span {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.shipping-container .price {
+    font-weight: bold;
+    font-size: 16px;
+    
+}
+
+.shipping-container .sub-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+}
+
+.shipping-container .sub-price {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.shipping-container .acknowledgement {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.shipping-container .acknowledgement input[type="checkbox"] {
+    display: none; /* Hide the native checkbox */
+}
+
+.shipping-container .acknowledgement label {
+    position: relative; /* Ensure the label is positioned relative for ::before */
+    padding-left: 30px; /* Adjust padding to accommodate custom checkbox */
+    font-size: 14px;
+    cursor: pointer; /* Show pointer cursor */
+}
+
+.shipping-container .acknowledgement label::before {
+    content: ''; /* Empty content for pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px; /* Size of the custom checkbox */
+    height: 16px; /* Size of the custom checkbox */
+    border: 2px solid #9c6830; /* Border color of the custom checkbox */
+    background-color: #fff; /* Background color of the custom checkbox */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.shipping-container .acknowledgement input[type="checkbox"]:checked + label::before {
+    background-color: #9c6830; /* Background color when checked */
+    content: '✓'; /* Check mark content */
+    text-align: center;
+    line-height: 16px; /* Line height to center vertically */
+    color: #fff; /* Color of the check mark */
+}
+
+#delivery-method-section p {
+    display: flex; /* Make paragraphs flex containers */
+    justify-content: space-between; /* Align items with space in between */
+}
+
+#delivery-method-section p span {
+    white-space: nowrap; /* Prevents span from breaking into multiple lines */
+    
+}
+
+
+.delivery-summary {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 500px;
+    font-family: Montserrat;
+    margin-left: 50px;
+    box-shadow: 3px 4px 5px 5px #80917D;
+}
+
+.delivery-summary .delivery-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-family: Montserrat;
+    font-weight: bold;
+}
+
+.delivery-summary h4 {
+    font-weight: bold;
+    font-size: 18px;
+    padding-bottom: 5px;
+    font-family: Montserrat;
+}
+
+.delivery-summary p {
+    margin: 5px 0;
+}
+
+.delivery-summary .order-items {
+    display: flex;
+    flex-direction: column;
+}
+
+.delivery-summary .order-item {
+    display: flex;
+    align-items: center;
+ 
+}
+
+.delivery-summary .order-item img {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+.delivery-summary .item-details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.delivery-summary .item-name-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.delivery-summary .item-name {
+    font-weight: bold;
+}
+
+.delivery-summary .item-price {
+    font-weight: bold;
+    font-size: 16px;
+    white-space: nowrap;
+    margin-left: auto;
+}
+
+.delivery-summary .item-description {
+    font-size: 14px;
+    color: #666;
+    width: calc(100% - 140px);
+    white-space: nowrap;
+}
+
+.delivery-summary .item-quantity {
+    font-size: 14px;
+    color: #666;
+}
+
+/* PAYMENT METHODS UWO */
+
+.payments-container {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.shipping-payment-section {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.left-panel {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.right-panel {
+    width: 35%;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 3px 4px 5px 5px #80917D;
+}
+
+.payments2-container {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 3px 4px 5px 5px #80917D;
+    margin-bottom: 20px;
+}
+
+.payments2-container h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-family: Montserrat;
+    font-weight: bold;
+    text-align: center;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.option.selected {
+    background-color: #f0f0f0;
+    border: 2px solid #9c6830;
+}
+
+.option:hover {
+    background-color: #f0f0f0;
+}
+
+.form-control-green {
+    color: #80917D;
+    border-color: #80917D;
+}
+.form-control-green:focus {
+    color: #80917D;
+    border-color: #80917D;
+    box-shadow: 3px 4px 5px 5px #80917D;
+}
+
+/* Credit Card Form styling */
+.credit-card-form {
+    display: none;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.credit-card-form h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.credit-card-form form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-family: Montserrat;
+    font-weight: bold;
+    
+}
+
+.credit-card-form form input,
+.credit-card-form form select,
+.credit-card-form form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    border: 2px solid #9c6830;
+    border-radius: 12px; 
+    padding: 8px; 
+    font-family: Montserrat;
+    
+}
+
+
+.credit-card-form form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.credit-card-form form button:hover {
+    background-color: #45a049;
+}
+
+label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 98%;
+}
+
+.label-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.label-content span {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.acknowledgement {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.acknowledgement input[type="checkbox"] {
+    display: none;
+}
+
+.acknowledgement label {
+    position: relative;
+    padding-left: 30px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.acknowledgement label::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #9c6830;
+    background-color: #fff;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3px;
+}
+
+.acknowledgement input[type="checkbox"]:checked + label::before {
+    background-color: #9c6830;
+    content: '✓';
+    text-align: center;
+    line-height: 16px;
+    color: #fff;
+}
+
+.hunder{
+    text-decoration: underline;
+    color: #80917D ;
+}
+
+#payment-button {
+    padding: 10px 20px;
+    background-color: #9c6830;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#payment-button:hover {
+    background-color: #80917D;
+}
+
+#payment-button:active {
+    background-color: #80917D;
 }
