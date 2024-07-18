@@ -91,7 +91,7 @@ body{
 
 .confirmation-message{
     text-align: center;
-    font-family: Montserrat;
+    font-family: Display Fair;
     font-weight: bold;
     font-size: 25px;
 }
@@ -115,7 +115,6 @@ body{
     height: 100vh;
     padding: 20px;
     box-sizing: border-box;
-    
 }
 
 
@@ -160,6 +159,8 @@ body{
 .invoice-number {
     font-size: 36px;
     color: #999;
+    font-family: Display Fair;
+    font-weight: bold;
 }
 
 .invoice-title {
@@ -167,12 +168,14 @@ body{
     font-weight: bold;
     text-align: left;
     flex-grow: 0.8; 
+    font-family: Montserrat;
 }
 
 .invoice-info {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+    font-family: Montserrat;
 }
 
 .invoice-info-left, .invoice-info-right {
@@ -201,6 +204,7 @@ body{
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
+    font-family: Montserrat;
 }
 
 .invoice-table th,
