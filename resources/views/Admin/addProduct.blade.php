@@ -4,7 +4,7 @@
 </head>
 <body>
     <div>
-        <!-- Simplicity is the ultimate sophistication. - Leonardo da Vinci -->
+        <!-- Simplicity is the ultimate sophistication. - Leonardo da Vinki -->
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
