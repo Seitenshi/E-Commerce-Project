@@ -90,35 +90,53 @@ body{
 }
 
 /* resibowz */
+.invoice-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+
 .invoice {
-    width: 700px;
+    width: 800px;
     background: #fff;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     color: #333;
+    box-shadow: 3px 4px 5px 5px #80917D;
+    
 }
 
 .invoice-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .invoice-number {
-    font-size: 24px;
+    font-size: 48px;
     color: #999;
 }
 
+.invoice-logo {
+    display: flex; /* Use flexbox */
+    justify-content: flex-start; /* Align items to the start (left side) */
+}
+
 .invoice-logo img {
-    height: 60px;
+    height: 130px;
+    width: auto; /* Set width to auto to maintain aspect ratio */
+    max-width: 100%; /* Ensure image doesn't exceed container width */
+    padding: 0; /* Remove any default padding */
 }
 
 .invoice-title {
     font-size: 36px;
     font-weight: bold;
-    text-align: center;
+    margin-left: 40%;
     margin-bottom: 20px;
 }
 
@@ -129,31 +147,28 @@ body{
 }
 
 .invoice-info-left, .invoice-info-right {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    width: 45%;
+    text-align: right;
 }
 
 .invoice-info-item {
-    display: flex;
-    flex-direction: column;
+    margin-bottom: 10px;
 }
 
 .invoice-info-item .label {
     font-weight: bold;
+    display: block;
     margin-bottom: 5px;
 }
 
 .invoice-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
 }
 
 .invoice-table th, .invoice-table td {
     border: 1px solid #ddd;
     padding: 10px;
-    text-align: right;
 }
 
 .invoice-table th {
@@ -168,3 +183,5 @@ body{
 .invoice-table td:first-child {
     text-align: left;
 }
+
+

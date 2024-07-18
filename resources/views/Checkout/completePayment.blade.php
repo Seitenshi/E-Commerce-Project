@@ -48,79 +48,83 @@
 
 <div>
     <!-- It is never too late to be what you might have been. - George Eliot -->
-<br>
+<br><br>
 
-<div class="invoice">
-    <div class="invoice-header">
-        <div class="invoice-number">Nº 123</div>
-        <div class="invoice-logo">
-            <img src="logo.png" alt="Kalinaw Crafts">
-        </div>
-    </div>
-    <div class="invoice-title">Invoice</div>
-    <div class="invoice-info">
-        <div class="invoice-info-left">
-            <div class="invoice-info-item">
-                <span class="label">Issued</span>
-                <span>01 Jan, 2022</span>
-            </div>
-            <div class="invoice-info-item">
-                <span class="label">From</span>
-                <span>Name or Company<br>123 Godly St.<br>Internet, GW000<br>United States</span>
+<div class="invoice-container">
+    <div class="invoice">
+        <div class="invoice-header">
+            <div class="invoice-number">Nº 123</div>
+            <div class="invoice-logo">
+                <img src="/assets/img/kalinawlogo2.png" alt="Kalinaw Crafts">
             </div>
         </div>
-        <div class="invoice-info-right">
-            <div class="invoice-info-item">
-                <span class="label">Due</span>
-                <span>07 Jan, 2022</span>
+        <div class="invoice-title">Invoice</div>
+        <div class="invoice-info">
+            <div class="invoice-info-left">
+                <div class="invoice-info-item">
+                    <span class="label">Issued</span>
+                    <span>01 Jan, 2022</span>
+                </div>
+                <div class="invoice-info-item">
+                    <span class="label">From</span>
+                    <span>Name or Company<br>123 Godly St.<br>Internet, GW000<br>United States</span>
+                </div>
             </div>
-            <div class="invoice-info-item">
-                <span class="label">To</span>
-                <span>Name or Company<br>123 Godly St.<br>Internet, GW000<br>United States</span>
+            <div class="invoice-info-right">
+                <div class="invoice-info-item">
+                    <span class="label">Due</span>
+                    <span>07 Jan, 2022</span>
+                </div>
+                <div class="invoice-info-item">
+                    <span class="label">To</span>
+                    <span>Name or Company<br>123 Godly St.<br>Internet, GW000<br>United States</span>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="invoice-table">
-        <table>
-            <thead>
-                <tr>
-                    <th>Item</th>
-                    <th>Cost</th>
-                    <th>Qty</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Product Name</td>
-                    <td>₱1,250</td>
-                    <td>1</td>
-                    <td>₱1,250</td>
-                </tr>
-                <tr>
-                    <td>Product Name</td>
-                    <td>₱1,250</td>
-                    <td>1</td>
-                    <td>₱1,250</td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="3">Subtotal</td>
-                    <td>₱2,500</td>
-                </tr>
-                <tr>
-                    <td colspan="3">Discount</td>
-                    <td>₱0.00</td>
-                </tr>
-                <tr>
-                    <td colspan="3">Total</td>
-                    <td>₱2,500</td>
-                </tr>
-            </tfoot>
-        </table>
+        <div class="invoice-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Cost</th>
+                        <th>Qty</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Product Name</td>
+                        <td>₱1,250</td>
+                        <td>1</td>
+                        <td>₱1,250</td>
+                    </tr>
+                    <tr>
+                        <td>Product Name</td>
+                        <td>₱1,250</td>
+                        <td>1</td>
+                        <td>₱1,250</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">Subtotal</td>
+                        <td>₱2,500</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Discount</td>
+                        <td>₱0.00</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Total</td>
+                        <td>₱2,500</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
     </div>
 </div>
+<br><br>
+
 
     {{-- invoice --}}
 

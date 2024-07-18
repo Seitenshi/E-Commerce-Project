@@ -1,4 +1,3 @@
-// progress bars -> pinaka taas
 let currentStep = 1;
 
 function getStepFromURL() {
@@ -28,11 +27,21 @@ function updateProgressBar() {
     }
 }
 
+function loadStepContent(step) {
+    const sections = document.querySelectorAll('.main-section');
+    sections.forEach(section => {
+        section.classList.remove('active');
+    });
+
+    document.getElementById(`section${step}`).classList.add('active');
+}
+
 function nextStep() {
     if (currentStep < 3) {
         currentStep++;
         updateURL(currentStep);
         updateProgressBar();
+        loadStepContent(currentStep);
     }
 }
 
@@ -41,40 +50,24 @@ function prevStep() {
         currentStep--;
         updateURL(currentStep);
         updateProgressBar();
+        loadStepContent(currentStep);
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     updateProgressBar();
+    loadStepContent(currentStep);
 });
 
-
-// Enable the "Continue to payment" button only when the checkbox is checked
-function nextStep() {
-    const acknowledgeCheckbox = document.getElementById('acknowledge');
-
-    if (acknowledgeCheckbox.checked) {
-        // Proceed to the next step (e.g., redirect to payment page)
-        window.location.href = 'payment-page-url'; // Replace with your actual payment page URL
-    } else {
-        alert('Please acknowledge your responsibility by checking the box before proceeding to payment.');
-    }
-}
-
-// buttons clicked -> shipping page to
 function selectDeliveryMethod(method) {
-    // Get the clicked option element
     const clickedOption = document.getElementById(method);
     const deliveryMethodSection = document.getElementById('delivery-method-section');
     
-    // Reset highlight for all options
     const allOptions = document.querySelectorAll('.option');
     allOptions.forEach(option => option.classList.remove('selected'));
 
-    // Highlight the clicked option
     clickedOption.classList.add('selected');
 
-    // Retrieve information dynamically based on the clicked option
     const deliveryInfo = {
         'click-collect': {
             label: 'Pick It Up Parcel',
@@ -91,7 +84,6 @@ function selectDeliveryMethod(method) {
         }
     };
 
-// dynamic na nag uupdate uwo 1 hr lang kami nagtitigan hehe
     deliveryMethodSection.innerHTML = `
         <h4>Delivery Method</h4>
         <p><span>${deliveryInfo[method].label}</span> <span>${deliveryInfo[method].price}</span></p>
@@ -99,41 +91,16 @@ function selectDeliveryMethod(method) {
     `;
 }
 
-// last Payment methods ffrfrfrfr
 function selectPaymentMethod(method) {
-    // Deselect all payment methods
     document.querySelectorAll('.payments2-container .option').forEach(option => {
         option.classList.remove('selected');
     });
-    // Select the chosen payment method
+
     document.getElementById(method).classList.add('selected');
 
-    // Show or hide the credit card form based on the selected method
     if (method === 'credit-card') {
         document.getElementById('credit-card-form').style.display = 'block';
     } else {
         document.getElementById('credit-card-form').style.display = 'none';
     }
 }
-
-
-// remove black input in forms
-
-
-
-
-
-
-// prompt
-// document.addEventListener('DOMContentLoaded', () => {
-//     const continueButton = document.getElementById('continue-button');
-//     const backButton = document.getElementById('back-to-cart');
-
-//     continueButton.addEventListener('click', () => {
-//         alert('Proceeding to services...');
-//     });
-
-//     backButton.addEventListener('click', () => {
-//         alert('Going back to cart...');
-//     });
-// });

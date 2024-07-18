@@ -99,7 +99,6 @@ body{
     align-items: center;
     justify-content: center;
     margin-bottom: 30px;
-    
 }
 
 .progress-step {
@@ -158,8 +157,18 @@ body{
 }
 
 .completed .step-label {
-    color: #9c6830
+    color: #9c6830;
 }
+
+.main-section {
+    display: none;
+}
+
+.main-section.active {
+    display: block;
+}
+
+
 
 .buttons {
     display: flex;
@@ -334,12 +343,13 @@ button {
 .order-summary p {
     margin: 0;
     font-size: 14px;
-    color: #999;
+    
 }
 
 .order-summary h4 {
     font-size: 18px;
     padding-bottom: 5px;
+    font-weight: bold;
 }
 .order-summary .order-total {
     display: flex;
@@ -356,6 +366,7 @@ button {
     display: flex;
     align-items: flex-start;
     margin-bottom: 10px;
+   
 }
 
 .order-summary .order-item img {
@@ -395,6 +406,7 @@ button {
     color: #666;
     margin-top: 5px;
     font-family: Montserrat;
+    
 }
 
 /* SHIPPING PAGE */
@@ -420,7 +432,7 @@ button {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
-    width: 60%;
+    width: 100%;
     box-shadow: 3px 4px 5px 5px #80917D;
     flex-shrink: 0;
 }
@@ -650,7 +662,7 @@ button {
 .left-panel {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 100%;
 }
 
 .right-panel {
