@@ -48,7 +48,13 @@
 
 <div>
     <!-- It is never too late to be what you might have been. - George Eliot -->
-<br><br>
+<br>
+
+<div class="confirmation-message">
+    <p>Thank you for ordering. You may view the order or track the shipping at <a id="profile-link" href="#">Profile</a> -> <a href="my-orders.html">My Orders</a>.</p>
+</div>
+
+<br>
 
 <div class="invoice-container">
     <div class="invoice">
@@ -138,7 +144,5 @@
 
     {{-- invoice --}}
 
-    Thank you for ordering. You may view the order or track the shipping at Profile -> My Orders.
-    <br>
 
 </div>

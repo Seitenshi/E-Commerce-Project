@@ -89,6 +89,24 @@ body{
     font-weight: bold;
 }
 
+.confirmation-message{
+    text-align: center;
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.confirmation-message a {
+    color: #80917D;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.confirmation-message a:hover {
+    text-decoration: underline;
+}
+
+
 /* resibowz */
 .invoice-container {
     display: flex;
@@ -97,13 +115,15 @@ body{
     height: 100vh;
     padding: 20px;
     box-sizing: border-box;
+    
 }
+
 
 .invoice {
     width: 700px;
     background: #fff;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 3px 4px 5px 5px #80917D;
     border-radius: 8px;
     color: #333;
 }
