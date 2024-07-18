@@ -95,21 +95,42 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .invoice {
-    width: 800px;
+    width: 700px;
     background: #fff;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     color: #333;
-    box-shadow: 3px 4px 5px 5px #80917D;
-    
 }
 
 .invoice-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.invoice-logo {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    flex-grow: 0.6; 
+    text-align: right;
+}
+
+
+.invoice-logo img {
+    height: 100px;
+    width: auto;
+    
+}
+
+.invoice-header-bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -117,27 +138,15 @@ body{
 }
 
 .invoice-number {
-    font-size: 48px;
+    font-size: 36px;
     color: #999;
-}
-
-.invoice-logo {
-    display: flex; /* Use flexbox */
-    justify-content: flex-start; /* Align items to the start (left side) */
-}
-
-.invoice-logo img {
-    height: 130px;
-    width: auto; /* Set width to auto to maintain aspect ratio */
-    max-width: 100%; /* Ensure image doesn't exceed container width */
-    padding: 0; /* Remove any default padding */
 }
 
 .invoice-title {
     font-size: 36px;
     font-weight: bold;
-    margin-left: 40%;
-    margin-bottom: 20px;
+    text-align: left;
+    flex-grow: 0.8; 
 }
 
 .invoice-info {
@@ -148,6 +157,13 @@ body{
 
 .invoice-info-left, .invoice-info-right {
     width: 45%;
+}
+
+.invoice-info-left {
+    text-align: right;
+}
+
+.invoice-info-right {
     text-align: right;
 }
 
@@ -164,24 +180,39 @@ body{
 .invoice-table {
     width: 100%;
     border-collapse: collapse;
+    margin-bottom: 20px;
 }
 
-.invoice-table th, .invoice-table td {
-    border: 1px solid #ddd;
+.invoice-table th,
+.invoice-table td {
+    border: none;
     padding: 10px;
 }
 
 .invoice-table th {
-    background-color: #f2f2f2;
-    text-align: left;
+    font-weight: bold;
+    border-bottom: 1px solid #000;
+}
+
+.invoice-table td {
+    border-bottom: 1px solid #ddd;
+    border: none;
+}
+
+.invoice-table .text-right {
+    text-align: right;
 }
 
 .invoice-table tfoot td {
     font-weight: bold;
+    text-align: right;
+    border: none;
 }
 
-.invoice-table td:first-child {
-    text-align: left;
+.line {
+    border: none;
+    border-top: 2px solid #181414;
+    margin: 0;
+    width: 100%;
 }
-
 

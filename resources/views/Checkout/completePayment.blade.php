@@ -53,12 +53,14 @@
 <div class="invoice-container">
     <div class="invoice">
         <div class="invoice-header">
-            <div class="invoice-number">Nº 123</div>
             <div class="invoice-logo">
                 <img src="/assets/img/kalinawlogo2.png" alt="Kalinaw Crafts">
             </div>
         </div>
-        <div class="invoice-title">Invoice</div>
+        <div class="invoice-header-bottom">
+            <div class="invoice-number">Nº 123</div>
+            <div class="invoice-title">Invoice</div>
+        </div>
         <div class="invoice-info">
             <div class="invoice-info-left">
                 <div class="invoice-info-item">
@@ -81,48 +83,56 @@
                 </div>
             </div>
         </div>
-        <div class="invoice-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Item</th>
-                        <th>Cost</th>
-                        <th>Qty</th>
-                        <th>Total</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Product Name</td>
-                        <td>₱1,250</td>
-                        <td>1</td>
-                        <td>₱1,250</td>
-                    </tr>
-                    <tr>
-                        <td>Product Name</td>
-                        <td>₱1,250</td>
-                        <td>1</td>
-                        <td>₱1,250</td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="3">Subtotal</td>
-                        <td>₱2,500</td>
-                    </tr>
-                    <tr>
-                        <td colspan="3">Discount</td>
-                        <td>₱0.00</td>
-                    </tr>
-                    <tr>
-                        <td colspan="3">Total</td>
-                        <td>₱2,500</td>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
+        <table class="invoice-table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th class="text-right">Cost</th>
+                    <th class="text-right">Quantity</th>
+                    <th class="text-right">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Product Name</td>
+                    <td class="text-right">₱1,250</td>
+                    <td class="text-right">1</td>
+                    <td class="text-right">₱1,250</td>
+                </tr>
+                <tr>
+                    <td>Product Name</td>
+                    <td class="text-right">₱1,250</td>
+                    <td class="text-right">1</td>
+                    <td class="text-right">₱1,250</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4"><hr class="line"></td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="text-right" id="pads">Subtotal</td>
+                    <td class="text-right">₱2,500</td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="text-right">Discount</td>
+                    <td class="text-right">₱0.00</td>
+                </tr>
+                <tr>
+                    <td colspan="4"><hr class="line"></td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="text-right">Total</td>
+                    <td class="text-right">₱2,500</td>
+                </tr>
+            </tfoot>
+        </table>
     </div>
 </div>
+
+
+
+
 <br><br>
 
 
